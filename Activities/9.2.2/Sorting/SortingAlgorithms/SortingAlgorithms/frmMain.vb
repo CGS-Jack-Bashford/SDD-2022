@@ -13,6 +13,15 @@
         Next
 
     End Sub
+
+    Private Sub Swap(ByRef A As Integer, ByRef B As Integer)
+
+        Dim temp As Integer = A
+        A = B
+        B = temp
+
+    End Sub
+
     Private Sub btnGetNums_Click(sender As Object, e As EventArgs) Handles btnGetNums.Click
 
         Dim len As Integer = Int(InputBox("How many integers would you like the list to contain?"))
@@ -48,7 +57,23 @@
 
     Private Sub btnBubbleSort_Click(sender As Object, e As EventArgs) Handles btnBubbleSort.Click
 
-        Dim last As Integer = nums.Length - 1
+        BubbleSort(nums)
+
+        updateListBox()
+
+    End Sub
+
+    Private Sub btnSelectionSort_Click(sender As Object, e As EventArgs) Handles btnSelectionSort.Click
+
+        SelectionSort(nums)
+
+        updateListBox()
+
+    End Sub
+
+    Private Sub BubbleSort(ByRef arr As Integer())
+
+        Dim last As Integer = arr.Length - 1
         Dim swapped As Boolean = True
 
         While swapped
@@ -58,9 +83,9 @@
 
             While i < last
 
-                If nums(i) > nums(i + 1) Then
+                If arr(i) > arr(i + 1) Then
 
-                    Swap(nums(i), nums(i + 1))
+                    Swap(arr(i), arr(i + 1))
                     swapped = True
 
                 End If
@@ -73,15 +98,32 @@
 
         End While
 
-        updateListBox()
-
     End Sub
 
-    Private Sub Swap(ByRef A As Integer, ByRef B As Integer)
+    Private Sub SelectionSort(ByRef arr As Integer())
 
-        Dim temp As Integer = A
-        A = B
-        B = temp
+        Dim endUnsorted = arr.Length - 1
+
+        While endUnsorted > 0
+
+            Dim i As Integer = 0
+            Dim max As Integer = arr(i)
+            Dim idxMax As Integer = i
+
+            While i < endUnsorted
+
+                i += 1
+                If arr(i) > max Then
+                    max = arr(i)
+                    idxMax = i
+                End If
+
+            End While
+
+            Swap(arr(i), arr(idxMax))
+            endUnsorted -= 1
+
+        End While
 
     End Sub
 
