@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmMain
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lstNums = New System.Windows.Forms.ListBox()
         Me.btnGetNums = New System.Windows.Forms.Button()
@@ -29,7 +29,6 @@ Partial Class frmMain
         Me.btnSelectionSort = New System.Windows.Forms.Button()
         Me.btnInsertionSort = New System.Windows.Forms.Button()
         Me.lstMetrics = New System.Windows.Forms.ListBox()
-        Me.chkMetrics = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'lstNums
@@ -56,7 +55,7 @@ Partial Class frmMain
         Me.btnShuffle.Name = "btnShuffle"
         Me.btnShuffle.Size = New System.Drawing.Size(150, 46)
         Me.btnShuffle.TabIndex = 2
-        Me.btnShuffle.Text = "Shuffle"
+        Me.btnShuffle.Text = "Reset Arr"
         Me.btnShuffle.UseVisualStyleBackColor = True
         '
         'btnBubbleSort
@@ -95,22 +94,11 @@ Partial Class frmMain
         Me.lstMetrics.Size = New System.Drawing.Size(257, 164)
         Me.lstMetrics.TabIndex = 6
         '
-        'chkMetrics
-        '
-        Me.chkMetrics.AutoSize = True
-        Me.chkMetrics.Location = New System.Drawing.Point(732, 99)
-        Me.chkMetrics.Name = "chkMetrics"
-        Me.chkMetrics.Size = New System.Drawing.Size(124, 36)
-        Me.chkMetrics.TabIndex = 7
-        Me.chkMetrics.Text = "Metrics"
-        Me.chkMetrics.UseVisualStyleBackColor = True
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 32.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(926, 539)
-        Me.Controls.Add(Me.chkMetrics)
         Me.Controls.Add(Me.lstMetrics)
         Me.Controls.Add(Me.btnInsertionSort)
         Me.Controls.Add(Me.btnSelectionSort)
@@ -121,7 +109,6 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -132,5 +119,4 @@ Partial Class frmMain
     Friend WithEvents btnSelectionSort As Button
     Friend WithEvents btnInsertionSort As Button
     Friend WithEvents lstMetrics As ListBox
-    Friend WithEvents chkMetrics As CheckBox
 End Class
