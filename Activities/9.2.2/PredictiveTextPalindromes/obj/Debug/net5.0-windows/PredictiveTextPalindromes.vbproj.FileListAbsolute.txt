@@ -1,0 +1,17 @@
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\PredictiveTextPalindromes.exe
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\PredictiveTextPalindromes.deps.json
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\PredictiveTextPalindromes.runtimeconfig.json
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\PredictiveTextPalindromes.runtimeconfig.dev.json
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\PredictiveTextPalindromes.dll
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\ref\PredictiveTextPalindromes.dll
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\bin\Debug\net5.0-windows\PredictiveTextPalindromes.pdb
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.Form1.resources
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.vbproj.GenerateResource.cache
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.AssemblyInfoInputs.cache
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.AssemblyInfo.vb
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.vbproj.CoreCompileInputs.cache
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.dll
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\ref\PredictiveTextPalindromes.dll
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.pdb
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\PredictiveTextPalindromes\obj\Debug\net5.0-windows\PredictiveTextPalindromes.genruntimeconfig.cache
