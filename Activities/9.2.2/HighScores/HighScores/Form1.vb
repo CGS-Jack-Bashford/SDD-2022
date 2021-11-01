@@ -7,19 +7,19 @@
 
     End Structure
 
-    Dim arrHighScores(6) As recHighScore
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        readHighScores()
-        addNewScore()
-        sortHighScores()
-        displayHighScores()
-        writeHighScores()
+        Dim arrHighScores(6) As recHighScore
+
+        readHighScores(arrHighScores)
+        addNewScore(arrHighScores)
+        sortHighScores(arrHighScores)
+        displayHighScores(arrHighScores)
+        writeHighScores(arrHighScores)
 
     End Sub
 
-    Private Sub readHighScores()
+    Private Sub readHighScores(arrHighScores As recHighScore())
 
         Dim i As Integer
 
@@ -41,14 +41,14 @@
 
     End Sub
 
-    Private Sub addNewScore()
+    Private Sub addNewScore(ByVal arrHighScores As recHighScore())
 
         arrHighScores(6).name = "Fred"
         arrHighScores(6).score = 9
 
     End Sub
 
-    Private Sub sortHighScores()
+    Private Sub sortHighScores(arrHighScores As recHighScore())
 
         Dim last As Integer = 6
         Dim swapped As Boolean = True
@@ -85,7 +85,7 @@
 
     End Sub
 
-    Private Sub displayHighScores()
+    Private Sub displayHighScores(arrHighScores As recHighScore())
 
         Dim i As Integer
 
@@ -97,7 +97,7 @@
 
     End Sub
 
-    Private Sub writeHighScores()
+    Private Sub writeHighScores(arrHighScores As recHighScore())
 
         FileSystem.FileOpen(1, "hs.txt", OpenMode.Output)
 
