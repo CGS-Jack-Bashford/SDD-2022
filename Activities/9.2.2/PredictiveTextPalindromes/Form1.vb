@@ -31,6 +31,54 @@
     Dim longestWord As String = ""
     Dim longestSequence As String
 
+    Private Sub CheckLine()
+
+        Dim word As String = ""
+        Input(1, word)
+
+        Dim isPalindrome As Boolean = CheckPalindrome(word)
+
+        If Not isPalindrome Then
+
+            Dim sequence As String = wordToSequence(word)
+            Dim sequencePalindrome As Boolean = CheckPalindrome(sequence)
+
+            If sequencePalindrome And word.Length > longestWord.Length Then
+
+                longestWord = word
+                longestSequence = sequence
+
+            End If
+
+        End If
+
+    End Sub
+
+#Region "Functions"
+
+    Function CheckPalindrome(word As String) As Boolean
+
+        Dim firstPtr As Integer = 0
+        Dim lastPtr As Integer = word.Length - 1
+        Dim charsEqual As Boolean = True
+
+        While charsEqual And firstPtr < lastPtr
+
+            If word(firstPtr) <> word(lastPtr) Then
+
+                charsEqual = False
+
+            End If
+
+            firstPtr = firstPtr + 1
+            lastPtr = lastPtr - 1
+
+        End While
+
+        Return charsEqual
+
+    End Function
+
     Function letterToNumber(letter As Char) As Integer
 
         Dim number As Integer
@@ -66,39 +114,6 @@
 
     End Function
 
-    Private Sub CheckLine()
-
-        Dim word As String = ""
-        Input(1, word)
-
-        Dim isPalindrome As Boolean = CheckPalindrome(word)
-
-        If Not isPalindrome Then
-
-            Dim sequence As String = wordToSequence(word)
-            Dim sequencePalindrome As Boolean = CheckPalindrome(sequence)
-
-            If sequencePalindrome Then
-
-                If word.Length > longestWord.Length Then
-
-                    longestWord = word
-                    longestSequence = sequence
-
-                End If
-
-            End If
-
-        End If
-
-    End Sub
-
-    Function CheckPalindrome(word As String) As Boolean
-
-        Dim revWord As String = StrReverse(word)
-
-        Return word.Equals(revWord)
-
-    End Function
+#End Region
 
 End Class
