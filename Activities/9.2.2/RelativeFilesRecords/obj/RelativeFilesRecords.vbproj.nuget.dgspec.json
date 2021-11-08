@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFileActivity\\RelativeFileActivity.vbproj": {}
+    "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFilesRecords\\RelativeFilesRecords.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFileActivity\\RelativeFileActivity.vbproj": {
+    "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFilesRecords\\RelativeFilesRecords.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFileActivity\\RelativeFileActivity.vbproj",
-        "projectName": "RelativeFileActivity",
-        "projectPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFileActivity\\RelativeFileActivity.vbproj",
+        "projectUniqueName": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFilesRecords\\RelativeFilesRecords.vbproj",
+        "projectName": "RelativeFilesRecords",
+        "projectPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFilesRecords\\RelativeFilesRecords.vbproj",
         "packagesPath": "C:\\Users\\Jack Bashford\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFileActivity\\obj\\",
+        "outputPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Activities\\9.2.2\\RelativeFilesRecords\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jack Bashford\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
