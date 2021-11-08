@@ -1,0 +1,23 @@
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\bin\Debug\SequentialFiles.exe
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\bin\Debug\SequentialFiles.pdb
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\bin\Debug\SequentialFiles.xml
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.frmMain.resources
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.Resources.resources
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.vbproj.GenerateResource.Cache
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.exe
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.xml
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append)\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.pdb
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append) - skeleton\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.exe
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append) - skeleton\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.xml
+E:\My Documents\Dropbox\Teaching Resources\Computing Studies\SDD\9 HSC\9.2 Software Development Cycle\9.2.2 Planning and Design\SequentialDemo (incl append) - skeleton\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.pdb
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.vbprojAssemblyReference.cache
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.frmMain.resources
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.Resources.resources
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.vbproj.GenerateResource.cache
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.vbproj.CoreCompileInputs.cache
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.exe
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.xml
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\obj\x86\Debug\SequentialFiles.pdb
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\bin\Debug\SequentialFiles.exe
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\bin\Debug\SequentialFiles.pdb
+C:\Users\jackbashford\Documents\GitHub\SDD-2022\Activities\9.2.2\SequentialFiles\SequentialFiles\bin\Debug\SequentialFiles.xml

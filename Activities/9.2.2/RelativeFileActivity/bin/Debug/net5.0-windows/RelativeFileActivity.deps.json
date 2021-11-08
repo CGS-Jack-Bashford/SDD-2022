@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "RelativeFileActivity/1.0.0": {
+        "runtime": {
+          "RelativeFileActivity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RelativeFileActivity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
