@@ -9,7 +9,6 @@
     Dim arrStudents(3) As recStudentInfo
 
     Private Sub cmdHarderWriteDemo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdHarderWriteDemo.Click
-        Dim counter As Integer
 
         'set up data
         arrStudents(1).skey = "SMITHJ"
