@@ -69,4 +69,40 @@
 
     End Sub
 
+    Function getSHA(ByVal strToHash As String) As String
+
+        Dim SHA As New Security.Cryptography.SHA1CryptoServiceProvider
+        Dim bytesToHash() As Byte = System.Text.Encoding.ASCII.GetBytes(strToHash)
+        Dim strResult As String = ""
+
+        bytesToHash = SHA.ComputeHash(bytesToHash)
+
+        For Each b As Byte In bytesToHash
+            strResult = strResult + b.ToString("x2")
+        Next b
+
+        Return strResult
+
+    End Function
+
+    Private Sub btnHash_Click(sender As Object, e As EventArgs) Handles btnHash.Click
+
+        FileOpen(1, "users.txt", OpenMode.Random)
+        FileOpen(2, "hashed.txt", OpenMode.Random)
+
+        Dim userRec As recUserDetails
+
+        For i = 1 To 1000 Step 1
+
+            FileGet(1, userRec, i)
+            userRec.Password = getSHA(userRec.Password)
+            FilePut(2, userRec, i)
+
+        Next i
+
+        FileClose(1)
+        FileClose(2)
+
+    End Sub
+
 End Class
