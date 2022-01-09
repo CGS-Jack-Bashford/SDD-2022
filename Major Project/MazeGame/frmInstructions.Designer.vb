@@ -22,9 +22,17 @@ Partial Class frmInstructions
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'frmInstructions
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "frmInstructions"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Name = "frmInstructions"
+        Me.Text = "Maze Game"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

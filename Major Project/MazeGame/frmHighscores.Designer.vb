@@ -31,7 +31,7 @@ Partial Class frmHighscores
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmHighscores"
-        Me.Text = "frmHighscores"
+        Me.Text = "Maze Game"
         Me.ResumeLayout(False)
 
     End Sub

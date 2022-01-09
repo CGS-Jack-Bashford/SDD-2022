@@ -22,9 +22,17 @@ Partial Class frmGameOver
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'frmGameOver
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "frmGameOver"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Name = "frmGameOver"
+        Me.Text = "Maze Game"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

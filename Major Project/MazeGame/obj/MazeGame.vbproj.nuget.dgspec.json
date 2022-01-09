@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jack Bashford\\Desktop\\SDD\\Assignment\\Major Project\\MazeGame\\MazeGame.vbproj": {}
+    "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project\\MazeGame\\MazeGame.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\Jack Bashford\\Desktop\\SDD\\Assignment\\Major Project\\MazeGame\\MazeGame.vbproj": {
+    "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project\\MazeGame\\MazeGame.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jack Bashford\\Desktop\\SDD\\Assignment\\Major Project\\MazeGame\\MazeGame.vbproj",
+        "projectUniqueName": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project\\MazeGame\\MazeGame.vbproj",
         "projectName": "MazeGame",
-        "projectPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD\\Assignment\\Major Project\\MazeGame\\MazeGame.vbproj",
+        "projectPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project\\MazeGame\\MazeGame.vbproj",
         "packagesPath": "C:\\Users\\Jack Bashford\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD\\Assignment\\Major Project\\MazeGame\\obj\\",
+        "outputPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project\\MazeGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jack Bashford\\AppData\\Roaming\\NuGet\\NuGet.Config",
