@@ -1,95 +1,64 @@
-import sys
-import random
+maze = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 
-width = 10 #int(input("Width: "))
-height = 10 #int(input("Height: "))
-# seed = int(input("Seed: "))
+def hasNeighborInDirection(arr, x, y, direction):
 
-grid = [ [0] * width ] * height
+    if direction == NORTH:
+        if (y - 1) >= 0:
+            # return [x, y - 1]
+            return [y - 1, x]
+            
+    elif direction == SOUTH:
+        if (y + 1) < len(arr[x]):
+            # return [x, y + 1]
+            return [y + 1, x]
+            
+    elif direction == EAST:
+        if (x + 1) < len(arr):
+            # return [x + 1, y]
+            return [y, x + 1]
+            
+    else:
+        if (x - 1) >= 0:
+            # return [x - 1, y]
+            return [y, x - 1]
 
-N = 1
-S = 2
-E = 4
-W = 8
+    return (-1, -1)
 
-DX = {}
-DX[E] = 1
-DX[W] = -1
-DX[N] = 0
-DX[S] = 0
+# This is hardcoded, should be randomised within the recursivePassage definition below
+NORTH = 1
+SOUTH = 2
+EAST = 4
+WEST = 8
 
-DY = {}
-DY[E] = 0
-DY[W] = 0
-DY[N] = -1
-DY[S] = 1
+directionsOrder = [NORTH, SOUTH, EAST, WEST]
 
-OP = {}
-OP[E] = W
-OP[W] = E
-OP[N] = S
-OP[S] = N
-
-c = 0
-
-def carve(cx, cy):
-    global c
-    c += 1
-    directions = [N, S, E, W]
-    # random.shuffle(directions)
+def recursivePassage(arr, x, y):
     
-    # print(directions)
-    
-    for direction in directions:
+    for direction in directionsOrder:
         
-        nx = cx + DX[direction]
-        ny = cy + DY[direction]
-        
-        print("nx " + str(nx))
-        # print("dx " + str(DX[direction]))
-        print("ny " + str(ny))
-        # print("dy " + str(DY[direction]))
-        print(len(grid[ny]))
-        print(len(grid))
-        
-        print(0 <= ny < len(grid))
-        print(0 <= nx < len(grid[ny]))
-        # print(grid[ny][nx])
-        
-        #if ((0 <= ny < len(grid)) and (0 <= nx < len(grid[ny]))) and grid[ny][nx] == 0:
-            
-        if ny >= 0 and nx < len(grid):
-            
-            if nx >= 0 and nx < len(grid[ny]):
-                
-                if grid[ny][nx] == 0:
-            
-                    grid[cy][cx] |= direction
-                    grid[ny][nx] |= OP[direction]
-                    print("recurse")
-                    carve(nx, ny)
-            
-carve(0, 0)
+        neighbor = hasNeighborInDirection(arr, x, y, direction)
 
-print(str(grid))
+        if neighbor == (-1, -1):
+            # Neighbor does not exist, so this direction is unviable
+            continue
+        
+        print(direction)
+        print("\n".join([str(row) for row in arr]))
+        print(str(neighbor))
 
-print(" " + ("_" * (width * 2 - 1)))
-for y in range(height):
-    s = ""
-    s += "|"
-    for x in range(width):
-        if grid[y][x] & S != 0:
-            s += " "
-        else:
-            s += "_"
-        if grid[y][x] & E != 0:
-            if (grid[y][x] | grid[y][x + 1]) & S != 0:
-                s += " "
-            else:
-                s += "_"
-        else:
-            s += "|"
-            
-    print(s)
-    
-print(c)
+        currentNeighborValue = arr[neighbor[0]][neighbor[1]]
+
+        if currentNeighborValue > 0:
+            print("Neighbor has already been visited")
+            continue
+
+        arr[x][y] += direction
+        arr[neighbor[0]][neighbor[1]] += direction
+        
+        # print("\n".join([str(x) for x in arr]))
+        
+        recursivePassage(arr, neighbor[0], neighbor[1])
+
+recursivePassage(maze, 0, 0)
+
+print("\n".join([str(x) for x in maze]))
