@@ -32,89 +32,110 @@ Partial Class Form1
         Me.txtChangeOld = New System.Windows.Forms.TextBox()
         Me.txtChangeUser = New System.Windows.Forms.TextBox()
         Me.txtChangeNew = New System.Windows.Forms.TextBox()
+        Me.btnHash = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(13, 13)
+        Me.txtUsername.Location = New System.Drawing.Point(22, 26)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(100, 23)
+        Me.txtUsername.Size = New System.Drawing.Size(169, 35)
         Me.txtUsername.TabIndex = 0
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(13, 43)
+        Me.txtPassword.Location = New System.Drawing.Point(22, 86)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 23)
+        Me.txtPassword.Size = New System.Drawing.Size(169, 35)
         Me.txtPassword.TabIndex = 1
         '
         'btnCheckCredentials
         '
-        Me.btnCheckCredentials.Location = New System.Drawing.Point(13, 73)
+        Me.btnCheckCredentials.Location = New System.Drawing.Point(22, 146)
+        Me.btnCheckCredentials.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.btnCheckCredentials.Name = "btnCheckCredentials"
-        Me.btnCheckCredentials.Size = New System.Drawing.Size(75, 23)
+        Me.btnCheckCredentials.Size = New System.Drawing.Size(129, 46)
         Me.btnCheckCredentials.TabIndex = 2
         Me.btnCheckCredentials.Text = "CheckValid"
         Me.btnCheckCredentials.UseVisualStyleBackColor = True
         '
         'txtNewPass
         '
-        Me.txtNewPass.Location = New System.Drawing.Point(158, 43)
+        Me.txtNewPass.Location = New System.Drawing.Point(271, 86)
+        Me.txtNewPass.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtNewPass.Name = "txtNewPass"
-        Me.txtNewPass.Size = New System.Drawing.Size(100, 23)
+        Me.txtNewPass.Size = New System.Drawing.Size(169, 35)
         Me.txtNewPass.TabIndex = 4
         '
         'txtNewName
         '
-        Me.txtNewName.Location = New System.Drawing.Point(158, 13)
+        Me.txtNewName.Location = New System.Drawing.Point(271, 26)
+        Me.txtNewName.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtNewName.Name = "txtNewName"
-        Me.txtNewName.Size = New System.Drawing.Size(100, 23)
+        Me.txtNewName.Size = New System.Drawing.Size(169, 35)
         Me.txtNewName.TabIndex = 3
         '
         'btnAddUser
         '
-        Me.btnAddUser.Location = New System.Drawing.Point(158, 73)
+        Me.btnAddUser.Location = New System.Drawing.Point(271, 146)
+        Me.btnAddUser.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.btnAddUser.Name = "btnAddUser"
-        Me.btnAddUser.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddUser.Size = New System.Drawing.Size(129, 46)
         Me.btnAddUser.TabIndex = 5
         Me.btnAddUser.Text = "Add User"
         Me.btnAddUser.UseVisualStyleBackColor = True
         '
         'btnChangePass
         '
-        Me.btnChangePass.Location = New System.Drawing.Point(299, 100)
+        Me.btnChangePass.Location = New System.Drawing.Point(513, 200)
+        Me.btnChangePass.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.btnChangePass.Name = "btnChangePass"
-        Me.btnChangePass.Size = New System.Drawing.Size(81, 23)
+        Me.btnChangePass.Size = New System.Drawing.Size(139, 46)
         Me.btnChangePass.TabIndex = 8
         Me.btnChangePass.Text = "ChangePass"
         Me.btnChangePass.UseVisualStyleBackColor = True
         '
         'txtChangeOld
         '
-        Me.txtChangeOld.Location = New System.Drawing.Point(299, 42)
+        Me.txtChangeOld.Location = New System.Drawing.Point(513, 84)
+        Me.txtChangeOld.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtChangeOld.Name = "txtChangeOld"
-        Me.txtChangeOld.Size = New System.Drawing.Size(100, 23)
+        Me.txtChangeOld.Size = New System.Drawing.Size(169, 35)
         Me.txtChangeOld.TabIndex = 7
         '
         'txtChangeUser
         '
-        Me.txtChangeUser.Location = New System.Drawing.Point(299, 12)
+        Me.txtChangeUser.Location = New System.Drawing.Point(513, 24)
+        Me.txtChangeUser.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtChangeUser.Name = "txtChangeUser"
-        Me.txtChangeUser.Size = New System.Drawing.Size(100, 23)
+        Me.txtChangeUser.Size = New System.Drawing.Size(169, 35)
         Me.txtChangeUser.TabIndex = 6
         '
         'txtChangeNew
         '
-        Me.txtChangeNew.Location = New System.Drawing.Point(299, 71)
+        Me.txtChangeNew.Location = New System.Drawing.Point(513, 142)
+        Me.txtChangeNew.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.txtChangeNew.Name = "txtChangeNew"
-        Me.txtChangeNew.Size = New System.Drawing.Size(100, 23)
+        Me.txtChangeNew.Size = New System.Drawing.Size(169, 35)
         Me.txtChangeNew.TabIndex = 9
+        '
+        'btnHash
+        '
+        Me.btnHash.Location = New System.Drawing.Point(752, 20)
+        Me.btnHash.Name = "btnHash"
+        Me.btnHash.Size = New System.Drawing.Size(131, 40)
+        Me.btnHash.TabIndex = 10
+        Me.btnHash.Text = "Button1"
+        Me.btnHash.UseVisualStyleBackColor = True
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1371, 900)
+        Me.Controls.Add(Me.btnHash)
         Me.Controls.Add(Me.txtChangeNew)
         Me.Controls.Add(Me.btnChangePass)
         Me.Controls.Add(Me.txtChangeOld)
@@ -125,6 +146,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnCheckCredentials)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
+        Me.Margin = New System.Windows.Forms.Padding(5, 6, 5, 6)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -142,4 +164,5 @@ Partial Class Form1
     Friend WithEvents txtChangeOld As TextBox
     Friend WithEvents txtChangeUser As TextBox
     Friend WithEvents txtChangeNew As TextBox
+    Friend WithEvents btnHash As Button
 End Class
