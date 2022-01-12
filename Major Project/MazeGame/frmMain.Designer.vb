@@ -23,164 +23,235 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.black10x10 = New MazeGame.ButtonEllipse()
-        Me.white10x10 = New MazeGame.ButtonEllipse()
-        Me.white20x20 = New MazeGame.ButtonEllipse()
-        Me.black20x20 = New MazeGame.ButtonEllipse()
-        Me.black30x30 = New MazeGame.ButtonEllipse()
-        Me.white30x30 = New MazeGame.ButtonEllipse()
+        Me.lblMazeGameTitle = New System.Windows.Forms.Label()
+        Me.lblMazeSize = New System.Windows.Forms.Label()
+        Me.lblMazeSize10 = New System.Windows.Forms.Label()
+        Me.lblMazeSize20 = New System.Windows.Forms.Label()
+        Me.lblMazeSize30 = New System.Windows.Forms.Label()
+        Me.lblMazeSeed = New System.Windows.Forms.Label()
+        Me.txtMazeSeed = New System.Windows.Forms.TextBox()
+        Me.btnMazeSize10Back = New MazeGame.ButtonEllipse()
+        Me.btnMazeSize10 = New MazeGame.ButtonEllipse()
+        Me.btnMazeSize20 = New MazeGame.ButtonEllipse()
+        Me.btnMazeSize20Back = New MazeGame.ButtonEllipse()
+        Me.btnMazeSize30Back = New MazeGame.ButtonEllipse()
+        Me.btnMazeSize30 = New MazeGame.ButtonEllipse()
+        Me.btnInstructions = New System.Windows.Forms.Button()
+        Me.btnHighscores = New System.Windows.Forms.Button()
+        Me.btnPlay = New System.Windows.Forms.Button()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.pnlEnterName = New System.Windows.Forms.TableLayoutPanel()
+        Me.pnlEnterName.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblMazeGameTitle
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Maze", 60.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(486, 20)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(397, 54)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Maze Game"
+        Me.lblMazeGameTitle.AutoSize = True
+        Me.lblMazeGameTitle.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeGameTitle.Font = New System.Drawing.Font("Maze", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblMazeGameTitle.Location = New System.Drawing.Point(446, 20)
+        Me.lblMazeGameTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMazeGameTitle.Name = "lblMazeGameTitle"
+        Me.lblMazeGameTitle.Size = New System.Drawing.Size(477, 64)
+        Me.lblMazeGameTitle.TabIndex = 0
+        Me.lblMazeGameTitle.Text = "Maze Game"
         '
-        'Label2
+        'lblMazeSize
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(38, 100)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(168, 32)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Maze Size"
+        Me.lblMazeSize.AutoSize = True
+        Me.lblMazeSize.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMazeSize.Location = New System.Drawing.Point(55, 184)
+        Me.lblMazeSize.Name = "lblMazeSize"
+        Me.lblMazeSize.Size = New System.Drawing.Size(168, 32)
+        Me.lblMazeSize.TabIndex = 1
+        Me.lblMazeSize.Text = "Maze Size"
         '
-        'Label3
+        'lblMazeSize10
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(105, 150)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 32)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "10x10"
+        Me.lblMazeSize10.AutoSize = True
+        Me.lblMazeSize10.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize10.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMazeSize10.Location = New System.Drawing.Point(122, 234)
+        Me.lblMazeSize10.Name = "lblMazeSize10"
+        Me.lblMazeSize10.Size = New System.Drawing.Size(99, 32)
+        Me.lblMazeSize10.TabIndex = 2
+        Me.lblMazeSize10.Text = "10x10"
         '
-        'Label4
+        'lblMazeSize20
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(105, 200)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 32)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "20x20"
+        Me.lblMazeSize20.AutoSize = True
+        Me.lblMazeSize20.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize20.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMazeSize20.Location = New System.Drawing.Point(122, 284)
+        Me.lblMazeSize20.Name = "lblMazeSize20"
+        Me.lblMazeSize20.Size = New System.Drawing.Size(101, 32)
+        Me.lblMazeSize20.TabIndex = 3
+        Me.lblMazeSize20.Text = "20x20"
         '
-        'Label5
+        'lblMazeSize30
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(107, 250)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 32)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "30x30"
+        Me.lblMazeSize30.AutoSize = True
+        Me.lblMazeSize30.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize30.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMazeSize30.Location = New System.Drawing.Point(124, 334)
+        Me.lblMazeSize30.Name = "lblMazeSize30"
+        Me.lblMazeSize30.Size = New System.Drawing.Size(99, 32)
+        Me.lblMazeSize30.TabIndex = 4
+        Me.lblMazeSize30.Text = "30x30"
         '
-        'Label6
+        'lblMazeSeed
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Enabled = False
-        Me.Label6.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.Location = New System.Drawing.Point(38, 392)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(168, 32)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Maze Seed"
+        Me.lblMazeSeed.AutoSize = True
+        Me.lblMazeSeed.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSeed.Enabled = False
+        Me.lblMazeSeed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblMazeSeed.Location = New System.Drawing.Point(55, 476)
+        Me.lblMazeSeed.Name = "lblMazeSeed"
+        Me.lblMazeSeed.Size = New System.Drawing.Size(168, 32)
+        Me.lblMazeSeed.TabIndex = 5
+        Me.lblMazeSeed.Text = "Maze Seed"
         '
-        'TextBox1
+        'txtMazeSeed
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox1.Location = New System.Drawing.Point(38, 438)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PlaceholderText = "Enter Seed"
-        Me.TextBox1.Size = New System.Drawing.Size(166, 36)
-        Me.TextBox1.TabIndex = 6
+        Me.txtMazeSeed.Enabled = False
+        Me.txtMazeSeed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtMazeSeed.Location = New System.Drawing.Point(55, 522)
+        Me.txtMazeSeed.Name = "txtMazeSeed"
+        Me.txtMazeSeed.PlaceholderText = "Enter Seed"
+        Me.txtMazeSeed.Size = New System.Drawing.Size(166, 36)
+        Me.txtMazeSeed.TabIndex = 6
         '
-        'black10x10
+        'btnMazeSize10Back
         '
-        Me.black10x10.BackColor = System.Drawing.Color.Black
-        Me.black10x10.FlatAppearance.BorderSize = 0
-        Me.black10x10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.black10x10.Location = New System.Drawing.Point(65, 150)
-        Me.black10x10.Name = "black10x10"
-        Me.black10x10.Size = New System.Drawing.Size(34, 34)
-        Me.black10x10.TabIndex = 7
-        Me.black10x10.UseVisualStyleBackColor = False
+        Me.btnMazeSize10Back.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSize10Back.Enabled = False
+        Me.btnMazeSize10Back.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize10Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSize10Back.Location = New System.Drawing.Point(82, 234)
+        Me.btnMazeSize10Back.Name = "btnMazeSize10Back"
+        Me.btnMazeSize10Back.Size = New System.Drawing.Size(34, 34)
+        Me.btnMazeSize10Back.TabIndex = 7
+        Me.btnMazeSize10Back.TabStop = False
+        Me.btnMazeSize10Back.UseVisualStyleBackColor = False
         '
-        'white10x10
+        'btnMazeSize10
         '
-        Me.white10x10.BackColor = System.Drawing.Color.White
-        Me.white10x10.FlatAppearance.BorderSize = 0
-        Me.white10x10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.white10x10.Location = New System.Drawing.Point(66, 151)
-        Me.white10x10.Name = "white10x10"
-        Me.white10x10.Size = New System.Drawing.Size(32, 32)
-        Me.white10x10.TabIndex = 7
-        Me.white10x10.UseVisualStyleBackColor = False
+        Me.btnMazeSize10.BackColor = System.Drawing.Color.White
+        Me.btnMazeSize10.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSize10.Location = New System.Drawing.Point(83, 235)
+        Me.btnMazeSize10.Name = "btnMazeSize10"
+        Me.btnMazeSize10.Size = New System.Drawing.Size(32, 32)
+        Me.btnMazeSize10.TabIndex = 7
+        Me.btnMazeSize10.UseVisualStyleBackColor = False
         '
-        'white20x20
+        'btnMazeSize20
         '
-        Me.white20x20.BackColor = System.Drawing.Color.White
-        Me.white20x20.FlatAppearance.BorderSize = 0
-        Me.white20x20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.white20x20.Location = New System.Drawing.Point(66, 201)
-        Me.white20x20.Name = "white20x20"
-        Me.white20x20.Size = New System.Drawing.Size(32, 32)
-        Me.white20x20.TabIndex = 8
-        Me.white20x20.UseVisualStyleBackColor = False
+        Me.btnMazeSize20.BackColor = System.Drawing.Color.White
+        Me.btnMazeSize20.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSize20.Location = New System.Drawing.Point(83, 285)
+        Me.btnMazeSize20.Name = "btnMazeSize20"
+        Me.btnMazeSize20.Size = New System.Drawing.Size(32, 32)
+        Me.btnMazeSize20.TabIndex = 8
+        Me.btnMazeSize20.UseVisualStyleBackColor = False
         '
-        'black20x20
+        'btnMazeSize20Back
         '
-        Me.black20x20.BackColor = System.Drawing.Color.Black
-        Me.black20x20.FlatAppearance.BorderSize = 0
-        Me.black20x20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.black20x20.Location = New System.Drawing.Point(65, 200)
-        Me.black20x20.Name = "black20x20"
-        Me.black20x20.Size = New System.Drawing.Size(34, 34)
-        Me.black20x20.TabIndex = 9
-        Me.black20x20.UseVisualStyleBackColor = False
+        Me.btnMazeSize20Back.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSize20Back.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize20Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSize20Back.Location = New System.Drawing.Point(82, 284)
+        Me.btnMazeSize20Back.Name = "btnMazeSize20Back"
+        Me.btnMazeSize20Back.Size = New System.Drawing.Size(34, 34)
+        Me.btnMazeSize20Back.TabIndex = 9
+        Me.btnMazeSize20Back.TabStop = False
+        Me.btnMazeSize20Back.UseVisualStyleBackColor = False
         '
-        'black30x30
+        'btnMazeSize30Back
         '
-        Me.black30x30.BackColor = System.Drawing.Color.Black
-        Me.black30x30.FlatAppearance.BorderSize = 0
-        Me.black30x30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.black30x30.Location = New System.Drawing.Point(65, 250)
-        Me.black30x30.Name = "black30x30"
-        Me.black30x30.Size = New System.Drawing.Size(34, 34)
-        Me.black30x30.TabIndex = 10
-        Me.black30x30.UseVisualStyleBackColor = False
+        Me.btnMazeSize30Back.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSize30Back.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize30Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSize30Back.Location = New System.Drawing.Point(82, 334)
+        Me.btnMazeSize30Back.Name = "btnMazeSize30Back"
+        Me.btnMazeSize30Back.Size = New System.Drawing.Size(34, 34)
+        Me.btnMazeSize30Back.TabIndex = 10
+        Me.btnMazeSize30Back.TabStop = False
+        Me.btnMazeSize30Back.UseVisualStyleBackColor = False
         '
-        'white30x30
+        'btnMazeSize30
         '
-        Me.white30x30.BackColor = System.Drawing.Color.White
-        Me.white30x30.FlatAppearance.BorderSize = 0
-        Me.white30x30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.white30x30.Location = New System.Drawing.Point(66, 251)
-        Me.white30x30.Name = "white30x30"
-        Me.white30x30.Size = New System.Drawing.Size(32, 32)
-        Me.white30x30.TabIndex = 11
-        Me.white30x30.UseVisualStyleBackColor = False
+        Me.btnMazeSize30.BackColor = System.Drawing.Color.White
+        Me.btnMazeSize30.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSize30.Location = New System.Drawing.Point(83, 335)
+        Me.btnMazeSize30.Name = "btnMazeSize30"
+        Me.btnMazeSize30.Size = New System.Drawing.Size(32, 32)
+        Me.btnMazeSize30.TabIndex = 11
+        Me.btnMazeSize30.UseVisualStyleBackColor = False
+        '
+        'btnInstructions
+        '
+        Me.btnInstructions.BackColor = System.Drawing.Color.White
+        Me.btnInstructions.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnInstructions.Location = New System.Drawing.Point(520, 266)
+        Me.btnInstructions.Name = "btnInstructions"
+        Me.btnInstructions.Size = New System.Drawing.Size(300, 70)
+        Me.btnInstructions.TabIndex = 12
+        Me.btnInstructions.Text = "Instructions"
+        Me.btnInstructions.UseVisualStyleBackColor = False
+        '
+        'btnHighscores
+        '
+        Me.btnHighscores.BackColor = System.Drawing.Color.White
+        Me.btnHighscores.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnHighscores.Location = New System.Drawing.Point(859, 266)
+        Me.btnHighscores.Name = "btnHighscores"
+        Me.btnHighscores.Size = New System.Drawing.Size(300, 70)
+        Me.btnHighscores.TabIndex = 13
+        Me.btnHighscores.Text = "Highscores"
+        Me.btnHighscores.UseVisualStyleBackColor = False
+        '
+        'btnPlay
+        '
+        Me.btnPlay.BackColor = System.Drawing.Color.White
+        Me.btnPlay.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnPlay.Location = New System.Drawing.Point(859, 396)
+        Me.btnPlay.Name = "btnPlay"
+        Me.btnPlay.Size = New System.Drawing.Size(300, 70)
+        Me.btnPlay.TabIndex = 14
+        Me.btnPlay.Text = "Play"
+        Me.btnPlay.UseVisualStyleBackColor = False
+        '
+        'txtName
+        '
+        Me.txtName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtName.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtName.Location = New System.Drawing.Point(4, 21)
+        Me.txtName.Name = "txtName"
+        Me.txtName.PlaceholderText = "Enter Name"
+        Me.txtName.Size = New System.Drawing.Size(292, 27)
+        Me.txtName.TabIndex = 15
+        Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pnlEnterName
+        '
+        Me.pnlEnterName.BackColor = System.Drawing.Color.White
+        Me.pnlEnterName.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.pnlEnterName.ColumnCount = 1
+        Me.pnlEnterName.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.pnlEnterName.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.pnlEnterName.Controls.Add(Me.txtName, 0, 0)
+        Me.pnlEnterName.Location = New System.Drawing.Point(520, 396)
+        Me.pnlEnterName.Name = "pnlEnterName"
+        Me.pnlEnterName.RowCount = 1
+        Me.pnlEnterName.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.pnlEnterName.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
+        Me.pnlEnterName.Size = New System.Drawing.Size(300, 70)
+        Me.pnlEnterName.TabIndex = 16
         '
         'frmMain
         '
@@ -189,40 +260,51 @@ Partial Class frmMain
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1352, 729)
-        Me.Controls.Add(Me.white10x10)
-        Me.Controls.Add(Me.white20x20)
-        Me.Controls.Add(Me.white30x30)
-        Me.Controls.Add(Me.black10x10)
-        Me.Controls.Add(Me.black20x20)
-        Me.Controls.Add(Me.black30x30)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.pnlEnterName)
+        Me.Controls.Add(Me.btnPlay)
+        Me.Controls.Add(Me.btnHighscores)
+        Me.Controls.Add(Me.btnInstructions)
+        Me.Controls.Add(Me.btnMazeSize10)
+        Me.Controls.Add(Me.btnMazeSize20)
+        Me.Controls.Add(Me.btnMazeSize30)
+        Me.Controls.Add(Me.btnMazeSize10Back)
+        Me.Controls.Add(Me.btnMazeSize20Back)
+        Me.Controls.Add(Me.btnMazeSize30Back)
+        Me.Controls.Add(Me.txtMazeSeed)
+        Me.Controls.Add(Me.lblMazeSeed)
+        Me.Controls.Add(Me.lblMazeSize30)
+        Me.Controls.Add(Me.lblMazeSize20)
+        Me.Controls.Add(Me.lblMazeSize10)
+        Me.Controls.Add(Me.lblMazeSize)
+        Me.Controls.Add(Me.lblMazeGameTitle)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmMain"
         Me.Text = "Maze Game"
+        Me.pnlEnterName.ResumeLayout(False)
+        Me.pnlEnterName.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents black10x10 As ButtonEllipse
-    Friend WithEvents white10x10 As ButtonEllipse
-    Friend WithEvents white20x20 As ButtonEllipse
-    Friend WithEvents black20x20 As ButtonEllipse
-    Friend WithEvents black30x30 As ButtonEllipse
-    Friend WithEvents white30x30 As ButtonEllipse
+    Friend WithEvents lblMazeGameTitle As Label
+    Friend WithEvents lblMazeSize As Label
+    Friend WithEvents lblMazeSize10 As Label
+    Friend WithEvents lblMazeSize20 As Label
+    Friend WithEvents lblMazeSize30 As Label
+    Friend WithEvents lblMazeSeed As Label
+    Friend WithEvents txtMazeSeed As TextBox
+    Friend WithEvents btnMazeSize10Back As ButtonEllipse
+    Friend WithEvents btnMazeSize10 As ButtonEllipse
+    Friend WithEvents btnMazeSize20 As ButtonEllipse
+    Friend WithEvents btnMazeSize20Back As ButtonEllipse
+    Friend WithEvents btnMazeSize30Back As ButtonEllipse
+    Friend WithEvents btnMazeSize30 As ButtonEllipse
+    Friend WithEvents btnInstructions As Button
+    Friend WithEvents btnHighscores As Button
+    Friend WithEvents btnPlay As Button
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents pnlEnterName As TableLayoutPanel
 End Class
