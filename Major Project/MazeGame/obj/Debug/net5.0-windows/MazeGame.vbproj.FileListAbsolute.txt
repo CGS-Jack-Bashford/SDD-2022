@@ -27,7 +27,6 @@ C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\bin\Debug\net5.0-
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\bin\Debug\net5.0-windows\MazeGame.dll
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\bin\Debug\net5.0-windows\ref\MazeGame.dll
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\bin\Debug\net5.0-windows\MazeGame.pdb
-C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.vbproj.AssemblyReference.cache
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.frmGame.resources
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.frmGameOver.resources
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.frmHighscores.resources
@@ -42,3 +41,5 @@ C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\ref\MazeGame.dll
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.pdb
 C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.genruntimeconfig.cache
+C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.Resources.resources
+C:\Users\Jack Bashford\Desktop\SDD-2022\Major Project\MazeGame\obj\Debug\net5.0-windows\MazeGame.vbproj.AssemblyReference.cache
