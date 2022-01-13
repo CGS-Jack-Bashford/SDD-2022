@@ -41,7 +41,7 @@
 
     Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
 
-        e.Graphics.Clear(Color.White)
+        e.Graphics.Clear(Color.Green)
         e.Graphics.DrawRectangle(New Pen(colour, PenWidth), RcDraw)
         e.Graphics.FillRectangle(New SolidBrush(colour), RcDraw)
 

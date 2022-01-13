@@ -23,7 +23,7 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.lblMazeGameTitle = New System.Windows.Forms.Label()
+        Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblMazeSize = New System.Windows.Forms.Label()
         Me.lblMazeSize10 = New System.Windows.Forms.Label()
         Me.lblMazeSize20 = New System.Windows.Forms.Label()
@@ -41,20 +41,21 @@ Partial Class frmMain
         Me.btnPlay = New System.Windows.Forms.Button()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.pnlEnterName = New System.Windows.Forms.TableLayoutPanel()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.pnlEnterName.SuspendLayout()
         Me.SuspendLayout()
         '
-        'lblMazeGameTitle
+        'lblTitle
         '
-        Me.lblMazeGameTitle.AutoSize = True
-        Me.lblMazeGameTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblMazeGameTitle.Font = New System.Drawing.Font("Maze", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblMazeGameTitle.Location = New System.Drawing.Point(446, 20)
-        Me.lblMazeGameTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblMazeGameTitle.Name = "lblMazeGameTitle"
-        Me.lblMazeGameTitle.Size = New System.Drawing.Size(477, 64)
-        Me.lblMazeGameTitle.TabIndex = 0
-        Me.lblMazeGameTitle.Text = "Maze Game"
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.BackColor = System.Drawing.Color.Transparent
+        Me.lblTitle.Font = New System.Drawing.Font("Maze", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblTitle.Location = New System.Drawing.Point(446, 20)
+        Me.lblTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(477, 64)
+        Me.lblTitle.TabIndex = 0
+        Me.lblTitle.Text = "Maze Game"
         '
         'lblMazeSize
         '
@@ -71,6 +72,7 @@ Partial Class frmMain
         '
         Me.lblMazeSize10.AutoSize = True
         Me.lblMazeSize10.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblMazeSize10.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblMazeSize10.Location = New System.Drawing.Point(122, 234)
         Me.lblMazeSize10.Name = "lblMazeSize10"
@@ -82,6 +84,7 @@ Partial Class frmMain
         '
         Me.lblMazeSize20.AutoSize = True
         Me.lblMazeSize20.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize20.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblMazeSize20.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblMazeSize20.Location = New System.Drawing.Point(122, 284)
         Me.lblMazeSize20.Name = "lblMazeSize20"
@@ -93,6 +96,7 @@ Partial Class frmMain
         '
         Me.lblMazeSize30.AutoSize = True
         Me.lblMazeSize30.BackColor = System.Drawing.Color.Transparent
+        Me.lblMazeSize30.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblMazeSize30.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblMazeSize30.Location = New System.Drawing.Point(124, 334)
         Me.lblMazeSize30.Name = "lblMazeSize30"
@@ -125,6 +129,7 @@ Partial Class frmMain
         'btnMazeSize10Back
         '
         Me.btnMazeSize10Back.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSize10Back.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize10Back.Enabled = False
         Me.btnMazeSize10Back.FlatAppearance.BorderSize = 0
         Me.btnMazeSize10Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -138,6 +143,7 @@ Partial Class frmMain
         'btnMazeSize10
         '
         Me.btnMazeSize10.BackColor = System.Drawing.Color.White
+        Me.btnMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize10.FlatAppearance.BorderSize = 0
         Me.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize10.Location = New System.Drawing.Point(83, 235)
@@ -149,6 +155,7 @@ Partial Class frmMain
         'btnMazeSize20
         '
         Me.btnMazeSize20.BackColor = System.Drawing.Color.White
+        Me.btnMazeSize20.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize20.FlatAppearance.BorderSize = 0
         Me.btnMazeSize20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize20.Location = New System.Drawing.Point(83, 285)
@@ -160,6 +167,7 @@ Partial Class frmMain
         'btnMazeSize20Back
         '
         Me.btnMazeSize20Back.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSize20Back.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize20Back.FlatAppearance.BorderSize = 0
         Me.btnMazeSize20Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize20Back.Location = New System.Drawing.Point(82, 284)
@@ -172,6 +180,7 @@ Partial Class frmMain
         'btnMazeSize30Back
         '
         Me.btnMazeSize30Back.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSize30Back.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize30Back.FlatAppearance.BorderSize = 0
         Me.btnMazeSize30Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize30Back.Location = New System.Drawing.Point(82, 334)
@@ -184,6 +193,7 @@ Partial Class frmMain
         'btnMazeSize30
         '
         Me.btnMazeSize30.BackColor = System.Drawing.Color.White
+        Me.btnMazeSize30.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize30.FlatAppearance.BorderSize = 0
         Me.btnMazeSize30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize30.Location = New System.Drawing.Point(83, 335)
@@ -195,6 +205,7 @@ Partial Class frmMain
         'btnInstructions
         '
         Me.btnInstructions.BackColor = System.Drawing.Color.White
+        Me.btnInstructions.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnInstructions.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnInstructions.Location = New System.Drawing.Point(520, 266)
         Me.btnInstructions.Name = "btnInstructions"
@@ -206,6 +217,7 @@ Partial Class frmMain
         'btnHighscores
         '
         Me.btnHighscores.BackColor = System.Drawing.Color.White
+        Me.btnHighscores.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHighscores.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnHighscores.Location = New System.Drawing.Point(859, 266)
         Me.btnHighscores.Name = "btnHighscores"
@@ -217,6 +229,7 @@ Partial Class frmMain
         'btnPlay
         '
         Me.btnPlay.BackColor = System.Drawing.Color.White
+        Me.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPlay.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnPlay.Location = New System.Drawing.Point(859, 396)
         Me.btnPlay.Name = "btnPlay"
@@ -272,11 +285,11 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnMazeSize30Back)
         Me.Controls.Add(Me.txtMazeSeed)
         Me.Controls.Add(Me.lblMazeSeed)
-        Me.Controls.Add(Me.lblMazeSize30)
-        Me.Controls.Add(Me.lblMazeSize20)
         Me.Controls.Add(Me.lblMazeSize10)
+        Me.Controls.Add(Me.lblMazeSize20)
+        Me.Controls.Add(Me.lblMazeSize30)
         Me.Controls.Add(Me.lblMazeSize)
-        Me.Controls.Add(Me.lblMazeGameTitle)
+        Me.Controls.Add(Me.lblTitle)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -289,7 +302,7 @@ Partial Class frmMain
 
     End Sub
 
-    Friend WithEvents lblMazeGameTitle As Label
+    Friend WithEvents lblTitle As Label
     Friend WithEvents lblMazeSize As Label
     Friend WithEvents lblMazeSize10 As Label
     Friend WithEvents lblMazeSize20 As Label
@@ -307,4 +320,5 @@ Partial Class frmMain
     Friend WithEvents btnPlay As Button
     Friend WithEvents txtName As TextBox
     Friend WithEvents pnlEnterName As TableLayoutPanel
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

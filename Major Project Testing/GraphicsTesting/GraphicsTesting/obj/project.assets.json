@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jackbashford\\.nuget\\packages\\": {}
+    "C:\\Users\\Jack Bashford\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jackbashford\\Documents\\GitHub\\SDD-2022\\Assignment\\GraphicsTesting\\GraphicsTesting\\GraphicsTesting.vbproj",
+      "projectUniqueName": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project Testing\\GraphicsTesting\\GraphicsTesting\\GraphicsTesting.vbproj",
       "projectName": "GraphicsTesting",
-      "projectPath": "C:\\Users\\jackbashford\\Documents\\GitHub\\SDD-2022\\Assignment\\GraphicsTesting\\GraphicsTesting\\GraphicsTesting.vbproj",
-      "packagesPath": "C:\\Users\\jackbashford\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jackbashford\\Documents\\GitHub\\SDD-2022\\Assignment\\GraphicsTesting\\GraphicsTesting\\obj\\",
+      "projectPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project Testing\\GraphicsTesting\\GraphicsTesting\\GraphicsTesting.vbproj",
+      "packagesPath": "C:\\Users\\Jack Bashford\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jack Bashford\\Desktop\\SDD-2022\\Major Project Testing\\GraphicsTesting\\GraphicsTesting\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jackbashford\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jack Bashford\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
