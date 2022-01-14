@@ -142,6 +142,7 @@ Partial Class frmGameOver
         '
         Me.btnMazeSize10.BackColor = System.Drawing.Color.White
         Me.btnMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMazeSize10.Enabled = False
         Me.btnMazeSize10.FlatAppearance.BorderSize = 0
         Me.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize10.Location = New System.Drawing.Point(595, 285)

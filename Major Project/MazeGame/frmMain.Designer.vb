@@ -145,6 +145,8 @@ Partial Class frmMain
         Me.btnMazeSize10.BackColor = System.Drawing.Color.White
         Me.btnMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize10.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnMazeSize10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize10.Location = New System.Drawing.Point(83, 235)
         Me.btnMazeSize10.Name = "btnMazeSize10"
@@ -157,6 +159,8 @@ Partial Class frmMain
         Me.btnMazeSize20.BackColor = System.Drawing.Color.White
         Me.btnMazeSize20.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize20.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnMazeSize20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.btnMazeSize20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize20.Location = New System.Drawing.Point(83, 285)
         Me.btnMazeSize20.Name = "btnMazeSize20"
@@ -195,6 +199,8 @@ Partial Class frmMain
         Me.btnMazeSize30.BackColor = System.Drawing.Color.White
         Me.btnMazeSize30.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMazeSize30.FlatAppearance.BorderSize = 0
+        Me.btnMazeSize30.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnMazeSize30.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.btnMazeSize30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMazeSize30.Location = New System.Drawing.Point(83, 335)
         Me.btnMazeSize30.Name = "btnMazeSize30"
