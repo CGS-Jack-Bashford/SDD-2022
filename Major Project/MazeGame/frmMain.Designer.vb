@@ -42,6 +42,9 @@ Partial Class frmMain
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.pnlEnterName = New System.Windows.Forms.TableLayoutPanel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.btnMazeSizeRandom = New MazeGame.ButtonEllipse()
+        Me.btnMazeSizeRandomBack = New MazeGame.ButtonEllipse()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlEnterName.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -272,6 +275,45 @@ Partial Class frmMain
         Me.pnlEnterName.Size = New System.Drawing.Size(300, 70)
         Me.pnlEnterName.TabIndex = 16
         '
+        'btnMazeSizeRandom
+        '
+        Me.btnMazeSizeRandom.BackColor = System.Drawing.Color.White
+        Me.btnMazeSizeRandom.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMazeSizeRandom.FlatAppearance.BorderSize = 0
+        Me.btnMazeSizeRandom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnMazeSizeRandom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.btnMazeSizeRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSizeRandom.Location = New System.Drawing.Point(83, 385)
+        Me.btnMazeSizeRandom.Name = "btnMazeSizeRandom"
+        Me.btnMazeSizeRandom.Size = New System.Drawing.Size(32, 32)
+        Me.btnMazeSizeRandom.TabIndex = 19
+        Me.btnMazeSizeRandom.UseVisualStyleBackColor = False
+        '
+        'btnMazeSizeRandomBack
+        '
+        Me.btnMazeSizeRandomBack.BackColor = System.Drawing.Color.Black
+        Me.btnMazeSizeRandomBack.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMazeSizeRandomBack.FlatAppearance.BorderSize = 0
+        Me.btnMazeSizeRandomBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMazeSizeRandomBack.Location = New System.Drawing.Point(82, 384)
+        Me.btnMazeSizeRandomBack.Name = "btnMazeSizeRandomBack"
+        Me.btnMazeSizeRandomBack.Size = New System.Drawing.Size(34, 34)
+        Me.btnMazeSizeRandomBack.TabIndex = 18
+        Me.btnMazeSizeRandomBack.TabStop = False
+        Me.btnMazeSizeRandomBack.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(124, 384)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(116, 32)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Random"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -279,6 +321,7 @@ Partial Class frmMain
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1352, 729)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pnlEnterName)
         Me.Controls.Add(Me.btnPlay)
         Me.Controls.Add(Me.btnHighscores)
@@ -286,9 +329,11 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnMazeSize10)
         Me.Controls.Add(Me.btnMazeSize20)
         Me.Controls.Add(Me.btnMazeSize30)
+        Me.Controls.Add(Me.btnMazeSizeRandom)
         Me.Controls.Add(Me.btnMazeSize10Back)
         Me.Controls.Add(Me.btnMazeSize20Back)
         Me.Controls.Add(Me.btnMazeSize30Back)
+        Me.Controls.Add(Me.btnMazeSizeRandomBack)
         Me.Controls.Add(Me.txtMazeSeed)
         Me.Controls.Add(Me.lblMazeSeed)
         Me.Controls.Add(Me.lblMazeSize10)
@@ -327,4 +372,7 @@ Partial Class frmMain
     Friend WithEvents txtName As TextBox
     Friend WithEvents pnlEnterName As TableLayoutPanel
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btnMazeSizeRandom As ButtonEllipse
+    Friend WithEvents btnMazeSizeRandomBack As ButtonEllipse
+    Friend WithEvents Label1 As Label
 End Class

@@ -270,7 +270,7 @@ Partial Class frmHighscores
         '
         'btn_ranking1White
         '
-        Me.btn_ranking1White.BackColor = System.Drawing.Color.White
+        Me.btn_ranking1White.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btn_ranking1White.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_ranking1White.Enabled = False
         Me.btn_ranking1White.FlatAppearance.BorderSize = 0
@@ -312,7 +312,7 @@ Partial Class frmHighscores
         '
         'btn_ranking2White
         '
-        Me.btn_ranking2White.BackColor = System.Drawing.Color.White
+        Me.btn_ranking2White.BackColor = System.Drawing.Color.Silver
         Me.btn_ranking2White.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_ranking2White.Enabled = False
         Me.btn_ranking2White.FlatAppearance.BorderSize = 0
@@ -340,7 +340,7 @@ Partial Class frmHighscores
         '
         'btn_ranking3White
         '
-        Me.btn_ranking3White.BackColor = System.Drawing.Color.White
+        Me.btn_ranking3White.BackColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.btn_ranking3White.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_ranking3White.Enabled = False
         Me.btn_ranking3White.FlatAppearance.BorderSize = 0
@@ -487,7 +487,7 @@ Partial Class frmHighscores
         'lbl_ranking2
         '
         Me.lbl_ranking2.AutoSize = True
-        Me.lbl_ranking2.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_ranking2.BackColor = System.Drawing.Color.Silver
         Me.lbl_ranking2.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.lbl_ranking2.Location = New System.Drawing.Point(496, 286)
         Me.lbl_ranking2.Name = "lbl_ranking2"
@@ -498,7 +498,7 @@ Partial Class frmHighscores
         'lbl_ranking3
         '
         Me.lbl_ranking3.AutoSize = True
-        Me.lbl_ranking3.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_ranking3.BackColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lbl_ranking3.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.lbl_ranking3.Location = New System.Drawing.Point(496, 338)
         Me.lbl_ranking3.Name = "lbl_ranking3"
@@ -531,7 +531,7 @@ Partial Class frmHighscores
         'lbl_ranking1
         '
         Me.lbl_ranking1.AutoSize = True
-        Me.lbl_ranking1.BackColor = System.Drawing.SystemColors.Window
+        Me.lbl_ranking1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lbl_ranking1.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.lbl_ranking1.Location = New System.Drawing.Point(497, 234)
         Me.lbl_ranking1.Name = "lbl_ranking1"
