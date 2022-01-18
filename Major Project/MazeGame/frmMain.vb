@@ -7,6 +7,14 @@ Public Class frmMain
         Dim allChecksPassed As Boolean = True
 
         CheckSeed(allChecksPassed)
+        ValidateName(allChecksPassed)
+        CheckDifficulty(allChecksPassed)
+
+        If allChecksPassed Then
+
+            GenerateMaze(Globals.arrGameBoard, Globals.mazeSeed, Globals.mazeSize)
+
+        End If
 
     End Sub
 
@@ -18,7 +26,7 @@ Public Class frmMain
 
             If ValidateSeed(enteredSeed) Then
 
-                Globals.mazeSeed = Convert.ToInt32(enteredSeed, 16)
+                Globals.mazeSeed = Convert.ToUInt64(enteredSeed, 16)
 
             Else
 
@@ -76,5 +84,65 @@ Public Class frmMain
         Return seedInt
 
     End Function
+
+    Private Sub ValidateName(ByRef checkPassed As Boolean)
+
+        Dim enteredName As String = txtName.Text
+
+        Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
+
+        If Not validNamePattern.IsMatch(enteredName) Then
+
+            MsgBox("That name is invalid. Please enter a string 1-16 characters, consisting of alphanumeric/underscore characters.")
+
+            checkPassed = False
+
+        End If
+
+    End Sub
+
+    Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
+
+
+
+    End Sub
+
+    Private Sub GenerateMaze(arrGameBoard As Integer(,), mazeSeed As ULong, mazeSize As Integer)
+
+        InitializeGameBoard(arrGameBoard, mazeSize)
+
+        Dim mazeRnd As Random = New Random(mazeSeed)
+
+    End Sub
+
+    Private Sub RecursePassage(arrGameBoard As Integer(,), mazeSize As Integer, currentCoordinates As (Integer, Integer))
+
+
+
+    End Sub
+
+    Private Sub ShuffleDirections(arrDirections As Integer(), rndShuffle As Random)
+
+
+
+    End Sub
+
+    Private Sub InitializeGameBoard(ByRef arrGameBoard As Integer(,), mazeSize As Integer)
+
+        If mazeSize <> 30 Then
+
+            ReDim arrGameBoard(mazeSize, mazeSize)
+
+        End If
+
+        For i = 0 To mazeSize - 1 Step 1
+            For j = 0 To mazeSize - 1 Step 1
+
+                arrGameBoard(i, j) = 0
+
+            Next j
+        Next i
+
+    End Sub
 
 End Class
