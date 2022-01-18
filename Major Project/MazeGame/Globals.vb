@@ -33,7 +33,7 @@
 
     End Structure
 
-    Dim arrHighscores As Highscore()
-    Dim arrGameBoard(30, 30) As Integer ' We define the gameboard array at the maximum size so that resizing impacts less on performance (since it'll always be a freeing of memory from the array, rather than a relocation and reallocation for the array).
+    Public arrHighscores As Highscore()
+    Public arrGameBoard(30, 30) As Integer ' We define the gameboard array at the maximum size so that resizing impacts less on performance (since it'll always be a freeing of memory from the array, rather than a relocation and reallocation for the array).
 
 End Module
