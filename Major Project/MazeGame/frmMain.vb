@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports MazeGame.MazeConstants
 
 Public Class frmMain
 
@@ -103,7 +104,17 @@ Public Class frmMain
 
     Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
 
+        Dim validDifficulties As Integer() = {0, 1, 2, 3}
 
+        If IsNothing(Globals.difficulty) Then
+
+            checkPassed = False
+
+        ElseIf Not validDifficulties.Contains(Globals.difficulty) Then
+
+            checkPassed = False
+
+        End If
 
     End Sub
 
@@ -113,17 +124,69 @@ Public Class frmMain
 
         Dim mazeRnd As Random = New Random(mazeSeed)
 
+        RecursePassage(arrGameBoard, (y:=0, x:=0), mazeRnd)
+
+        Debug.Print(" " & Strings.StrDup(mazeSize * 2 - 1, "_"))
+
+        For y = 0 To mazeSize Step 1
+
+            Dim s As String = ""
+            s &= "|"
+
+            For x = 0 To mazeSize Step 1
+
+
+
+            Next
+
+        Next
+
     End Sub
 
-    Private Sub RecursePassage(arrGameBoard As Integer(,), mazeSize As Integer, currentCoordinates As (Integer, Integer))
+    Private Sub RecursePassage(arrGameBoard As Integer(,), currentCoordinates As (y As Integer, x As Integer), mazeRnd As Random)
 
+        Dim arrDirections As Integer() = {N, S, E, W}
+        Dim newCoordinates As (y As Integer, x As Integer) = currentCoordinates
 
+        ShuffleDirections(arrDirections, mazeRnd)
+
+        For i = 0 To 3 Step 1
+
+            Dim direction As Integer = arrDirections(i)
+
+            newCoordinates.y += Vertical(direction)
+            newCoordinates.x += Horizontal(direction)
+
+            Dim verticalRange As Boolean = newCoordinates.y >= 0 And newCoordinates.y < mazeSize
+            Dim horizontalRange As Boolean = newCoordinates.x >= 0 And newCoordinates.x < mazeSize
+
+            If verticalRange And horizontalRange And arrGameBoard(newCoordinates.y, newCoordinates.x) = 0 Then
+
+                arrGameBoard(currentCoordinates.y, currentCoordinates.x) += direction
+                arrGameBoard(newCoordinates.y, newCoordinates.x) += Opposite(direction)
+
+                RecursePassage(arrGameBoard, newCoordinates, mazeRnd)
+
+            End If
+
+        Next i
 
     End Sub
 
-    Private Sub ShuffleDirections(arrDirections As Integer(), rndShuffle As Random)
+    Private Sub ShuffleDirections(ByRef arrDirections As Integer(), ByRef rndShuffle As Random)
 
+        Dim temp As Integer
+        Dim j As Integer
 
+        For i = 3 To 0 Step -1
+
+            j = rndShuffle.Next(i + 1)
+
+            temp = arrDirections(i)
+            arrDirections(i) = arrDirections(j)
+            arrDirections(j) = temp
+
+        Next
 
     End Sub
 
