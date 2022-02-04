@@ -7,9 +7,14 @@ Public Class frmMain
 
         Dim allChecksPassed As Boolean = True
 
-        CheckSeed(allChecksPassed)
-        ValidateName(allChecksPassed)
-        CheckDifficulty(allChecksPassed)
+        'TODO Temporary code
+
+        ' CheckSeed(allChecksPassed)
+        ' ValidateName(allChecksPassed)
+        ' CheckDifficulty(allChecksPassed)
+
+        mazeSize = 10
+        mazeSeed = 5
 
         If allChecksPassed Then
 
@@ -126,27 +131,69 @@ Public Class frmMain
 
         RecursePassage(arrGameBoard, (y:=0, x:=0), mazeRnd)
 
-        Debug.Print(" " & Strings.StrDup(mazeSize * 2 - 1, "_"))
-
-        For y = 0 To mazeSize Step 1
-
-            Dim s As String = ""
-            s &= "|"
-
-            For x = 0 To mazeSize Step 1
-
-
-
+        For y = 0 To 9 Step 1
+            Dim Str As String = ""
+            For x = 0 To 9 Step 1
+                Str &= arrGameBoard(y, x).ToString()
             Next
-
+            Debug.Print(Str)
         Next
+
+        'Debug.Print(" " & Strings.StrDup(mazeSize * 2 - 1, "_"))
+
+        'For y = 0 To mazeSize Step 1
+
+        '    Dim str As String = ""
+        '    str &= "|"
+
+        '    For x = 0 To mazeSize Step 1
+
+        '        If arrGameBoard(y, x) And S <> 0 Then
+
+        '            str += " "
+
+        '        Else
+
+        '            str += "_"
+
+        '        End If
+
+        '        If arrGameBoard(y, x) And E <> 0 Then
+
+        '            If (arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0 Then
+
+        '                str += " "
+
+        '            Else
+
+        '                str += "_"
+
+        '            End If
+
+        '        Else
+
+        '            str += "|"
+
+        '        End If
+
+        '    Next
+
+        '    Debug.Print(str)
+
+        'Next
 
     End Sub
 
     Private Sub RecursePassage(arrGameBoard As Integer(,), currentCoordinates As (y As Integer, x As Integer), mazeRnd As Random)
 
+        Debug.Print(currentCoordinates.x & " " & currentCoordinates.y)
+
         Dim arrDirections As Integer() = {N, S, E, W}
-        Dim newCoordinates As (y As Integer, x As Integer) = currentCoordinates
+
+        Dim cx As Integer = currentCoordinates.x
+        Dim cy As Integer = currentCoordinates.y
+        Dim nx As Integer = currentCoordinates.x
+        Dim ny As Integer = currentCoordinates.y
 
         ShuffleDirections(arrDirections, mazeRnd)
 
@@ -154,18 +201,18 @@ Public Class frmMain
 
             Dim direction As Integer = arrDirections(i)
 
-            newCoordinates.y += Vertical(direction)
-            newCoordinates.x += Horizontal(direction)
+            ny += Vertical(direction)
+            nx += Horizontal(direction)
 
-            Dim verticalRange As Boolean = newCoordinates.y >= 0 And newCoordinates.y < mazeSize
-            Dim horizontalRange As Boolean = newCoordinates.x >= 0 And newCoordinates.x < mazeSize
+            Dim verticalRange As Boolean = ny >= 0 And ny < mazeSize
+            Dim horizontalRange As Boolean = nx >= 0 And nx < mazeSize
 
-            If verticalRange And horizontalRange And arrGameBoard(newCoordinates.y, newCoordinates.x) = 0 Then
+            If verticalRange AndAlso horizontalRange AndAlso arrGameBoard(ny, nx) = 0 Then
 
-                arrGameBoard(currentCoordinates.y, currentCoordinates.x) += direction
-                arrGameBoard(newCoordinates.y, newCoordinates.x) += Opposite(direction)
+                arrGameBoard(cy, cx) = arrGameBoard(cy, cx) Or direction
+                arrGameBoard(ny, nx) = arrGameBoard(ny, nx) Or Opposite(direction)
 
-                RecursePassage(arrGameBoard, newCoordinates, mazeRnd)
+                RecursePassage(arrGameBoard, (y:=ny, x:=nx), mazeRnd)
 
             End If
 
@@ -186,7 +233,7 @@ Public Class frmMain
             arrDirections(i) = arrDirections(j)
             arrDirections(j) = temp
 
-        Next
+        Next i
 
     End Sub
 
@@ -194,7 +241,7 @@ Public Class frmMain
 
         If mazeSize <> 30 Then
 
-            ReDim arrGameBoard(mazeSize, mazeSize)
+            ReDim arrGameBoard(mazeSize - 1, mazeSize - 1)
 
         End If
 
