@@ -44,7 +44,7 @@
 
         InitializeGameBoard(arrGameBoard)
 
-        Dim mazeRnd As Random = New Random(mazeSeed)
+        Dim mazeRnd As Random = New Random()
 
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
@@ -61,13 +61,13 @@
             Dim str As String = ""
             str &= "|"
             For x = 0 To mazeSize - 1 Step 1
-                If arrGameBoard(y, x) And S <> 0 Then
+                If (arrGameBoard(y, x) And S) <> 0 Then
                     str += " "
                 Else
                     str += "_"
                 End If
-                If arrGameBoard(y, x) And E <> 0 Then
-                    If x < 9 AndAlso (arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0 Then
+                If (arrGameBoard(y, x) And E) <> 0 Then
+                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
                         str += " "
                     Else
                         str += "_"
@@ -83,7 +83,7 @@
 
     Private Sub RecursePassage(arrGameBoard As Integer(,), cy As Integer, cx As Integer, mazeRnd As Random)
 
-        Debug.Print("cy cx " & cx & " " & cy)
+        'Debug.Print("cy cx " & cx & " " & cy)
 
         Dim arrDirections As Integer() = {N, S, E, W}
 
@@ -92,7 +92,7 @@
 
         ShuffleDirections(arrDirections, mazeRnd)
 
-        Debug.Print("order of directions: " & String.Join(",", arrDirections))
+        'Debug.Print("order of directions: " & String.Join(",", arrDirections))
 
         For i = 0 To 3 Step 1
 
@@ -118,7 +118,7 @@
             Dim verticalRange As Boolean = ny >= 0 And ny < mazeSize
             Dim horizontalRange As Boolean = nx >= 0 And nx < mazeSize
 
-            Debug.Print("ny nx " & ny & " " & nx)
+            'Debug.Print("ny nx " & ny & " " & nx)
 
             If verticalRange AndAlso horizontalRange AndAlso arrGameBoard(ny, nx) = 0 Then
 
