@@ -14,7 +14,7 @@ Public Class frmMain
         ' CheckDifficulty(allChecksPassed)
 
         mazeSize = 10
-        mazeSeed = 5
+        mazeSeed = 3
 
         If allChecksPassed Then
 
@@ -129,75 +129,46 @@ Public Class frmMain
 
         Dim mazeRnd As Random = New Random(mazeSeed)
 
-        RecursePassage(arrGameBoard, (y:=0, x:=0), mazeRnd)
+        RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
-        For y = 0 To 9 Step 1
-            Dim Str As String = ""
-            For x = 0 To 9 Step 1
-                Str &= arrGameBoard(y, x).ToString()
+        Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
+        For y = 0 To mazeSize - 1 Step 1
+            Dim str As String = ""
+            str &= "|"
+            For x = 0 To mazeSize - 1 Step 1
+                If (arrGameBoard(y, x) And S) <> 0 Then
+                    str += " "
+                Else
+                    str += "_"
+                End If
+                If (arrGameBoard(y, x) And E) <> 0 Then
+                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
+                        str += " "
+                    Else
+                        str += "_"
+                    End If
+                Else
+                    str += "|"
+                End If
             Next
-            Debug.Print(Str)
+            Debug.Print(str)
         Next
-
-        'Debug.Print(" " & Strings.StrDup(mazeSize * 2 - 1, "_"))
-
-        'For y = 0 To mazeSize Step 1
-
-        '    Dim str As String = ""
-        '    str &= "|"
-
-        '    For x = 0 To mazeSize Step 1
-
-        '        If arrGameBoard(y, x) And S <> 0 Then
-
-        '            str += " "
-
-        '        Else
-
-        '            str += "_"
-
-        '        End If
-
-        '        If arrGameBoard(y, x) And E <> 0 Then
-
-        '            If (arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0 Then
-
-        '                str += " "
-
-        '            Else
-
-        '                str += "_"
-
-        '            End If
-
-        '        Else
-
-        '            str += "|"
-
-        '        End If
-
-        '    Next
-
-        '    Debug.Print(str)
-
-        'Next
 
     End Sub
 
-    Private Sub RecursePassage(arrGameBoard As Integer(,), currentCoordinates As (y As Integer, x As Integer), mazeRnd As Random)
-
-        Debug.Print(currentCoordinates.x & " " & currentCoordinates.y)
+    Private Sub RecursePassage(arrGameBoard As Integer(,), cy As Integer, cx As Integer, mazeRnd As Random)
 
         Dim arrDirections As Integer() = {N, S, E, W}
 
-        Dim cx As Integer = currentCoordinates.x
-        Dim cy As Integer = currentCoordinates.y
-        Dim nx As Integer = currentCoordinates.x
-        Dim ny As Integer = currentCoordinates.y
+        Dim nx As Integer
+        Dim ny As Integer
 
         ShuffleDirections(arrDirections, mazeRnd)
 
         For i = 0 To 3 Step 1
+
+            nx = cx
+            ny = cy
 
             Dim direction As Integer = arrDirections(i)
 
@@ -212,7 +183,7 @@ Public Class frmMain
                 arrGameBoard(cy, cx) = arrGameBoard(cy, cx) Or direction
                 arrGameBoard(ny, nx) = arrGameBoard(ny, nx) Or Opposite(direction)
 
-                RecursePassage(arrGameBoard, (y:=ny, x:=nx), mazeRnd)
+                RecursePassage(arrGameBoard, ny, nx, mazeRnd)
 
             End If
 

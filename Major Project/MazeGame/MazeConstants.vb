@@ -10,7 +10,7 @@
     }
 
     Public Vertical = New Dictionary(Of Integer, Integer) From {
-        {N, 1}, {S, -1}, {E, 0}, {W, 0}
+        {N, -1}, {S, 1}, {E, 0}, {W, 0}
     }
 
     Public Opposite = New Dictionary(Of Integer, Integer) From {
