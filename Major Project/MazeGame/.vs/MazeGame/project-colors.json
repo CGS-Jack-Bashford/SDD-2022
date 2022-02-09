@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "719051e8-8da7-4de1-9d30-20de9009f02f": {
+      "ProjectGuid": "719051e8-8da7-4de1-9d30-20de9009f02f",
+      "DisplayName": "MazeGame",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
