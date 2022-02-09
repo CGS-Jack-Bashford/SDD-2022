@@ -5,14 +5,6 @@
     Dim W = 4
     Dim S = 8
 
-    'Dim Vertical = New Dictionary(Of Integer, Integer) From {
-    '    {N, 1}, {E, 0}, {S, -1}, {W, 0}
-    '}
-
-    'Dim Horizontal = New Dictionary(Of Integer, Integer) From {
-    '    {N, 0}, {E, 1}, {S, 0}, {W, -1}
-    '}
-
     Dim Vertical = New Dictionary(Of Integer, Integer) From {
         {N, -1}, {E, 0}, {S, 1}, {W, 0}
     }
@@ -29,8 +21,6 @@
 
     Private Sub InitializeGameBoard(ByRef arr As Integer(,))
 
-        ' Mazesize 10
-
         ReDim arr(9, 9)
 
         For i = 0 To 9 Step 1
@@ -44,19 +34,11 @@
 
         InitializeGameBoard(arrGameBoard)
 
-        Dim mazeRnd As Random = New Random()
+        Dim mazeRnd As Random = New Random(mazeSeed)
 
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
-        'For y = 0 To 9 Step 1
-        '    Dim Str As String = ""
-        '    For x = 0 To 9 Step 1
-        '        Str &= arrGameBoard(y, x).ToString("X1")
-        '    Next
-        '    Debug.Print(Str)
-        'Next
-
-        Debug.Print(" " & Strings.StrDup(mazeSize * 2 - 1, "_"))
+        Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
         For y = 0 To mazeSize - 1 Step 1
             Dim str As String = ""
             str &= "|"
@@ -83,16 +65,12 @@
 
     Private Sub RecursePassage(arrGameBoard As Integer(,), cy As Integer, cx As Integer, mazeRnd As Random)
 
-        'Debug.Print("cy cx " & cx & " " & cy)
-
         Dim arrDirections As Integer() = {N, S, E, W}
 
         Dim nx As Integer
         Dim ny As Integer
 
         ShuffleDirections(arrDirections, mazeRnd)
-
-        'Debug.Print("order of directions: " & String.Join(",", arrDirections))
 
         For i = 0 To 3 Step 1
 
@@ -101,24 +79,11 @@
 
             Dim direction As Integer = arrDirections(i)
 
-            'ny += Vertical(direction)
-            'nx += Horizontal(direction)
-
-            Select Case direction
-                Case N
-                    ny -= 1
-                Case E
-                    nx += 1
-                Case S
-                    ny += 1
-                Case W
-                    nx -= 1
-            End Select
+            ny += Vertical(direction)
+            nx += Horizontal(direction)
 
             Dim verticalRange As Boolean = ny >= 0 And ny < mazeSize
             Dim horizontalRange As Boolean = nx >= 0 And nx < mazeSize
-
-            'Debug.Print("ny nx " & ny & " " & nx)
 
             If verticalRange AndAlso horizontalRange AndAlso arrGameBoard(ny, nx) = 0 Then
 
