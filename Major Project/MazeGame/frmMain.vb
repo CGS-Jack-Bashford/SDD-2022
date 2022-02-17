@@ -3,14 +3,28 @@ Imports MazeGame.MazeConstants
 
 Public Class frmMain
 
+    Private Sub SetupForm(sender As Object, e As EventArgs) Handles Me.Load
+
+        ' First setup all of the handlers for the difficulty buttons
+
+        Dim arrDifficultyButtons As Button() = {btnMazeSize10, btnMazeSize10Back, btnMazeSize20, btnMazeSize20Back, btnMazeSize30, btnMazeSize30Back, btnMazeSizeRandom, btnMazeSizeRandomBack}
+
+        For i = 0 To arrDifficultyButtons.Length Step 1
+
+            AddHandler arrDifficultyButtons(i).Click, AddressOf ChangeDifficulty
+
+        Next
+
+    End Sub
+
     Private Sub SetupGame(sender As Object, e As EventArgs) Handles btnPlay.Click
 
         Dim allChecksPassed As Boolean = True
 
         'TODO Temporary code
 
-        ' CheckSeed(allChecksPassed)
-        ' ValidateName(allChecksPassed)
+        CheckSeed(allChecksPassed)
+        ValidateName(allChecksPassed)
         ' CheckDifficulty(allChecksPassed)
 
         mazeSize = 10
@@ -21,6 +35,17 @@ Public Class frmMain
             GenerateMaze(Globals.arrGameBoard, Globals.mazeSeed, Globals.mazeSize)
 
         End If
+
+    End Sub
+
+    Private Sub ChangeDifficulty(sender As Object, e As EventArgs)
+
+        Dim buttonClicked As Button = sender
+
+        Select Case buttonClicked.Name(11)
+            Case "1"
+
+        End Select
 
     End Sub
 
