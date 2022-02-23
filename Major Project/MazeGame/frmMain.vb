@@ -1,5 +1,4 @@
 ﻿Imports System.Text.RegularExpressions
-Imports MazeGame.MazeConstants
 
 Public Class frmMain
 
@@ -23,8 +22,8 @@ Public Class frmMain
 
         'TODO Temporary code
 
-        CheckSeed(allChecksPassed)
-        ValidateName(allChecksPassed)
+        ' CheckSeed(allChecksPassed)
+        ' ValidateName(allChecksPassed)
         ' CheckDifficulty(allChecksPassed)
 
         mazeSize = 10
@@ -32,9 +31,18 @@ Public Class frmMain
 
         If allChecksPassed Then
 
+            If mazeSize = 4 Then
+
+                mazeSize = New Random().Next(1, 4)
+
+            End If
+
             GenerateMaze(Globals.arrGameBoard, Globals.mazeSeed, Globals.mazeSize)
 
         End If
+
+        frmGame.Show()
+        Me.Hide()
 
     End Sub
 
