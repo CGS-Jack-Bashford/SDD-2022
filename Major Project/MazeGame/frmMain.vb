@@ -4,11 +4,13 @@ Public Class frmMain
 
     Private Sub SetupForm(sender As Object, e As EventArgs) Handles Me.Load
 
+        configureFrmMain()
+
         ' First setup all of the handlers for the difficulty buttons
 
         Dim arrDifficultyButtons As Button() = {btnMazeSize10, btnMazeSize10Back, btnMazeSize20, btnMazeSize20Back, btnMazeSize30, btnMazeSize30Back, btnMazeSizeRandom, btnMazeSizeRandomBack}
 
-        For i = 0 To arrDifficultyButtons.Length Step 1
+        For i = 0 To arrDifficultyButtons.Length - 1 Step 1
 
             AddHandler arrDifficultyButtons(i).Click, AddressOf ChangeDifficulty
 

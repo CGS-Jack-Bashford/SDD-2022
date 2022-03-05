@@ -33,73 +33,45 @@ Partial Class frmInstructions
         '
         'lblTitle
         '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblTitle.Font = New System.Drawing.Font("Maze", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblTitle.Location = New System.Drawing.Point(411, 20)
-        Me.lblTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTitle.Location = New System.Drawing.Point(0, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(547, 64)
-        Me.lblTitle.TabIndex = 1
-        Me.lblTitle.Text = "Instructions"
+        Me.lblTitle.Size = New System.Drawing.Size(100, 23)
+        Me.lblTitle.TabIndex = 5
         '
         'lblInstructions1
         '
-        Me.lblInstructions1.BackColor = System.Drawing.Color.Transparent
-        Me.lblInstructions1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblInstructions1.Location = New System.Drawing.Point(337, 119)
+        Me.lblInstructions1.Location = New System.Drawing.Point(0, 0)
         Me.lblInstructions1.Name = "lblInstructions1"
-        Me.lblInstructions1.Size = New System.Drawing.Size(694, 104)
-        Me.lblInstructions1.TabIndex = 2
-        Me.lblInstructions1.Text = "Choose a name (alphanumeric and underscores, 1-16 characters) and a difficulty (s" &
-    "tandard sizes of 10x10, 20x20, or 30x30, and a random choice of those options as" &
-    " well)"
+        Me.lblInstructions1.Size = New System.Drawing.Size(100, 23)
+        Me.lblInstructions1.TabIndex = 4
         '
         'lblInstructions2
         '
-        Me.lblInstructions2.BackColor = System.Drawing.Color.Transparent
-        Me.lblInstructions2.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblInstructions2.Location = New System.Drawing.Point(337, 253)
+        Me.lblInstructions2.Location = New System.Drawing.Point(0, 0)
         Me.lblInstructions2.Name = "lblInstructions2"
-        Me.lblInstructions2.Size = New System.Drawing.Size(694, 107)
+        Me.lblInstructions2.Size = New System.Drawing.Size(100, 23)
         Me.lblInstructions2.TabIndex = 3
-        Me.lblInstructions2.Text = "Then use arrow keys or the on—screen controls to navigate through the maze from t" &
-    "he starting square to the ending square. Try to get through the maze as fast as " &
-    "possible! "
         '
         'lblInstructions3
         '
-        Me.lblInstructions3.BackColor = System.Drawing.Color.Transparent
-        Me.lblInstructions3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblInstructions3.Location = New System.Drawing.Point(337, 390)
+        Me.lblInstructions3.Location = New System.Drawing.Point(0, 0)
         Me.lblInstructions3.Name = "lblInstructions3"
-        Me.lblInstructions3.Size = New System.Drawing.Size(694, 79)
-        Me.lblInstructions3.TabIndex = 4
-        Me.lblInstructions3.Text = "You can't move into a square blocked from your current square by a wall, and you " &
-    "can't move beyond the boundaries of the maze."
+        Me.lblInstructions3.Size = New System.Drawing.Size(100, 23)
+        Me.lblInstructions3.TabIndex = 2
         '
         'lblInstructions4
         '
-        Me.lblInstructions4.BackColor = System.Drawing.Color.Transparent
-        Me.lblInstructions4.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblInstructions4.Location = New System.Drawing.Point(337, 499)
+        Me.lblInstructions4.Location = New System.Drawing.Point(0, 0)
         Me.lblInstructions4.Name = "lblInstructions4"
-        Me.lblInstructions4.Size = New System.Drawing.Size(694, 77)
-        Me.lblInstructions4.TabIndex = 5
-        Me.lblInstructions4.Text = "Once you're through the maze, you can copy your seed to play the same maze and tr" &
-    "y for a faster time. "
+        Me.lblInstructions4.Size = New System.Drawing.Size(100, 23)
+        Me.lblInstructions4.TabIndex = 1
         '
         'btnBack
         '
-        Me.btnBack.BackColor = System.Drawing.Color.White
-        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBack.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnBack.Location = New System.Drawing.Point(595, 604)
+        Me.btnBack.Location = New System.Drawing.Point(0, 0)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(179, 72)
-        Me.btnBack.TabIndex = 6
-        Me.btnBack.Text = "Back"
-        Me.btnBack.UseVisualStyleBackColor = False
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 0
         '
         'frmInstructions
         '
@@ -120,7 +92,6 @@ Partial Class frmInstructions
         Me.Name = "frmInstructions"
         Me.Text = "Maze Game"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

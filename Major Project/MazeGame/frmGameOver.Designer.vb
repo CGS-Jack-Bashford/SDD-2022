@@ -40,154 +40,94 @@ Partial Class frmGameOver
         '
         'lblTitle
         '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblTitle.Font = New System.Drawing.Font("Maze", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblTitle.Location = New System.Drawing.Point(458, 20)
-        Me.lblTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTitle.Location = New System.Drawing.Point(0, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(452, 64)
-        Me.lblTitle.TabIndex = 1
-        Me.lblTitle.Text = "Game Over"
+        Me.lblTitle.Size = New System.Drawing.Size(100, 23)
+        Me.lblTitle.TabIndex = 12
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(488, 224)
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(99, 32)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Name:"
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.TabIndex = 11
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(488, 284)
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 32)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Size:"
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
+        Me.Label2.TabIndex = 10
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(487, 344)
+        Me.Label3.Location = New System.Drawing.Point(0, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 32)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Seed:"
+        Me.Label3.Size = New System.Drawing.Size(100, 23)
+        Me.Label3.TabIndex = 9
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(488, 404)
+        Me.Label4.Location = New System.Drawing.Point(0, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 32)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Time:"
+        Me.Label4.Size = New System.Drawing.Size(100, 23)
+        Me.Label4.TabIndex = 8
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(593, 224)
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(286, 32)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "_mac_equivalent_"
+        Me.Label5.Size = New System.Drawing.Size(100, 23)
+        Me.Label5.TabIndex = 7
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.Location = New System.Drawing.Point(644, 285)
+        Me.Label6.Location = New System.Drawing.Point(0, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(235, 32)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "_mac_equivale"
+        Me.Label6.Size = New System.Drawing.Size(100, 23)
+        Me.Label6.TabIndex = 6
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.Location = New System.Drawing.Point(593, 344)
+        Me.Label7.Location = New System.Drawing.Point(0, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(286, 32)
-        Me.Label7.TabIndex = 8
-        Me.Label7.Text = "_mac_equivalent_"
+        Me.Label7.Size = New System.Drawing.Size(100, 23)
+        Me.Label7.TabIndex = 5
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label8.Location = New System.Drawing.Point(593, 404)
+        Me.Label8.Location = New System.Drawing.Point(0, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(286, 32)
-        Me.Label8.TabIndex = 9
-        Me.Label8.Text = "_mac_equivalent_"
+        Me.Label8.Size = New System.Drawing.Size(100, 23)
+        Me.Label8.TabIndex = 4
         '
         'btnMazeSize10
         '
-        Me.btnMazeSize10.BackColor = System.Drawing.Color.White
-        Me.btnMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMazeSize10.Enabled = False
-        Me.btnMazeSize10.FlatAppearance.BorderSize = 0
-        Me.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMazeSize10.Location = New System.Drawing.Point(595, 285)
+        Me.btnMazeSize10.Location = New System.Drawing.Point(0, 0)
         Me.btnMazeSize10.Name = "btnMazeSize10"
-        Me.btnMazeSize10.Size = New System.Drawing.Size(32, 32)
-        Me.btnMazeSize10.TabIndex = 10
-        Me.btnMazeSize10.UseVisualStyleBackColor = False
+        Me.btnMazeSize10.Size = New System.Drawing.Size(75, 23)
+        Me.btnMazeSize10.TabIndex = 2
         '
         'btnMazeSize10Back
         '
-        Me.btnMazeSize10Back.BackColor = System.Drawing.Color.Black
-        Me.btnMazeSize10Back.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMazeSize10Back.Enabled = False
-        Me.btnMazeSize10Back.FlatAppearance.BorderSize = 0
-        Me.btnMazeSize10Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMazeSize10Back.Location = New System.Drawing.Point(594, 284)
+        Me.btnMazeSize10Back.Location = New System.Drawing.Point(0, 0)
         Me.btnMazeSize10Back.Name = "btnMazeSize10Back"
-        Me.btnMazeSize10Back.Size = New System.Drawing.Size(34, 34)
-        Me.btnMazeSize10Back.TabIndex = 11
-        Me.btnMazeSize10Back.TabStop = False
-        Me.btnMazeSize10Back.UseVisualStyleBackColor = False
+        Me.btnMazeSize10Back.Size = New System.Drawing.Size(75, 23)
+        Me.btnMazeSize10Back.TabIndex = 3
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(734, 529)
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(300, 70)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Highscores"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
         '
         'btnInstructions
         '
-        Me.btnInstructions.BackColor = System.Drawing.Color.White
-        Me.btnInstructions.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInstructions.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnInstructions.Location = New System.Drawing.Point(334, 529)
+        Me.btnInstructions.Location = New System.Drawing.Point(0, 0)
         Me.btnInstructions.Name = "btnInstructions"
-        Me.btnInstructions.Size = New System.Drawing.Size(300, 70)
-        Me.btnInstructions.TabIndex = 13
-        Me.btnInstructions.Text = "Back to Start"
-        Me.btnInstructions.UseVisualStyleBackColor = False
+        Me.btnInstructions.Size = New System.Drawing.Size(75, 23)
+        Me.btnInstructions.TabIndex = 1
         '
         'frmGameOver
         '
@@ -215,7 +155,6 @@ Partial Class frmGameOver
         Me.Name = "frmGameOver"
         Me.Text = "Maze Game"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

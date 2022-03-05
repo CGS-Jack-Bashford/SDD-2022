@@ -2,28 +2,35 @@
 
     Dim mazeWallsDrawn As Boolean = False
     Dim pixelSize As Integer
+    Dim horizontalEdge As Rectangle
 
-    Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.
+
+    Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        configureFrmGame()
 
         Select Case mazeSize
             Case 1 : pixelSize = 12
             Case 2 : pixelSize = 6
-            Case 3 : pixelSize = 3
+            Case 3 : pixelSize = 4
         End Select
+
+        horizontalEdge.X = Panel1.Location.X
+        horizontalEdge.Y = Panel1.Location.Y
+        horizontalEdge.Width = (5 * mazeSize * 10) * pixelSize
+        horizontalEdge.Height = pixelSize
+
+        Panel1.Invalidate(horizontalEdge)
 
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-        If Not mazeWallsDrawn Then
+        e.Graphics.FillRectangle(New SolidBrush(Color.Black), horizontalEdge)
 
-            Dim rcWallCell As Rectangle
-            rcWallCell.X = 0
-            rcWallCell.Y = 0
-            rcWallCell.Width = pixelSize
-            rcWallCell.Height = pixelSize
+        'If Not mazeWallsDrawn Then
 
-        End If
+        'End If
 
         'Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
         'For y = 0 To mazeSize - 1 Step 1
@@ -49,4 +56,7 @@
         'Next
 
     End Sub
+
+
+
 End Class
