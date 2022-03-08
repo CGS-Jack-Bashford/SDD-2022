@@ -4,7 +4,7 @@
 
     ' All the application colors are stored here, in a Dictionary of Color structures accessible via their names (to avoid hard-coding an array's indices, names can be easily found and replaced if necessary throughout the entire program).
 
-    Dim applicationColors = New Dictionary(Of String, Color) From {
+    Public applicationColors = New Dictionary(Of String, Color) From {
         {"green", Color.FromArgb(&HFF, &H0, &H64, &H0)},
         {"yellow", Color.FromArgb(&HFF, &HFF, &HFF, &H0)},
         {"red", Color.FromArgb(&HFF, &HFF, &H0, &H0)},

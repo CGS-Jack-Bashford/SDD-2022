@@ -15,16 +15,16 @@
             Case 3 : pixelSize = 4
         End Select
 
-        horizontalEdge.X = Panel1.Location.X
-        horizontalEdge.Y = Panel1.Location.Y
+        horizontalEdge.X = pnlGame.Location.X
+        horizontalEdge.Y = pnlGame.Location.Y
         horizontalEdge.Width = (5 * mazeSize * 10) * pixelSize
         horizontalEdge.Height = pixelSize
 
-        Panel1.Invalidate(horizontalEdge)
+        pnlGame.Invalidate(horizontalEdge)
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
         e.Graphics.FillRectangle(New SolidBrush(Color.Black), horizontalEdge)
 

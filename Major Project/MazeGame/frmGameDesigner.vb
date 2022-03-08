@@ -14,42 +14,42 @@
         '
         'btnMazeSize10
         '
-        frmGame.btnMazeSize10.BackColor = System.Drawing.Color.White
-        frmGame.btnMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
-        frmGame.btnMazeSize10.Enabled = False
-        frmGame.btnMazeSize10.FlatAppearance.BorderSize = 0
-        frmGame.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.btnMazeSize10.Location = New System.Drawing.Point(83, 235)
-        frmGame.btnMazeSize10.Name = "btnMazeSize10"
-        frmGame.btnMazeSize10.Size = New System.Drawing.Size(32, 32)
-        frmGame.btnMazeSize10.TabIndex = 10
-        frmGame.btnMazeSize10.UseVisualStyleBackColor = False
+        frmGame.btnMazeSizeDisp.BackColor = System.Drawing.Color.White
+        frmGame.btnMazeSizeDisp.Cursor = System.Windows.Forms.Cursors.Hand
+        frmGame.btnMazeSizeDisp.Enabled = False
+        frmGame.btnMazeSizeDisp.FlatAppearance.BorderSize = 0
+        frmGame.btnMazeSizeDisp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMazeSizeDisp.Location = New System.Drawing.Point(83, 235)
+        frmGame.btnMazeSizeDisp.Name = "btnMazeSize10"
+        frmGame.btnMazeSizeDisp.Size = New System.Drawing.Size(32, 32)
+        frmGame.btnMazeSizeDisp.TabIndex = 10
+        frmGame.btnMazeSizeDisp.UseVisualStyleBackColor = False
         '
         'btnMazeSize10Back
         '
-        frmGame.btnMazeSize10Back.BackColor = System.Drawing.Color.Black
-        frmGame.btnMazeSize10Back.Cursor = System.Windows.Forms.Cursors.Hand
-        frmGame.btnMazeSize10Back.Enabled = False
-        frmGame.btnMazeSize10Back.FlatAppearance.BorderSize = 0
-        frmGame.btnMazeSize10Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.btnMazeSize10Back.Location = New System.Drawing.Point(82, 234)
-        frmGame.btnMazeSize10Back.Name = "btnMazeSize10Back"
-        frmGame.btnMazeSize10Back.Size = New System.Drawing.Size(34, 34)
-        frmGame.btnMazeSize10Back.TabIndex = 11
-        frmGame.btnMazeSize10Back.TabStop = False
-        frmGame.btnMazeSize10Back.UseVisualStyleBackColor = False
+        frmGame.btnMazeSizeDispBack.BackColor = System.Drawing.Color.Black
+        frmGame.btnMazeSizeDispBack.Cursor = System.Windows.Forms.Cursors.Hand
+        frmGame.btnMazeSizeDispBack.Enabled = False
+        frmGame.btnMazeSizeDispBack.FlatAppearance.BorderSize = 0
+        frmGame.btnMazeSizeDispBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMazeSizeDispBack.Location = New System.Drawing.Point(82, 234)
+        frmGame.btnMazeSizeDispBack.Name = "btnMazeSize10Back"
+        frmGame.btnMazeSizeDispBack.Size = New System.Drawing.Size(34, 34)
+        frmGame.btnMazeSizeDispBack.TabIndex = 11
+        frmGame.btnMazeSizeDispBack.TabStop = False
+        frmGame.btnMazeSizeDispBack.UseVisualStyleBackColor = False
         '
         'lblMazeSize10
         '
-        frmGame.lblMazeSize10.AutoSize = True
-        frmGame.lblMazeSize10.BackColor = System.Drawing.Color.Transparent
-        frmGame.lblMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
-        frmGame.lblMazeSize10.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.lblMazeSize10.Location = New System.Drawing.Point(122, 234)
-        frmGame.lblMazeSize10.Name = "lblMazeSize10"
-        frmGame.lblMazeSize10.Size = New System.Drawing.Size(99, 32)
-        frmGame.lblMazeSize10.TabIndex = 9
-        frmGame.lblMazeSize10.Text = "10x10"
+        frmGame.lblMazeSizeDisp.AutoSize = True
+        frmGame.lblMazeSizeDisp.BackColor = System.Drawing.Color.Transparent
+        frmGame.lblMazeSizeDisp.Cursor = System.Windows.Forms.Cursors.Hand
+        frmGame.lblMazeSizeDisp.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.lblMazeSizeDisp.Location = New System.Drawing.Point(122, 234)
+        frmGame.lblMazeSizeDisp.Name = "lblMazeSize10"
+        frmGame.lblMazeSizeDisp.Size = New System.Drawing.Size(99, 32)
+        frmGame.lblMazeSizeDisp.TabIndex = 9
+        frmGame.lblMazeSizeDisp.Text = "10x10"
         '
         'lblMazeSize
         '
@@ -62,102 +62,102 @@
         frmGame.lblMazeSize.TabIndex = 8
         frmGame.lblMazeSize.Text = "Maze Size"
         '
-        'Label1
+        'lblPlayerName
         '
-        frmGame.Label1.AutoSize = True
-        frmGame.Label1.BackColor = System.Drawing.Color.Transparent
-        frmGame.Label1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Label1.Location = New System.Drawing.Point(55, 96)
-        frmGame.Label1.Name = "Label1"
-        frmGame.Label1.Size = New System.Drawing.Size(286, 32)
-        frmGame.Label1.TabIndex = 12
-        frmGame.Label1.Text = "_mac_equivalent_"
+        frmGame.lblPlayerName.AutoSize = True
+        frmGame.lblPlayerName.BackColor = System.Drawing.Color.Transparent
+        frmGame.lblPlayerName.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.lblPlayerName.Location = New System.Drawing.Point(55, 96)
+        frmGame.lblPlayerName.Name = "lblPlayerName"
+        frmGame.lblPlayerName.Size = New System.Drawing.Size(286, 32)
+        frmGame.lblPlayerName.TabIndex = 12
+        frmGame.lblPlayerName.Text = "_mac_equivalent_"
         '
-        'Panel1
+        'pnlGame
         '
-        frmGame.Panel1.BackColor = System.Drawing.Color.White
-        frmGame.Panel1.Location = New System.Drawing.Point(384, 96)
-        frmGame.Panel1.Name = "Panel1"
-        frmGame.Panel1.Size = New System.Drawing.Size(600, 600)
-        frmGame.Panel1.TabIndex = 13
+        frmGame.pnlGame.BackColor = System.Drawing.Color.White
+        frmGame.pnlGame.Location = New System.Drawing.Point(384, 96)
+        frmGame.pnlGame.Name = "pnlGame"
+        frmGame.pnlGame.Size = New System.Drawing.Size(600, 600)
+        frmGame.pnlGame.TabIndex = 13
         '
-        'Label2
+        'lbl_Time
         '
-        frmGame.Label2.AutoSize = True
-        frmGame.Label2.BackColor = System.Drawing.Color.Transparent
-        frmGame.Label2.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Label2.Location = New System.Drawing.Point(1027, 96)
-        frmGame.Label2.Name = "Label2"
-        frmGame.Label2.Size = New System.Drawing.Size(100, 32)
-        frmGame.Label2.TabIndex = 14
-        frmGame.Label2.Text = "Time:"
+        frmGame.lbl_Time.AutoSize = True
+        frmGame.lbl_Time.BackColor = System.Drawing.Color.Transparent
+        frmGame.lbl_Time.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.lbl_Time.Location = New System.Drawing.Point(1027, 96)
+        frmGame.lbl_Time.Name = "lbl_Time"
+        frmGame.lbl_Time.Size = New System.Drawing.Size(100, 32)
+        frmGame.lbl_Time.TabIndex = 14
+        frmGame.lbl_Time.Text = "Time:"
         '
-        'Label3
+        'lblTime
         '
-        frmGame.Label3.AutoSize = True
-        frmGame.Label3.BackColor = System.Drawing.Color.Transparent
-        frmGame.Label3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Label3.Location = New System.Drawing.Point(1133, 96)
-        frmGame.Label3.Name = "Label3"
-        frmGame.Label3.Size = New System.Drawing.Size(100, 32)
-        frmGame.Label3.TabIndex = 15
-        frmGame.Label3.Text = "12:34"
+        frmGame.lblTime.AutoSize = True
+        frmGame.lblTime.BackColor = System.Drawing.Color.Transparent
+        frmGame.lblTime.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.lblTime.Location = New System.Drawing.Point(1133, 96)
+        frmGame.lblTime.Name = "lblTime"
+        frmGame.lblTime.Size = New System.Drawing.Size(100, 32)
+        frmGame.lblTime.TabIndex = 15
+        frmGame.lblTime.Text = "12:34"
         '
-        'Button1
+        'btnMoveUp
         '
-        frmGame.Button1.BackColor = System.Drawing.Color.White
-        frmGame.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.Button1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Button1.ForeColor = System.Drawing.Color.Black
-        frmGame.Button1.Location = New System.Drawing.Point(1133, 226)
-        frmGame.Button1.Name = "Button1"
-        frmGame.Button1.Size = New System.Drawing.Size(40, 40)
-        frmGame.Button1.TabIndex = 16
-        frmGame.Button1.Text = "∧"
-        frmGame.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.Button1.UseVisualStyleBackColor = False
+        frmGame.btnMoveUp.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveUp.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveUp.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveUp.Location = New System.Drawing.Point(1133, 226)
+        frmGame.btnMoveUp.Name = "btnMoveUp"
+        frmGame.btnMoveUp.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveUp.TabIndex = 16
+        frmGame.btnMoveUp.Text = "∧"
+        frmGame.btnMoveUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveUp.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnMoveLeft
         '
-        frmGame.Button3.BackColor = System.Drawing.Color.White
-        frmGame.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.Button3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Button3.ForeColor = System.Drawing.Color.Black
-        frmGame.Button3.Location = New System.Drawing.Point(1087, 272)
-        frmGame.Button3.Name = "Button3"
-        frmGame.Button3.Size = New System.Drawing.Size(40, 40)
-        frmGame.Button3.TabIndex = 18
-        frmGame.Button3.Text = "<"
-        frmGame.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.Button3.UseVisualStyleBackColor = False
+        frmGame.btnMoveLeft.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveLeft.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveLeft.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveLeft.Location = New System.Drawing.Point(1087, 272)
+        frmGame.btnMoveLeft.Name = "btnMoveLeft"
+        frmGame.btnMoveLeft.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveLeft.TabIndex = 18
+        frmGame.btnMoveLeft.Text = "<"
+        frmGame.btnMoveLeft.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveLeft.UseVisualStyleBackColor = False
         '
-        'Button4
+        'btnMoveDown
         '
-        frmGame.Button4.BackColor = System.Drawing.Color.White
-        frmGame.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.Button4.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Button4.ForeColor = System.Drawing.Color.Black
-        frmGame.Button4.Location = New System.Drawing.Point(1133, 318)
-        frmGame.Button4.Name = "Button4"
-        frmGame.Button4.Size = New System.Drawing.Size(40, 40)
-        frmGame.Button4.TabIndex = 19
-        frmGame.Button4.Text = "∨"
-        frmGame.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.Button4.UseVisualStyleBackColor = False
+        frmGame.btnMoveDown.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveDown.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveDown.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveDown.Location = New System.Drawing.Point(1133, 318)
+        frmGame.btnMoveDown.Name = "btnMoveDown"
+        frmGame.btnMoveDown.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveDown.TabIndex = 19
+        frmGame.btnMoveDown.Text = "∨"
+        frmGame.btnMoveDown.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveDown.UseVisualStyleBackColor = False
         '
-        'Button5
+        'btnMoveRight
         '
-        frmGame.Button5.BackColor = System.Drawing.Color.White
-        frmGame.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.Button5.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.Button5.ForeColor = System.Drawing.Color.Black
-        frmGame.Button5.Location = New System.Drawing.Point(1179, 272)
-        frmGame.Button5.Name = "Button5"
-        frmGame.Button5.Size = New System.Drawing.Size(40, 40)
-        frmGame.Button5.TabIndex = 20
-        frmGame.Button5.Text = ">"
-        frmGame.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.Button5.UseVisualStyleBackColor = False
+        frmGame.btnMoveRight.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveRight.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveRight.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveRight.Location = New System.Drawing.Point(1179, 272)
+        frmGame.btnMoveRight.Name = "btnMoveRight"
+        frmGame.btnMoveRight.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveRight.TabIndex = 20
+        frmGame.btnMoveRight.Text = ">"
+        frmGame.btnMoveRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveRight.UseVisualStyleBackColor = False
 
     End Sub
 

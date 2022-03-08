@@ -68,7 +68,7 @@
         frmMain.lblMazeSizeRandom.Cursor = System.Windows.Forms.Cursors.Hand
         frmMain.lblMazeSizeRandom.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         frmMain.lblMazeSizeRandom.Location = New System.Drawing.Point(122, 384)
-        frmMain.lblMazeSizeRandom.Name = "lblMazeSize30"
+        frmMain.lblMazeSizeRandom.Name = "lblMazeSizeRandom"
         frmMain.lblMazeSizeRandom.Size = New System.Drawing.Size(99, 32)
         frmMain.lblMazeSizeRandom.TabIndex = 4
         frmMain.lblMazeSizeRandom.Text = "Random"
@@ -150,19 +150,6 @@
         frmMain.btnMazeSize20Back.TabStop = False
         frmMain.btnMazeSize20Back.UseVisualStyleBackColor = False
         '
-        'btnMazeSize30Back
-        '
-        frmMain.btnMazeSize30Back.BackColor = System.Drawing.Color.Black
-        frmMain.btnMazeSize30Back.Cursor = System.Windows.Forms.Cursors.Hand
-        frmMain.btnMazeSize30Back.FlatAppearance.BorderSize = 0
-        frmMain.btnMazeSize30Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmMain.btnMazeSize30Back.Location = New System.Drawing.Point(82, 334)
-        frmMain.btnMazeSize30Back.Name = "btnMazeSize30Back"
-        frmMain.btnMazeSize30Back.Size = New System.Drawing.Size(34, 34)
-        frmMain.btnMazeSize30Back.TabIndex = 10
-        frmMain.btnMazeSize30Back.TabStop = False
-        frmMain.btnMazeSize30Back.UseVisualStyleBackColor = False
-        '
         'btnMazeSize30
         '
         frmMain.btnMazeSize30.BackColor = System.Drawing.Color.White
@@ -177,18 +164,18 @@
         frmMain.btnMazeSize30.TabIndex = 11
         frmMain.btnMazeSize30.UseVisualStyleBackColor = False
         '
-        'btnMazeSizeRandomBack
+        'btnMazeSize30Back
         '
-        frmMain.btnMazeSizeRandomBack.BackColor = System.Drawing.Color.Black
-        frmMain.btnMazeSizeRandomBack.Cursor = System.Windows.Forms.Cursors.Hand
-        frmMain.btnMazeSizeRandomBack.FlatAppearance.BorderSize = 0
-        frmMain.btnMazeSizeRandomBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmMain.btnMazeSizeRandomBack.Location = New System.Drawing.Point(82, 384)
-        frmMain.btnMazeSizeRandomBack.Name = "btnMazeSizeRandomBack"
-        frmMain.btnMazeSizeRandomBack.Size = New System.Drawing.Size(34, 34)
-        frmMain.btnMazeSizeRandomBack.TabIndex = 10
-        frmMain.btnMazeSizeRandomBack.TabStop = False
-        frmMain.btnMazeSizeRandomBack.UseVisualStyleBackColor = False
+        frmMain.btnMazeSize30Back.BackColor = System.Drawing.Color.Black
+        frmMain.btnMazeSize30Back.Cursor = System.Windows.Forms.Cursors.Hand
+        frmMain.btnMazeSize30Back.FlatAppearance.BorderSize = 0
+        frmMain.btnMazeSize30Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmMain.btnMazeSize30Back.Location = New System.Drawing.Point(82, 334)
+        frmMain.btnMazeSize30Back.Name = "btnMazeSize30Back"
+        frmMain.btnMazeSize30Back.Size = New System.Drawing.Size(34, 34)
+        frmMain.btnMazeSize30Back.TabIndex = 10
+        frmMain.btnMazeSize30Back.TabStop = False
+        frmMain.btnMazeSize30Back.UseVisualStyleBackColor = False
         '
         'btnMazeSizeRandom
         '
@@ -203,6 +190,19 @@
         frmMain.btnMazeSizeRandom.Size = New System.Drawing.Size(32, 32)
         frmMain.btnMazeSizeRandom.TabIndex = 11
         frmMain.btnMazeSizeRandom.UseVisualStyleBackColor = False
+        '
+        'btnMazeSizeRandomBack
+        '
+        frmMain.btnMazeSizeRandomBack.BackColor = System.Drawing.Color.Black
+        frmMain.btnMazeSizeRandomBack.Cursor = System.Windows.Forms.Cursors.Hand
+        frmMain.btnMazeSizeRandomBack.FlatAppearance.BorderSize = 0
+        frmMain.btnMazeSizeRandomBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmMain.btnMazeSizeRandomBack.Location = New System.Drawing.Point(82, 384)
+        frmMain.btnMazeSizeRandomBack.Name = "btnMazeSizeRandomBack"
+        frmMain.btnMazeSizeRandomBack.Size = New System.Drawing.Size(34, 34)
+        frmMain.btnMazeSizeRandomBack.TabIndex = 10
+        frmMain.btnMazeSizeRandomBack.TabStop = False
+        frmMain.btnMazeSizeRandomBack.UseVisualStyleBackColor = False
         '
         'btnInstructions
         '

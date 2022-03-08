@@ -24,18 +24,18 @@ Partial Class frmGame
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGame))
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.btnMazeSize10 = New MazeGame.ButtonEllipse()
-        Me.btnMazeSize10Back = New MazeGame.ButtonEllipse()
-        Me.lblMazeSize10 = New System.Windows.Forms.Label()
+        Me.btnMazeSizeDisp = New MazeGame.ButtonEllipse()
+        Me.btnMazeSizeDispBack = New MazeGame.ButtonEllipse()
+        Me.lblMazeSizeDisp = New System.Windows.Forms.Label()
         Me.lblMazeSize = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.lblPlayerName = New System.Windows.Forms.Label()
+        Me.pnlGame = New System.Windows.Forms.Panel()
+        Me.lbl_Time = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.btnMoveUp = New System.Windows.Forms.Button()
+        Me.btnMoveLeft = New System.Windows.Forms.Button()
+        Me.btnMoveDown = New System.Windows.Forms.Button()
+        Me.btnMoveRight = New System.Windows.Forms.Button()
         Me.SuspendLayout()
 
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 32.0!)
@@ -43,17 +43,17 @@ Partial Class frmGame
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(2511, 1555)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnMazeSize10)
-        Me.Controls.Add(Me.btnMazeSize10Back)
-        Me.Controls.Add(Me.lblMazeSize10)
+        Me.Controls.Add(Me.btnMoveRight)
+        Me.Controls.Add(Me.btnMoveDown)
+        Me.Controls.Add(Me.btnMoveLeft)
+        Me.Controls.Add(Me.btnMoveUp)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.lbl_Time)
+        Me.Controls.Add(Me.pnlGame)
+        Me.Controls.Add(Me.lblPlayerName)
+        Me.Controls.Add(Me.btnMazeSizeDisp)
+        Me.Controls.Add(Me.btnMazeSizeDispBack)
+        Me.Controls.Add(Me.lblMazeSizeDisp)
         Me.Controls.Add(Me.lblMazeSize)
         Me.Controls.Add(Me.lblTitle)
         Me.DoubleBuffered = True
@@ -67,16 +67,16 @@ Partial Class frmGame
     End Sub
 
     Friend WithEvents lblTitle As Label
-    Friend WithEvents btnMazeSize10 As ButtonEllipse
-    Friend WithEvents btnMazeSize10Back As ButtonEllipse
-    Friend WithEvents lblMazeSize10 As Label
+    Friend WithEvents btnMazeSizeDisp As ButtonEllipse
+    Friend WithEvents btnMazeSizeDispBack As ButtonEllipse
+    Friend WithEvents lblMazeSizeDisp As Label
     Friend WithEvents lblMazeSize As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents lblPlayerName As Label
+    Friend WithEvents pnlGame As Panel
+    Friend WithEvents lbl_Time As Label
+    Friend WithEvents lblTime As Label
+    Friend WithEvents btnMoveUp As Button
+    Friend WithEvents btnMoveLeft As Button
+    Friend WithEvents btnMoveDown As Button
+    Friend WithEvents btnMoveRight As Button
 End Class
