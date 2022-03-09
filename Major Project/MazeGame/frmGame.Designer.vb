@@ -38,11 +38,9 @@ Partial Class frmGame
         Me.btnMoveRight = New System.Windows.Forms.Button()
         Me.SuspendLayout()
 
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 32.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(2511, 1555)
         Me.Controls.Add(Me.btnMoveRight)
         Me.Controls.Add(Me.btnMoveDown)
         Me.Controls.Add(Me.btnMoveLeft)

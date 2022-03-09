@@ -159,6 +159,9 @@
         frmGame.btnMoveRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         frmGame.btnMoveRight.UseVisualStyleBackColor = False
 
+        frmGame.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        frmGame.ClientSize = New System.Drawing.Size(1352, 729)
+
     End Sub
 
 End Module

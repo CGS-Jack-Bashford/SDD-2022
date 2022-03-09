@@ -131,11 +131,9 @@ Partial Class frmGameOver
         '
         'frmGameOver
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1352, 729)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnInstructions)
         Me.Controls.Add(Me.btnMazeSize10)

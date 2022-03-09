@@ -479,6 +479,8 @@
         '
         'frmHighscores
         '
+        frmHighscores.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        frmHighscores.ClientSize = New System.Drawing.Size(1352, 729)
     End Sub
 
 End Module

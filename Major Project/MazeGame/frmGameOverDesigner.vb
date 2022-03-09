@@ -156,7 +156,8 @@
         '
         'frmGameOver
         '
-
+        frmGameOver.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        frmGameOver.ClientSize = New System.Drawing.Size(1352, 729)
     End Sub
 
 End Module

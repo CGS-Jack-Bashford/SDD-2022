@@ -74,6 +74,8 @@
         '
         'frmInstructions
         '
+        frmInstructions.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        frmInstructions.ClientSize = New System.Drawing.Size(1352, 729)
     End Sub
 
 End Module

@@ -4,15 +4,17 @@
     Dim pixelSize As Integer
     Dim horizontalEdge As Rectangle
 
-
     Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
 
         configureFrmGame()
 
+        Dim mazeSizes As String() = {"10x10", "20x20", "30x30"}
+        Dim mazeColors As Color() = {applicationColors("green"), applicationColors("orange"), applicationColors("red")}
+
         Select Case mazeSize
-            Case 1 : pixelSize = 12
-            Case 2 : pixelSize = 6
-            Case 3 : pixelSize = 4
+            Case 0 : pixelSize = 12
+            Case 1 : pixelSize = 6
+            Case 2 : pixelSize = 4
         End Select
 
         horizontalEdge.X = pnlGame.Location.X

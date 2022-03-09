@@ -14,7 +14,7 @@ Public Class frmMain
 
             AddHandler arrDifficultyButtons(i).Click, AddressOf ChangeDifficultyHandlerBtn
 
-        Next
+        Next i
 
         Dim arrDifficultyLabels As Label() = {lblMazeSize10, lblMazeSize20, lblMazeSizeRandom, lblMazeSize30}
 
@@ -22,7 +22,7 @@ Public Class frmMain
 
             AddHandler arrDifficultyLabels(i).Click, AddressOf ChangeDifficultyHandlerLbl
 
-        Next
+        Next i
 
     End Sub
 
@@ -30,9 +30,12 @@ Public Class frmMain
 
         Dim allChecksPassed As Boolean = True
 
-        CheckSeed(allChecksPassed)
-        ValidateName(allChecksPassed)
+        'CheckSeed(allChecksPassed)
+        'ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
+
+        ' mazeSize = 10
+        mazeSeed = New Random().Next(10000)
 
         If allChecksPassed Then
 
@@ -52,21 +55,21 @@ Public Class frmMain
 
         Select Case buttonClicked.Name(11)
             Case "1"
-                difficulty = 0
+                difficulty = 1
                 newColor = applicationColors("green")
             Case "2"
-                difficulty = 1
+                difficulty = 2
                 newColor = applicationColors("yellow")
             Case "3"
-                difficulty = 2
+                difficulty = 3
                 newColor = applicationColors("red")
             Case "R"
-                difficulty = 3
+                difficulty = 4
                 newColor = applicationColors("orange")
 
         End Select
 
-        SetDifficultyColor(difficulty, newColor)
+        SetDifficultyColor(difficulty - 1, newColor)
 
     End Sub
 
@@ -77,21 +80,21 @@ Public Class frmMain
 
         Select Case labelClicked.Name(11)
             Case "1"
-                difficulty = 0
+                difficulty = 1
                 newColor = applicationColors("green")
             Case "2"
-                difficulty = 1
+                difficulty = 2
                 newColor = applicationColors("yellow")
             Case "3"
-                difficulty = 2
+                difficulty = 3
                 newColor = applicationColors("red")
             Case "R"
-                difficulty = 3
+                difficulty = 4
                 newColor = applicationColors("orange")
 
         End Select
 
-        SetDifficultyColor(difficulty, newColor)
+        SetDifficultyColor(difficulty - 1, newColor)
 
     End Sub
 
@@ -109,19 +112,19 @@ Public Class frmMain
 
             End If
 
-        Next
+        Next i
 
         buttonsArray(targetButtonIndex).BackColor = targetButtonColor
         buttonsArray(targetButtonIndex).FlatAppearance.MouseOverBackColor = targetButtonColor
         buttonsArray(targetButtonIndex).FlatAppearance.MouseDownBackColor = targetButtonColor
 
-        txtMazeSeed.Enabled = (difficulty <> 3)
+        txtMazeSeed.Enabled = (difficulty <> 4)
 
     End Sub
 
     Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
 
-        Dim validDifficulties As Integer() = {0, 1, 2, 3} ' 3 indicates the Random difficulty, which we handle later in this subroutine
+        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 3 indicates the Random difficulty, which we handle later in this subroutine
 
         If IsNothing(difficulty) Or Not validDifficulties.Contains(difficulty) Then
 
@@ -129,11 +132,15 @@ Public Class frmMain
 
         End If
 
-        ' If the selected difficulty is "3", or Random, then we generate the random maze size and assign it here
+        ' If the selected difficulty is "4", or Random, then we generate the random maze size and assign it here
 
         If difficulty = 4 Then
 
-            mazeSize = New Random().Next(0, 3)
+            mazeSize = New Random().Next(1, 4) * 10
+
+        Else
+
+            mazeSize = difficulty * 10
 
         End If
 
@@ -232,28 +239,31 @@ Public Class frmMain
 
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
-        'Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
-        'For y = 0 To mazeSize - 1 Step 1
-        '    Dim str As String = ""
-        '    str &= "|"
-        '    For x = 0 To mazeSize - 1 Step 1
-        '        If (arrGameBoard(y, x) And S) <> 0 Then
-        '            str += " "
-        '        Else
-        '            str += "_"
-        '        End If
-        '        If (arrGameBoard(y, x) And E) <> 0 Then
-        '            If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
-        '                str += " "
-        '            Else
-        '                str += "_"
-        '            End If
-        '        Else
-        '            str += "|"
-        '        End If
-        '    Next
-        '    Debug.Print(str)
-        'Next
+        Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
+        For y = 0 To mazeSize - 1 Step 1
+            Dim str As String = ""
+            str &= "|"
+            For x = 0 To mazeSize - 1 Step 1
+                If arrGameBoard(y, x) = 15 Then
+                    Dim a = 2
+                End If
+                If (arrGameBoard(y, x) And S) <> 0 Then
+                    str += " "
+                Else
+                    str += "_"
+                End If
+                If (arrGameBoard(y, x) And E) <> 0 Then
+                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
+                        str += " "
+                    Else
+                        str += "_"
+                    End If
+                Else
+                    str += "|"
+                End If
+            Next x
+            Debug.Print(str)
+        Next y
 
     End Sub
 
@@ -311,9 +321,9 @@ Public Class frmMain
 
     Private Sub InitializeGameBoard(ByRef arrGameBoard As Integer(,), mazeSize As Integer)
 
-        If mazeSize <> 30 Then
+        If mazeSize <> 3 Then
 
-            ReDim arrGameBoard(mazeSize - 1, mazeSize - 1)
+            ReDim arrGameBoard(mazeSize * 10 - 1, mazeSize * 10 - 1)
 
         End If
 
