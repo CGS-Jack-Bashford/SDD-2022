@@ -24,6 +24,11 @@ Public Class frmMain
 
         Next i
 
+        'TODO game instant setup code
+
+        btnMazeSize20.PerformClick()
+        txtName.Text = "test"
+
     End Sub
 
     Private Sub SetupGame(sender As Object, e As EventArgs) Handles btnPlay.Click
@@ -34,8 +39,9 @@ Public Class frmMain
         'ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
 
-        ' mazeSize = 10
         mazeSeed = New Random().Next(10000)
+        mazeSize = 1
+        playerName = "test"
 
         If allChecksPassed Then
 
@@ -124,7 +130,7 @@ Public Class frmMain
 
     Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
 
-        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 3 indicates the Random difficulty, which we handle later in this subroutine
+        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle later in this subroutine
 
         If IsNothing(difficulty) Or Not validDifficulties.Contains(difficulty) Then
 
@@ -136,11 +142,11 @@ Public Class frmMain
 
         If difficulty = 4 Then
 
-            mazeSize = New Random().Next(1, 4) * 10
+            mazeSize = New Random().Next(0, 3)
 
         Else
 
-            mazeSize = difficulty * 10
+            mazeSize = difficulty - 1
 
         End If
 
@@ -239,31 +245,39 @@ Public Class frmMain
 
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
-        Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
-        For y = 0 To mazeSize - 1 Step 1
-            Dim str As String = ""
-            str &= "|"
-            For x = 0 To mazeSize - 1 Step 1
-                If arrGameBoard(y, x) = 15 Then
-                    Dim a = 2
-                End If
-                If (arrGameBoard(y, x) And S) <> 0 Then
-                    str += " "
-                Else
-                    str += "_"
-                End If
-                If (arrGameBoard(y, x) And E) <> 0 Then
-                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
-                        str += " "
-                    Else
-                        str += "_"
-                    End If
-                Else
-                    str += "|"
-                End If
-            Next x
-            Debug.Print(str)
-        Next y
+        Dim edgeLength As Integer = (mazeSize + 1) * 10
+
+        Debug.Print(edgeLength)
+        Debug.Print(arrGameBoard.Length)
+
+        For i = 0 To edgeLength Step 1
+            For j = 0 To edgeLength Step 1
+                Debug.Print(arrGameBoard(i, j).ToString("X1"))
+            Next
+        Next
+
+        'Debug.Print(" " & StrDup(edgeLength - 1, "_"))
+        'For y = 0 To edgeLength - 1 Step 1
+        '    Dim str As String = ""
+        '    str &= "|"
+        '    For x = 0 To edgeLength - 1 Step 1
+        '        If (arrGameBoard(y, x) And S) <> 0 Then
+        '            str += " "
+        '        Else
+        '            str += "_"
+        '        End If
+        '        If (arrGameBoard(y, x) And E) <> 0 Then
+        '            If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
+        '                str += " "
+        '            Else
+        '                str += "_"
+        '            End If
+        '        Else
+        '            str += "|"
+        '        End If
+        '    Next x
+        '    Debug.Print(str)
+        'Next y
 
     End Sub
 
@@ -321,14 +335,16 @@ Public Class frmMain
 
     Private Sub InitializeGameBoard(ByRef arrGameBoard As Integer(,), mazeSize As Integer)
 
-        If mazeSize <> 3 Then
+        Dim edgeLength As Integer = (mazeSize + 1) * 10
 
-            ReDim arrGameBoard(mazeSize * 10 - 1, mazeSize * 10 - 1)
+        If mazeSize <> 2 Then
+
+            ReDim arrGameBoard(edgeLength, edgeLength)
 
         End If
 
-        For i = 0 To mazeSize - 1 Step 1
-            For j = 0 To mazeSize - 1 Step 1
+        For i = 0 To edgeLength Step 1
+            For j = 0 To edgeLength Step 1
 
                 arrGameBoard(i, j) = 0
 

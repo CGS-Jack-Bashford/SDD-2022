@@ -11,6 +11,10 @@
         Dim mazeSizes As String() = {"10x10", "20x20", "30x30"}
         Dim mazeColors As Color() = {applicationColors("green"), applicationColors("orange"), applicationColors("red")}
 
+        lblMazeSizeDisp.Text = mazeSizes(mazeSize)
+        btnMazeSizeDisp.BackColor = mazeColors(mazeSize)
+        lblPlayerName.Text = playerName
+
         Select Case mazeSize
             Case 0 : pixelSize = 12
             Case 1 : pixelSize = 6

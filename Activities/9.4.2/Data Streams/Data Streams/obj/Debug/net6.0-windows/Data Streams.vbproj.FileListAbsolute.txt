@@ -1,0 +1,17 @@
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\bin\Debug\net6.0-windows\Data Streams.exe
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\bin\Debug\net6.0-windows\Data Streams.deps.json
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\bin\Debug\net6.0-windows\Data Streams.runtimeconfig.json
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\bin\Debug\net6.0-windows\Data Streams.dll
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\bin\Debug\net6.0-windows\ref\Data Streams.dll
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\bin\Debug\net6.0-windows\Data Streams.pdb
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.vbproj.AssemblyReference.cache
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data_Streams.Form1.resources
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.vbproj.GenerateResource.cache
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.AssemblyInfoInputs.cache
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.AssemblyInfo.vb
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.vbproj.CoreCompileInputs.cache
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.dll
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\ref\Data Streams.dll
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.pdb
+C:\Users\Jack Bashford\Desktop\SDD-2022\Activities\9.4.2\Data Streams\Data Streams\obj\Debug\net6.0-windows\Data Streams.genruntimeconfig.cache
