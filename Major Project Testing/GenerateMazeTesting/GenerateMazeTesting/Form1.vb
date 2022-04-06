@@ -15,8 +15,9 @@
     }
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim difficulty As Integer = (CInt(InputBox("")) Mod 4) + 1
+        Dim difficulty As Integer = 1
         Dim mazeSize%
+
         If difficulty = 4 Then
             mazeSize = New Random().Next(0, 3)
         Else
@@ -57,7 +58,7 @@
         Debug.Print(" " & StrDup(edgeLength - 1, "_"))
         For y = 0 To edgeLength - 1 Step 1
             Dim str As String = ""
-            str &= "|"
+            str += "|"
             For x = 0 To edgeLength - 1 Step 1
                 If (arrGameBoard(y, x) And S) <> 0 Then
                     str += " "

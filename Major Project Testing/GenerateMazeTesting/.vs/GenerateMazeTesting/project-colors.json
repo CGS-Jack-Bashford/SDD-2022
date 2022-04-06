@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fd45265e-d71e-43e2-b620-33cba7f97935": {
+      "ProjectGuid": "fd45265e-d71e-43e2-b620-33cba7f97935",
+      "DisplayName": "GenerateMazeTesting",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
