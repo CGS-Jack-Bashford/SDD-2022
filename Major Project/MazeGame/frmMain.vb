@@ -130,7 +130,7 @@ Public Class frmMain
 
     Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
 
-        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle later in this subroutine
+        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle later
 
         If IsNothing(difficulty) Or Not validDifficulties.Contains(difficulty) Then
 
@@ -251,33 +251,35 @@ Public Class frmMain
         Debug.Print(arrGameBoard.Length)
 
         For i = 0 To edgeLength Step 1
+            Dim s As String = ""
             For j = 0 To edgeLength Step 1
-                Debug.Print(arrGameBoard(i, j).ToString("X1"))
+                s += arrGameBoard(i, j).ToString("X1")
             Next
+            Debug.Print(s)
         Next
 
-        'Debug.Print(" " & StrDup(edgeLength - 1, "_"))
-        'For y = 0 To edgeLength - 1 Step 1
-        '    Dim str As String = ""
-        '    str &= "|"
-        '    For x = 0 To edgeLength - 1 Step 1
-        '        If (arrGameBoard(y, x) And S) <> 0 Then
-        '            str += " "
-        '        Else
-        '            str += "_"
-        '        End If
-        '        If (arrGameBoard(y, x) And E) <> 0 Then
-        '            If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
-        '                str += " "
-        '            Else
-        '                str += "_"
-        '            End If
-        '        Else
-        '            str += "|"
-        '        End If
-        '    Next x
-        '    Debug.Print(str)
-        'Next y
+        Debug.Print(" " & StrDup(edgeLength - 1, "_"))
+        For y = 0 To edgeLength - 1 Step 1
+            Dim str As String = ""
+            str &= "|"
+            For x = 0 To edgeLength - 1 Step 1
+                If (arrGameBoard(y, x) And S) <> 0 Then
+                    str += " "
+                Else
+                    str += "_"
+                End If
+                If (arrGameBoard(y, x) And E) <> 0 Then
+                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
+                        str += " "
+                    Else
+                        str += "_"
+                    End If
+                Else
+                    str += "|"
+                End If
+            Next x
+            Debug.Print(str)
+        Next y
 
     End Sub
 
@@ -300,8 +302,8 @@ Public Class frmMain
             ny += Vertical(direction)
             nx += Horizontal(direction)
 
-            Dim verticalRange As Boolean = ny >= 0 And ny < mazeSize
-            Dim horizontalRange As Boolean = nx >= 0 And nx < mazeSize
+            Dim verticalRange As Boolean = ny >= 0 And ny < arrGameBoard.GetLength(0)
+            Dim horizontalRange As Boolean = nx >= 0 And nx < arrGameBoard.GetLength(1)
 
             If verticalRange AndAlso horizontalRange AndAlso arrGameBoard(ny, nx) = 0 Then
 

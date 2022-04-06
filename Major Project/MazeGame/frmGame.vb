@@ -23,7 +23,7 @@
 
         horizontalEdge.X = pnlGame.Location.X
         horizontalEdge.Y = pnlGame.Location.Y
-        horizontalEdge.Width = (5 * mazeSize * 10) * pixelSize
+        horizontalEdge.Width = (mazeSize + 1) * 50 * pixelSize
         horizontalEdge.Height = pixelSize
 
         pnlGame.Invalidate(horizontalEdge)
