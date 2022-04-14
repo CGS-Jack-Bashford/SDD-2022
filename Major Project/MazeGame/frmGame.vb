@@ -21,8 +21,8 @@
             Case 2 : pixelSize = 4
         End Select
 
-        horizontalEdge.X = pnlGame.Location.X
-        horizontalEdge.Y = pnlGame.Location.Y
+        horizontalEdge.X = 0
+        horizontalEdge.Y = 0
         horizontalEdge.Width = (mazeSize + 1) * 50 * pixelSize
         horizontalEdge.Height = pixelSize
 
@@ -30,36 +30,17 @@
 
     End Sub
 
+    Private Sub frmGame_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
+
+        Application.Exit()
+
+    End Sub
+
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
+        ' Calculate each maze border based on the pixelSize :D
+
         e.Graphics.FillRectangle(New SolidBrush(Color.Black), horizontalEdge)
-
-        'If Not mazeWallsDrawn Then
-
-        'End If
-
-        'Debug.Print(" " & StrDup(mazeSize * 2 - 1, "_"))
-        'For y = 0 To mazeSize - 1 Step 1
-        '    Dim str As String = ""
-        '    str &= "|"
-        '    For x = 0 To mazeSize - 1 Step 1
-        '        If (arrGameBoard(y, x) And S) <> 0 Then
-        '            str += " "
-        '        Else
-        '            str += "_"
-        '        End If
-        '        If (arrGameBoard(y, x) And e) <> 0 Then
-        '            If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
-        '                str += " "
-        '            Else
-        '                str += "_"
-        '            End If
-        '        Else
-        '            str += "|"
-        '        End If
-        '    Next
-        '    Debug.Print(str)
-        'Next
 
     End Sub
 

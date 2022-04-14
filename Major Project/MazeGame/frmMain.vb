@@ -24,10 +24,11 @@ Public Class frmMain
 
         Next i
 
-        'TODO game instant setup code
+    End Sub
 
-        btnMazeSize20.PerformClick()
-        txtName.Text = "test"
+    Private Sub frmMain_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
+
+        Application.Exit()
 
     End Sub
 
@@ -35,13 +36,9 @@ Public Class frmMain
 
         Dim allChecksPassed As Boolean = True
 
-        'CheckSeed(allChecksPassed)
-        'ValidateName(allChecksPassed)
+        CheckSeed(allChecksPassed)
+        ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
-
-        mazeSeed = New Random().Next(10000)
-        mazeSize = 1
-        playerName = "test"
 
         If allChecksPassed Then
 
@@ -130,23 +127,29 @@ Public Class frmMain
 
     Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
 
-        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle later
+        Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle on its own
+
+        ' If the user hasn't provided a difficulty, or by a typecast issue the difficulty isn't in the validDifficulties array, it doesn't proceed
 
         If IsNothing(difficulty) Or Not validDifficulties.Contains(difficulty) Then
 
             checkPassed = False
 
-        End If
-
-        ' If the selected difficulty is "4", or Random, then we generate the random maze size and assign it here
-
-        If difficulty = 4 Then
-
-            mazeSize = New Random().Next(0, 3)
-
         Else
 
-            mazeSize = difficulty - 1
+            ' If the selected difficulty is "4", or Random, then we generate the random maze size and assign it here
+
+            If difficulty = 4 Then
+
+                mazeSize = New Random().Next(0, 3)
+
+            Else
+
+                ' Otherwise, we adjust the difficulty by an offset of 1 to obtain the relevant mazeSize
+
+                mazeSize = difficulty - 1
+
+            End If
 
         End If
 
@@ -233,6 +236,10 @@ Public Class frmMain
 
             checkPassed = False
 
+        Else
+
+            playerName = enteredName
+
         End If
 
     End Sub
@@ -247,39 +254,56 @@ Public Class frmMain
 
         Dim edgeLength As Integer = (mazeSize + 1) * 10
 
-        Debug.Print(edgeLength)
-        Debug.Print(arrGameBoard.Length)
+        'Debug.Print(edgeLength)
+        'Debug.Print(arrGameBoard.Length)
 
-        For i = 0 To edgeLength Step 1
-            Dim s As String = ""
-            For j = 0 To edgeLength Step 1
-                s += arrGameBoard(i, j).ToString("X1")
-            Next
-            Debug.Print(s)
-        Next
+        'For i = 0 To edgeLength - 1 Step 1
+        '    Dim s As String = ""
+        '    For j = 0 To edgeLength - 1 Step 1
+        '        s += arrGameBoard(i, j).ToString("X1")
+        '    Next
+        '    Debug.Print(s)
+        'Next
 
-        Debug.Print(" " & StrDup(edgeLength - 1, "_"))
-        For y = 0 To edgeLength - 1 Step 1
-            Dim str As String = ""
-            str &= "|"
-            For x = 0 To edgeLength - 1 Step 1
-                If (arrGameBoard(y, x) And S) <> 0 Then
-                    str += " "
+        Debug.Print(" " & StrDup((2 * edgeLength) - 1, "_"))
+
+        Dim lineStr As String
+
+        For r = 0 To edgeLength - 1 Step 1
+
+            lineStr = "|"
+
+            For c = 0 To edgeLength - 1 Step 1
+
+                If (arrGameBoard(r, c) And S) = 0 Then
+
+                    lineStr &= "_"
+
                 Else
-                    str += "_"
+
+                    lineStr &= " "
+
                 End If
-                If (arrGameBoard(y, x) And E) <> 0 Then
-                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
-                        str += " "
-                    Else
-                        str += "_"
-                    End If
+
+                If (arrGameBoard(r, c) And E) = 0 Then
+
+                    lineStr &= "|"
+
+                ElseIf ((arrGameBoard(r, c) Or arrGameBoard(r, c + 1)) And S) = 0 Then
+
+                    lineStr &= "_"
+
                 Else
-                    str += "|"
+
+                    lineStr &= " "
+
                 End If
-            Next x
-            Debug.Print(str)
-        Next y
+
+            Next c
+
+            Debug.Print(lineStr)
+
+        Next r
 
     End Sub
 
@@ -341,12 +365,12 @@ Public Class frmMain
 
         If mazeSize <> 2 Then
 
-            ReDim arrGameBoard(edgeLength, edgeLength)
+            ReDim arrGameBoard(edgeLength - 1, edgeLength - 1)
 
         End If
 
-        For i = 0 To edgeLength Step 1
-            For j = 0 To edgeLength Step 1
+        For i = 0 To edgeLength - 1 Step 1
+            For j = 0 To edgeLength - 1 Step 1
 
                 arrGameBoard(i, j) = 0
 
