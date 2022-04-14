@@ -363,11 +363,7 @@ Public Class frmMain
 
         Dim edgeLength As Integer = (mazeSize + 1) * 10
 
-        If mazeSize <> 2 Then
-
-            ReDim arrGameBoard(edgeLength - 1, edgeLength - 1)
-
-        End If
+        ReDim arrGameBoard(edgeLength - 1, edgeLength - 1)
 
         For i = 0 To edgeLength - 1 Step 1
             For j = 0 To edgeLength - 1 Step 1
