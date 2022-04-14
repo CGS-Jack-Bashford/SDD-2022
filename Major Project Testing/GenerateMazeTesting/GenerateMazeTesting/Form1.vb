@@ -26,7 +26,7 @@
 
         Dim mazeSeed As ULong = 3
 
-        Dim arrGameBoard((mazeSize + 1) * 10, (mazeSize + 1) * 10) As Integer
+        Dim arrGameBoard((mazeSize + 1) * 10 - 1, (mazeSize + 1) * 10 - 1) As Integer
 
         InitializeGameBoard(arrGameBoard, mazeSize)
 
@@ -45,38 +45,64 @@
         Dim edgeLength As Integer = (mazeSize + 1) * 10
 
         Debug.Print(edgeLength)
-        Debug.Print(arrGameBoard.Length)
 
-        For i = 0 To edgeLength Step 1
+        For i = 0 To edgeLength - 1 Step 1
             Dim s As String = ""
-            For j = 0 To edgeLength Step 1
+            For j = 0 To edgeLength - 1 Step 1
                 s += arrGameBoard(i, j).ToString("X1")
             Next
             Debug.Print(s)
         Next
 
-        Debug.Print(" " & StrDup(edgeLength - 1, "_"))
-        For y = 0 To edgeLength - 1 Step 1
-            Dim str As String = ""
-            str += "|"
-            For x = 0 To edgeLength - 1 Step 1
-                If (arrGameBoard(y, x) And S) <> 0 Then
-                    str += " "
+        ' All printing code here
+
+        ' This prints the line of '_' characters along the top (the single space offset is because of the pipe characters on the left of the maze)
+
+        Debug.Print(" " & StrDup((edgeLength * 2) - 1, "_"))
+
+        ' The variable that will be storing each line
+
+        Dim str$
+
+        For r = 0 To edgeLength - 1 Step 1
+
+            str = "|"
+
+            For c = 0 To edgeLength - 1 Step 1
+
+                ' If the southern wall is closed, then insert a _, otherwise insert a space.
+
+                If (arrGameBoard(r, c) And S) = 0 Then
+
+                    str &= "_"
+
                 Else
-                    str += "_"
+
+                    str &= " "
+
                 End If
-                If (arrGameBoard(y, x) And E) <> 0 Then
-                    If x < 9 AndAlso ((arrGameBoard(y, x) Or arrGameBoard(y, x + 1)) And S <> 0) Then
-                        str += " "
-                    Else
-                        str += "_"
-                    End If
+
+                ' Similarly, if the eastern wall is closed, insert a |, otherwise insert a space.
+
+                If (arrGameBoard(r, c) And E) = 0 Then
+
+                    str &= "|"
+
+                ElseIf ((arrGameBoard(r, c) Or arrGameBoard(r, c + 1)) And S) = 0 Then
+
+                    str &= "_"
+
                 Else
-                    str += "|"
+
+                    str &= " "
+
                 End If
-            Next x
+
+            Next c
+
             Debug.Print(str)
-        Next y
+
+        Next r
 
     End Sub
 
@@ -134,11 +160,11 @@
 
     Private Sub InitializeGameBoard(ByRef arrGameBoard As Integer(,), ByVal mazeSize As Integer)
 
-        For row = 0 To (mazeSize + 1) * 10
-            For column = 0 To (mazeSize + 1) * 10
+        For row = 0 To arrGameBoard.GetLength(0) - 1
+            For column = 0 To arrGameBoard.GetLength(1) - 1
                 arrGameBoard(row, column) = 0
-            Next
-        Next
+            Next column
+        Next row
 
     End Sub
 
