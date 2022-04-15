@@ -37,12 +37,12 @@ Public Class frmMain
         Dim allChecksPassed As Boolean = True
 
         CheckSeed(allChecksPassed)
-        ValidateName(allChecksPassed)
+        ' ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
 
         If allChecksPassed Then
 
-            GenerateMaze(arrGameBoard, mazeSeed, mazeSize)
+            GenerateMaze(Globals.arrGameBoard, mazeSeed, mazeSize)
 
             frmGame.Show()
             Me.Hide()
@@ -185,8 +185,6 @@ Public Class frmMain
 
     Private Function SeedEntered() As Boolean
 
-        Debug.Print("seed: '" & txtMazeSeed.Text & "'")
-
         Return Not String.IsNullOrEmpty(txtMazeSeed.Text)
 
     End Function
@@ -244,7 +242,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub GenerateMaze(arrGameBoard As Integer(,), mazeSeed As ULong, mazeSize As Integer)
+    Private Sub GenerateMaze(ByRef arrGameBoard As Integer(,), mazeSeed As ULong, mazeSize As Integer)
 
         InitializeGameBoard(arrGameBoard, mazeSize)
 
@@ -285,7 +283,7 @@ Public Class frmMain
 
                 End If
 
-                If (arrGameBoard(r, c) And E) = 0 Then
+                    If (arrGameBoard(r, c) And E) = 0 Then
 
                     lineStr &= "|"
 
@@ -313,6 +311,7 @@ Public Class frmMain
 
         Dim nx As Integer
         Dim ny As Integer
+        Dim direction As Integer
 
         ShuffleDirections(arrDirections, mazeRnd)
 
@@ -321,7 +320,7 @@ Public Class frmMain
             nx = cx
             ny = cy
 
-            Dim direction As Integer = arrDirections(i)
+            direction = arrDirections(i)
 
             ny += Vertical(direction)
             nx += Horizontal(direction)
@@ -331,8 +330,8 @@ Public Class frmMain
 
             If verticalRange AndAlso horizontalRange AndAlso arrGameBoard(ny, nx) = 0 Then
 
-                arrGameBoard(cy, cx) = arrGameBoard(cy, cx) Or direction
-                arrGameBoard(ny, nx) = arrGameBoard(ny, nx) Or Opposite(direction)
+                arrGameBoard(cy, cx) = (arrGameBoard(cy, cx) Or direction)
+                arrGameBoard(ny, nx) = (arrGameBoard(ny, nx) Or Opposite(direction))
 
                 RecursePassage(arrGameBoard, ny, nx, mazeRnd)
 
