@@ -52,11 +52,32 @@
 
     End Function
 
-    Function GenerateEdges(ByVal cell As Integer, ByVal loc As (row As Integer, column As Integer)) As RectangleF()
+    Function GenerateEdges(ByVal cell As Integer, ByVal loc As (row As Integer, column As Integer)) As (edgesLength As Integer, edges As RectangleF())
 
-        Dim edges As RectangleF()
+        Dim edges(2) As RectangleF
+        Dim i As Integer = 0
 
+        If (cell And N) = 0 Then
+            edges(i) = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize), 5 * pixelSize, pixelSize)
+            i += 1
+        End If
 
+        If (cell And E) = 0 Then
+            edges(i) = New RectangleF((loc.column * 5 * pixelSize) + (4 * pixelSize), (loc.row * 5 * pixelSize), pixelSize, 5 * pixelSize)
+            i += 1
+        End If
+
+        If (cell And S) = 0 Then
+            edges(i) = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize) + (4 * pixelSize), 5 * pixelSize, pixelSize)
+            i += 1
+        End If
+
+        If (cell And W) = 0 Then
+            edges(i) = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize), pixelSize, 5 * pixelSize)
+            i += 1
+        End If
+
+        Return (edgesLength:=i - 1, edges)
 
     End Function
 
@@ -72,36 +93,36 @@
 
     Private Sub pnlGame_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
-        Dim edgeLength As Integer = (mazeSize + 1) * 10
-        Dim blackSolidBrush As SolidBrush = New SolidBrush(Color.Black)
-
-        If Not mazeWallsDrawn Then
-
-            mazeWallsDrawn = True
-
-            e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(0F, 0F, (mazeSize + 1) * 50 * pixelSize, pixelSize))
-            e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(0F, 0F, pixelSize, (mazeSize + 1) * 50 * pixelSize))
-            e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(0F, 600 - pixelSize, (mazeSize + 1) * 50 * pixelSize, pixelSize))
-            e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(600 - pixelSize, 0F, pixelSize, (mazeSize + 1) * 50 * pixelSize))
-
-            For row = 0 To edgeLength - 1 Step 1
-
-                For column = 0 To edgeLength - 1 Step 1
-
-                    If rectangleEdges(row, column).Width <> 0 Then
-
-                        e.Graphics.FillRectangle(blackSolidBrush, rectangleEdges(row, column))
-
-                    End If
-
-                Next
-
-            Next
-
-        End If
+        drawWalls(e)
 
     End Sub
 
+    Private Sub drawWalls(e As PaintEventArgs)
 
+        Dim edgeLength As Integer = (mazeSize + 1) * 10
+        Dim blackSolidBrush As SolidBrush = New SolidBrush(Color.Black)
+
+        e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(0F, 0F, (mazeSize + 1) * 50 * pixelSize, pixelSize))
+        e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(0F, 0F, pixelSize, (mazeSize + 1) * 50 * pixelSize))
+        e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(0F, 600 - pixelSize, (mazeSize + 1) * 50 * pixelSize, pixelSize))
+        e.Graphics.FillRectangle(blackSolidBrush, New RectangleF(600 - pixelSize, 0F, pixelSize, (mazeSize + 1) * 50 * pixelSize))
+
+        For row = 0 To edgeLength - 1 Step 1
+
+            For column = 0 To edgeLength - 1 Step 1
+
+                Dim cellEdges As (edgesLength As Integer, edges As RectangleF()) = GenerateEdges(arrGameBoard(row, column), (row:=row, column:=column))
+
+                For i = 0 To cellEdges.edgesLength Step 1
+
+                    e.Graphics.FillRectangle(blackSolidBrush, cellEdges.edges(i))
+
+                Next i
+
+            Next
+
+        Next
+
+    End Sub
 
 End Class
