@@ -16,11 +16,11 @@
 
     ' Primitive data types
 
-    Public playerName As String
-    Public difficulty As Integer ' Difficulty will be in the range 1-4 inclusive, with 1, 2, and 3 representing 10, 20, and 30 maze sizes, and difficulty 4 representing the random difficulty.
-    Public mazeSize As Integer   ' The maze size is simply stored as 1, 2, or 3.
-    Public mazeSeed As ULong     ' The maze seed is stored as a ULong (unsigned 64-bit Integer), and displayed as a hexadecimal number on forms and in save files. 
-    Public gameTime As Integer
+    Public playerName As String = ""
+    Public difficulty As Integer     ' Difficulty will be in the range 1-4 inclusive, with 1, 2, and 3 representing 10, 20, and 30 maze sizes, and difficulty 4 representing the random difficulty.
+    Public mazeSize As Integer       ' The maze size is stored in the range 0-2 inclusive, 0 represents 10x10 and so on.
+    Public mazeSeed As ULong         ' The maze seed is stored as a ULong (unsigned 64-bit Integer), and displayed as a hexadecimal number on forms and in save files. 
+    Public gameTime As Integer = 0   ' The game time is stored in seconds, and will be formatted using clean division & modulus operators for display in mm:ss format
 
     ' Data structures
 

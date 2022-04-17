@@ -1,20 +1,13 @@
 ﻿Public Class frmGame
 
     Dim pixelSize As Integer
-    Dim horizontalEdge As Rectangle
-    Dim mazeWallsDrawn As Boolean = False
     Dim rectangleEdges(,) As RectangleF
+    Dim mazeDrawn As Boolean = False
 
     Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
 
         configureFrmGame()
-
-        Dim mazeSizes As String() = {"10x10", "20x20", "30x30"}
-        Dim mazeColors As Color() = {applicationColors("green"), applicationColors("orange"), applicationColors("red")}
-
-        lblMazeSizeDisp.Text = mazeSizes(mazeSize)
-        btnMazeSizeDisp.BackColor = mazeColors(mazeSize)
-        lblPlayerName.Text = playerName
+        SetupUI()
 
         Select Case mazeSize
             Case 0 : pixelSize = 12
@@ -35,6 +28,19 @@
             Next column
 
         Next row
+
+    End Sub
+
+    Private Sub SetupUI()
+
+        Dim mazeSizes As String() = {"10x10", "20x20", "30x30"}
+        Dim mazeColors As Color() = {applicationColors("green"), applicationColors("yellow"), applicationColors("red"), applicationColors("orange")}
+
+        lblMazeSizeDisp.Text = mazeSizes(mazeSize)
+        btnMazeSizeDisp.BackColor = mazeColors(difficulty - 1)
+        lblPlayerName.Text = playerName
+        lblTime.Text = "00:00"
+        txtMazeSeed.Text = Hex(mazeSeed).PadLeft(10, "0")
 
     End Sub
 
@@ -87,13 +93,31 @@
 
     End Sub
 
-    Private Sub frmGame_Click(sender As Object, e As EventArgs) Handles MyBase.Click
-
-    End Sub
-
     Private Sub pnlGame_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
         drawWalls(e)
+        drawPlayer(e)
+
+        If mazeDrawn = False Then
+
+            mazeDrawn = True
+            tmrTick.Start()
+
+        End If
+
+    End Sub
+
+    Private Sub TickHandler(sender As Object, e As EventArgs) Handles tmrTick.Tick
+
+        gameTime += 1
+
+        Dim minutes As Integer = gameTime \ 60
+        Dim seconds As Integer = gameTime Mod 60
+
+        Dim paddedMinutes As String = minutes.ToString.PadLeft(2, "0")
+        Dim paddedSeconds As String = seconds.ToString.PadLeft(2, "0")
+
+        lblTime.Text = paddedMinutes & ":" & paddedSeconds
 
     End Sub
 
@@ -122,6 +146,12 @@
             Next
 
         Next
+
+    End Sub
+
+    Private Sub drawPlayer(e As PaintEventArgs)
+
+
 
     End Sub
 

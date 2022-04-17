@@ -37,7 +37,7 @@ Public Class frmMain
         Dim allChecksPassed As Boolean = True
 
         CheckSeed(allChecksPassed)
-        ' ValidateName(allChecksPassed)
+        ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
 
         If allChecksPassed Then
@@ -122,6 +122,7 @@ Public Class frmMain
         buttonsArray(targetButtonIndex).FlatAppearance.MouseDownBackColor = targetButtonColor
 
         txtMazeSeed.Enabled = (difficulty <> 4)
+        lblMazeSeed.Enabled = (difficulty <> 4)
 
     End Sub
 

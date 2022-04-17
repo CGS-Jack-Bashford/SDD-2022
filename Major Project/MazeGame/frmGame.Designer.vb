@@ -22,6 +22,7 @@ Partial Class frmGame
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGame))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.btnMazeSizeDisp = New MazeGame.ButtonEllipse()
@@ -36,11 +37,18 @@ Partial Class frmGame
         Me.btnMoveLeft = New System.Windows.Forms.Button()
         Me.btnMoveDown = New System.Windows.Forms.Button()
         Me.btnMoveRight = New System.Windows.Forms.Button()
+        Me.tmrTick = New System.Windows.Forms.Timer(Me.components)
+        Me.lblMazeSeed = New System.Windows.Forms.Label()
+        Me.txtMazeSeed = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-
+        '
+        'frmGame
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.btnMoveRight)
         Me.Controls.Add(Me.btnMoveDown)
         Me.Controls.Add(Me.btnMoveLeft)
@@ -54,13 +62,14 @@ Partial Class frmGame
         Me.Controls.Add(Me.lblMazeSizeDisp)
         Me.Controls.Add(Me.lblMazeSize)
         Me.Controls.Add(Me.lblTitle)
+        Me.Controls.Add(Me.txtMazeSeed)
+        Me.Controls.Add(Me.lblMazeSeed)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmGame"
         Me.Text = "Maze Game"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -77,4 +86,7 @@ Partial Class frmGame
     Friend WithEvents btnMoveLeft As Button
     Friend WithEvents btnMoveDown As Button
     Friend WithEvents btnMoveRight As Button
+    Friend WithEvents tmrTick As Timer
+    Friend WithEvents lblMazeSeed As Label
+    Friend WithEvents txtMazeSeed As TextBox
 End Class

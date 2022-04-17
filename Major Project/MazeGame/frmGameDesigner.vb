@@ -12,10 +12,9 @@
         frmGame.lblTitle.TabIndex = 1
         frmGame.lblTitle.Text = "Maze Game"
         '
-        'btnMazeSize10
+        'btnMazeSizeDisp
         '
         frmGame.btnMazeSizeDisp.BackColor = System.Drawing.Color.White
-        frmGame.btnMazeSizeDisp.Cursor = System.Windows.Forms.Cursors.Hand
         frmGame.btnMazeSizeDisp.Enabled = False
         frmGame.btnMazeSizeDisp.FlatAppearance.BorderSize = 0
         frmGame.btnMazeSizeDisp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -25,10 +24,9 @@
         frmGame.btnMazeSizeDisp.TabIndex = 10
         frmGame.btnMazeSizeDisp.UseVisualStyleBackColor = False
         '
-        'btnMazeSize10Back
+        'btnMazeSizeDispBack
         '
         frmGame.btnMazeSizeDispBack.BackColor = System.Drawing.Color.Black
-        frmGame.btnMazeSizeDispBack.Cursor = System.Windows.Forms.Cursors.Hand
         frmGame.btnMazeSizeDispBack.Enabled = False
         frmGame.btnMazeSizeDispBack.FlatAppearance.BorderSize = 0
         frmGame.btnMazeSizeDispBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -39,11 +37,10 @@
         frmGame.btnMazeSizeDispBack.TabStop = False
         frmGame.btnMazeSizeDispBack.UseVisualStyleBackColor = False
         '
-        'lblMazeSize10
+        'lblMazeSizeDisp
         '
         frmGame.lblMazeSizeDisp.AutoSize = True
         frmGame.lblMazeSizeDisp.BackColor = System.Drawing.Color.Transparent
-        frmGame.lblMazeSizeDisp.Cursor = System.Windows.Forms.Cursors.Hand
         frmGame.lblMazeSizeDisp.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         frmGame.lblMazeSizeDisp.Location = New System.Drawing.Point(122, 234)
         frmGame.lblMazeSizeDisp.Name = "lblMazeSize10"
@@ -158,6 +155,34 @@
         frmGame.btnMoveRight.Text = ">"
         frmGame.btnMoveRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         frmGame.btnMoveRight.UseVisualStyleBackColor = False
+        '
+        'tmrTick
+        '
+        frmGame.tmrTick.Enabled = True
+        frmGame.tmrTick.Interval = 1000
+        '
+        'lblMazeSeed
+        '
+        frmGame.lblMazeSeed.AutoSize = True
+        frmGame.lblMazeSeed.BackColor = System.Drawing.Color.Transparent
+        frmGame.lblMazeSeed.Enabled = True
+        frmGame.lblMazeSeed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.lblMazeSeed.Location = New System.Drawing.Point(55, 282)
+        frmGame.lblMazeSeed.Name = "lblMazeSeed"
+        frmGame.lblMazeSeed.Size = New System.Drawing.Size(168, 32)
+        frmGame.lblMazeSeed.TabIndex = 5
+        frmGame.lblMazeSeed.Text = "Maze Seed"
+        '
+        'txtMazeSeed
+        '
+        frmGame.txtMazeSeed.Enabled = True
+        frmGame.txtMazeSeed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.txtMazeSeed.Location = New System.Drawing.Point(55, 332)
+        frmGame.txtMazeSeed.Name = "txtMazeSeed"
+        frmGame.txtMazeSeed.PlaceholderText = "Enter Seed"
+        frmGame.txtMazeSeed.Size = New System.Drawing.Size(166, 36)
+        frmGame.txtMazeSeed.TabIndex = 6
+        frmGame.txtMazeSeed.ReadOnly = True
 
         frmGame.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         frmGame.ClientSize = New System.Drawing.Size(1352, 729)
