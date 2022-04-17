@@ -63,23 +63,26 @@
         Dim edges(2) As RectangleF
         Dim i As Integer = 0
 
+        Dim rowpx As Integer = loc.row * 5 * pixelSize
+        Dim colpx As Integer = loc.column * 5 * pixelSize
+
         If (cell And N) = 0 Then
-            edges(i) = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize), 5 * pixelSize, pixelSize)
+            edges(i) = New RectangleF(colpx, rowpx, 5 * pixelSize, pixelSize)
             i += 1
         End If
 
         If (cell And E) = 0 Then
-            edges(i) = New RectangleF((loc.column * 5 * pixelSize) + (4 * pixelSize), (loc.row * 5 * pixelSize), pixelSize, 5 * pixelSize)
+            edges(i) = New RectangleF(colpx + (4 * pixelSize), rowpx, pixelSize, 5 * pixelSize)
             i += 1
         End If
 
         If (cell And S) = 0 Then
-            edges(i) = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize) + (4 * pixelSize), 5 * pixelSize, pixelSize)
+            edges(i) = New RectangleF(colpx, rowpx + (4 * pixelSize), 5 * pixelSize, pixelSize)
             i += 1
         End If
 
         If (cell And W) = 0 Then
-            edges(i) = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize), pixelSize, 5 * pixelSize)
+            edges(i) = New RectangleF(colpx, rowpx, pixelSize, 5 * pixelSize)
             i += 1
         End If
 
