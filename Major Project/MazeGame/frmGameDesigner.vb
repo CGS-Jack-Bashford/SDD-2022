@@ -102,59 +102,59 @@
         '
         'btnMoveUp
         '
-        frmGame.btnMoveUp.BackColor = System.Drawing.Color.White
-        frmGame.btnMoveUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.btnMoveUp.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.btnMoveUp.ForeColor = System.Drawing.Color.Black
-        frmGame.btnMoveUp.Location = New System.Drawing.Point(1133, 226)
-        frmGame.btnMoveUp.Name = "btnMoveUp"
-        frmGame.btnMoveUp.Size = New System.Drawing.Size(40, 40)
-        frmGame.btnMoveUp.TabIndex = 16
-        frmGame.btnMoveUp.Text = "∧"
-        frmGame.btnMoveUp.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.btnMoveUp.UseVisualStyleBackColor = False
+        frmGame.btnMoveN.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveN.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveN.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveN.Location = New System.Drawing.Point(1133, 226)
+        frmGame.btnMoveN.Name = "btnMoveN"
+        frmGame.btnMoveN.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveN.TabIndex = 16
+        frmGame.btnMoveN.Text = "∧"
+        frmGame.btnMoveN.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveN.UseVisualStyleBackColor = False
         '
         'btnMoveLeft
         '
-        frmGame.btnMoveLeft.BackColor = System.Drawing.Color.White
-        frmGame.btnMoveLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.btnMoveLeft.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.btnMoveLeft.ForeColor = System.Drawing.Color.Black
-        frmGame.btnMoveLeft.Location = New System.Drawing.Point(1087, 272)
-        frmGame.btnMoveLeft.Name = "btnMoveLeft"
-        frmGame.btnMoveLeft.Size = New System.Drawing.Size(40, 40)
-        frmGame.btnMoveLeft.TabIndex = 18
-        frmGame.btnMoveLeft.Text = "<"
-        frmGame.btnMoveLeft.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.btnMoveLeft.UseVisualStyleBackColor = False
+        frmGame.btnMoveW.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveW.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveW.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveW.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveW.Location = New System.Drawing.Point(1087, 272)
+        frmGame.btnMoveW.Name = "btnMoveW"
+        frmGame.btnMoveW.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveW.TabIndex = 18
+        frmGame.btnMoveW.Text = "<"
+        frmGame.btnMoveW.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveW.UseVisualStyleBackColor = False
         '
         'btnMoveDown
         '
-        frmGame.btnMoveDown.BackColor = System.Drawing.Color.White
-        frmGame.btnMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.btnMoveDown.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.btnMoveDown.ForeColor = System.Drawing.Color.Black
-        frmGame.btnMoveDown.Location = New System.Drawing.Point(1133, 318)
-        frmGame.btnMoveDown.Name = "btnMoveDown"
-        frmGame.btnMoveDown.Size = New System.Drawing.Size(40, 40)
-        frmGame.btnMoveDown.TabIndex = 19
-        frmGame.btnMoveDown.Text = "∨"
-        frmGame.btnMoveDown.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.btnMoveDown.UseVisualStyleBackColor = False
+        frmGame.btnMoveS.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveS.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveS.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveS.Location = New System.Drawing.Point(1133, 318)
+        frmGame.btnMoveS.Name = "btnMoveS"
+        frmGame.btnMoveS.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveS.TabIndex = 19
+        frmGame.btnMoveS.Text = "∨"
+        frmGame.btnMoveS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveS.UseVisualStyleBackColor = False
         '
         'btnMoveRight
         '
-        frmGame.btnMoveRight.BackColor = System.Drawing.Color.White
-        frmGame.btnMoveRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        frmGame.btnMoveRight.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGame.btnMoveRight.ForeColor = System.Drawing.Color.Black
-        frmGame.btnMoveRight.Location = New System.Drawing.Point(1179, 272)
-        frmGame.btnMoveRight.Name = "btnMoveRight"
-        frmGame.btnMoveRight.Size = New System.Drawing.Size(40, 40)
-        frmGame.btnMoveRight.TabIndex = 20
-        frmGame.btnMoveRight.Text = ">"
-        frmGame.btnMoveRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        frmGame.btnMoveRight.UseVisualStyleBackColor = False
+        frmGame.btnMoveE.BackColor = System.Drawing.Color.White
+        frmGame.btnMoveE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        frmGame.btnMoveE.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGame.btnMoveE.ForeColor = System.Drawing.Color.Black
+        frmGame.btnMoveE.Location = New System.Drawing.Point(1179, 272)
+        frmGame.btnMoveE.Name = "btnMoveE"
+        frmGame.btnMoveE.Size = New System.Drawing.Size(40, 40)
+        frmGame.btnMoveE.TabIndex = 20
+        frmGame.btnMoveE.Text = ">"
+        frmGame.btnMoveE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        frmGame.btnMoveE.UseVisualStyleBackColor = False
         '
         'tmrTick
         '

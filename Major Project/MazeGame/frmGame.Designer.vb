@@ -33,10 +33,10 @@ Partial Class frmGame
         Me.pnlGame = New System.Windows.Forms.Panel()
         Me.lbl_Time = New System.Windows.Forms.Label()
         Me.lblTime = New System.Windows.Forms.Label()
-        Me.btnMoveUp = New System.Windows.Forms.Button()
-        Me.btnMoveLeft = New System.Windows.Forms.Button()
-        Me.btnMoveDown = New System.Windows.Forms.Button()
-        Me.btnMoveRight = New System.Windows.Forms.Button()
+        Me.btnMoveN = New System.Windows.Forms.Button()
+        Me.btnMoveW = New System.Windows.Forms.Button()
+        Me.btnMoveS = New System.Windows.Forms.Button()
+        Me.btnMoveE = New System.Windows.Forms.Button()
         Me.tmrTick = New System.Windows.Forms.Timer(Me.components)
         Me.lblMazeSeed = New System.Windows.Forms.Label()
         Me.txtMazeSeed = New System.Windows.Forms.TextBox()
@@ -49,10 +49,10 @@ Partial Class frmGame
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(284, 261)
-        Me.Controls.Add(Me.btnMoveRight)
-        Me.Controls.Add(Me.btnMoveDown)
-        Me.Controls.Add(Me.btnMoveLeft)
-        Me.Controls.Add(Me.btnMoveUp)
+        Me.Controls.Add(Me.btnMoveE)
+        Me.Controls.Add(Me.btnMoveS)
+        Me.Controls.Add(Me.btnMoveW)
+        Me.Controls.Add(Me.btnMoveN)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lbl_Time)
         Me.Controls.Add(Me.pnlGame)
@@ -82,10 +82,10 @@ Partial Class frmGame
     Friend WithEvents pnlGame As Panel
     Friend WithEvents lbl_Time As Label
     Friend WithEvents lblTime As Label
-    Friend WithEvents btnMoveUp As Button
-    Friend WithEvents btnMoveLeft As Button
-    Friend WithEvents btnMoveDown As Button
-    Friend WithEvents btnMoveRight As Button
+    Friend WithEvents btnMoveN As Button
+    Friend WithEvents btnMoveW As Button
+    Friend WithEvents btnMoveS As Button
+    Friend WithEvents btnMoveE As Button
     Friend WithEvents tmrTick As Timer
     Friend WithEvents lblMazeSeed As Label
     Friend WithEvents txtMazeSeed As TextBox

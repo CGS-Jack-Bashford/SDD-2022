@@ -3,6 +3,8 @@
     Dim pixelSize As Integer
     Dim rectangleEdges(,) As RectangleF
     Dim mazeDrawn As Boolean = False
+    Dim player As (curr As RectangleF, prev As RectangleF)
+    Dim coords As Point
 
     Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -29,6 +31,11 @@
 
         Next row
 
+        coords.X = 0
+        coords.Y = 0
+        player.curr = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+        player.prev = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+
     End Sub
 
     Private Sub SetupUI()
@@ -41,6 +48,7 @@
         lblPlayerName.Text = playerName
         lblTime.Text = "00:00"
         txtMazeSeed.Text = Hex(mazeSeed).PadLeft(10, "0")
+        lblTitle.Select()
 
     End Sub
 
@@ -124,7 +132,7 @@
 
     End Sub
 
-    Private Sub drawWalls(e As PaintEventArgs)
+    Private Sub DrawWalls(e As PaintEventArgs)
 
         Dim edgeLength As Integer = (mazeSize + 1) * 10
         Dim blackSolidBrush As SolidBrush = New SolidBrush(Color.Black)
@@ -152,9 +160,60 @@
 
     End Sub
 
-    Private Sub drawPlayer(e As PaintEventArgs)
+    Private Sub DrawPlayer(e As PaintEventArgs)
 
+        e.Graphics.FillRectangle(New SolidBrush(Color.White), player.prev)
+        e.Graphics.FillRectangle(New SolidBrush(Color.CadetBlue), player.curr)
 
+    End Sub
+
+    Private Sub UpdatePlayerCoords(direction As Char)
+
+        Debug.Print("2")
+
+        If ValidateMovement(direction) Then
+
+            Select Case direction
+                Case "N" : coords.Y = coords.Y - 1
+                Case "S" : coords.Y += 1
+                Case "W" : coords.X -= 1
+                Case "E" : coords.X += 1
+            End Select
+
+            Debug.Print(direction)
+
+            player.curr = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+            player.prev = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+
+        End If
+
+    End Sub
+
+    Function ValidateMovement(dir As Char) As Boolean
+
+        Dim valid As Boolean = True
+
+        Select Case dir
+            Case "N" : valid = (coords.Y > 0) And (arrGameBoard(coords.Y, coords.X) And N <> 0)
+            Case "S" : valid = (coords.Y < (mazeSize + 1) * 10) And (arrGameBoard(coords.Y, coords.X) And S <> 0)
+            Case "E" : valid = (coords.X < (mazeSize + 1) * 10) And (arrGameBoard(coords.Y, coords.X) And E <> 0)
+            Case "W" : valid = (coords.X > 0) And (arrGameBoard(coords.Y, coords.X) And W <> 0)
+        End Select
+
+        Debug.Print("3 " & valid)
+        Debug.Print(coords.ToString())
+
+        Return valid
+
+    End Function
+
+    Private Sub MovementButton_Click(sender As Object, e As EventArgs) Handles btnMoveN.Click, btnMoveE.Click, btnMoveS.Click, btnMoveW.Click
+
+        Dim buttonClicked As Button = sender
+
+        Debug.Print("1")
+
+        UpdatePlayerCoords(buttonClicked.Name(7))
 
     End Sub
 
