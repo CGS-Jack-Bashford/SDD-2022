@@ -3,7 +3,7 @@
     Dim pixelSize As Integer
     Dim rectangleEdges(,) As RectangleF
     Dim mazeDrawn As Boolean = False
-    Dim player As (curr As RectangleF, prev As RectangleF)
+    Dim player As RectangleF
     Dim coords As Point
 
     Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -33,8 +33,7 @@
 
         coords.X = 0
         coords.Y = 0
-        player.curr = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
-        player.prev = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+        player = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
 
     End Sub
 
@@ -162,28 +161,26 @@
 
     Private Sub DrawPlayer(e As PaintEventArgs)
 
-        e.Graphics.FillRectangle(New SolidBrush(Color.White), player.prev)
-        e.Graphics.FillRectangle(New SolidBrush(Color.CadetBlue), player.curr)
+        e.Graphics.FillRectangle(New SolidBrush(Color.CadetBlue), player)
 
     End Sub
 
     Private Sub UpdatePlayerCoords(direction As Char)
 
-        Debug.Print("2")
-
         If ValidateMovement(direction) Then
 
+            pnlGame.Invalidate(Rectangle.Round(player))
+
             Select Case direction
-                Case "N" : coords.Y = coords.Y - 1
+                Case "N" : coords.Y -= 1
                 Case "S" : coords.Y += 1
                 Case "W" : coords.X -= 1
                 Case "E" : coords.X += 1
             End Select
 
-            Debug.Print(direction)
+            player = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
 
-            player.curr = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
-            player.prev = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+            pnlGame.Invalidate(Rectangle.Round(player))
 
         End If
 
@@ -191,17 +188,24 @@
 
     Function ValidateMovement(dir As Char) As Boolean
 
-        Dim valid As Boolean = True
+        Dim valid As Boolean
 
-        Select Case dir
-            Case "N" : valid = (coords.Y > 0) And (arrGameBoard(coords.Y, coords.X) And N <> 0)
-            Case "S" : valid = (coords.Y < (mazeSize + 1) * 10) And (arrGameBoard(coords.Y, coords.X) And S <> 0)
-            Case "E" : valid = (coords.X < (mazeSize + 1) * 10) And (arrGameBoard(coords.Y, coords.X) And E <> 0)
-            Case "W" : valid = (coords.X > 0) And (arrGameBoard(coords.Y, coords.X) And W <> 0)
-        End Select
-
-        Debug.Print("3 " & valid)
-        Debug.Print(coords.ToString())
+        If dir = "N" AndAlso (coords.Y > 0 AndAlso (arrGameBoard(coords.Y, coords.X) And N) <> 0) Then
+            valid = True
+            Debug.Print("N, true")
+        ElseIf dir = "S" AndAlso (coords.Y < arrGameBoard.GetLength(0) AndAlso ((arrGameBoard(coords.Y, coords.X) And S) <> 0)) Then
+            valid = True
+            Debug.Print("S, true")
+        ElseIf dir = "E" AndAlso (coords.X < arrGameBoard.GetLength(1) AndAlso ((arrGameBoard(coords.Y, coords.X) And E) <> 0)) Then
+            valid = True
+            Debug.Print("E, true")
+        ElseIf dir = "W" AndAlso (coords.X > 0 AndAlso ((arrGameBoard(coords.Y, coords.X) And W) <> 0)) Then
+            valid = True
+            Debug.Print("W, true")
+        Else
+            valid = False
+            Debug.Print(coords.ToString() & " " & arrGameBoard(coords.Y, coords.X) & " " & arrGameBoard.GetLength(0) & " " & arrGameBoard.GetLength(1) & " " & dir)
+        End If
 
         Return valid
 
@@ -210,8 +214,6 @@
     Private Sub MovementButton_Click(sender As Object, e As EventArgs) Handles btnMoveN.Click, btnMoveE.Click, btnMoveS.Click, btnMoveW.Click
 
         Dim buttonClicked As Button = sender
-
-        Debug.Print("1")
 
         UpdatePlayerCoords(buttonClicked.Name(7))
 

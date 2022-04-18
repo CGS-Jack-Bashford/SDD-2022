@@ -37,7 +37,7 @@ Public Class frmMain
         Dim allChecksPassed As Boolean = True
 
         CheckSeed(allChecksPassed)
-        ValidateName(allChecksPassed)
+        'ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
 
         If allChecksPassed Then
