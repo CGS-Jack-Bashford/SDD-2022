@@ -239,6 +239,7 @@
         frmMain.btnPlay.TabIndex = 14
         frmMain.btnPlay.Text = "Play"
         frmMain.btnPlay.UseVisualStyleBackColor = False
+        frmMain.btnPlay.Enabled = False
         '
         'txtName
         '

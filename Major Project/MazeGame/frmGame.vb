@@ -5,6 +5,7 @@
     Dim mazeDrawn As Boolean = False
     Dim player As RectangleF
     Dim coords As Point
+    Dim gameTimer As Stopwatch = New Stopwatch()
 
     Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -105,13 +106,15 @@
 
     Private Sub pnlGame_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
-        drawWalls(e)
-        drawPlayer(e)
+        DrawWalls(e)
+        DrawTextures(e)
+        DrawPlayer(e)
 
         If mazeDrawn = False Then
 
             mazeDrawn = True
             tmrTick.Start()
+            gameTimer.Start()
 
         End If
 
@@ -165,7 +168,19 @@
 
     End Sub
 
+    Private Sub DrawTextures(e As PaintEventArgs)
+
+        Dim begin As RectangleF = New RectangleF(pixelSize, pixelSize, 3 * pixelSize, 3 * pixelSize)
+        Dim finish As RectangleF = New RectangleF(600 - (4 * pixelSize), 600 - (4 * pixelSize), 3 * pixelSize, 3 * pixelSize)
+
+        e.Graphics.FillRectangle(New SolidBrush(Color.SeaGreen), begin)
+        e.Graphics.FillRectangle(New SolidBrush(Color.Goldenrod), finish)
+
+    End Sub
+
     Private Sub UpdatePlayerCoords(direction As Char)
+
+        Debug.Print(arrGameBoard.GetLength(0))
 
         If ValidateMovement(direction) Then
 
@@ -182,6 +197,8 @@
 
             pnlGame.Invalidate(Rectangle.Round(player))
 
+            CheckWin()
+
         End If
 
     End Sub
@@ -190,22 +207,12 @@
 
         Dim valid As Boolean
 
-        If dir = "N" AndAlso (coords.Y > 0 AndAlso (arrGameBoard(coords.Y, coords.X) And N) <> 0) Then
-            valid = True
-            Debug.Print("N, true")
-        ElseIf dir = "S" AndAlso (coords.Y < arrGameBoard.GetLength(0) AndAlso ((arrGameBoard(coords.Y, coords.X) And S) <> 0)) Then
-            valid = True
-            Debug.Print("S, true")
-        ElseIf dir = "E" AndAlso (coords.X < arrGameBoard.GetLength(1) AndAlso ((arrGameBoard(coords.Y, coords.X) And E) <> 0)) Then
-            valid = True
-            Debug.Print("E, true")
-        ElseIf dir = "W" AndAlso (coords.X > 0 AndAlso ((arrGameBoard(coords.Y, coords.X) And W) <> 0)) Then
-            valid = True
-            Debug.Print("W, true")
-        Else
-            valid = False
-            Debug.Print(coords.ToString() & " " & arrGameBoard(coords.Y, coords.X) & " " & arrGameBoard.GetLength(0) & " " & arrGameBoard.GetLength(1) & " " & dir)
-        End If
+        Select Case dir
+            Case "N" : valid = coords.Y > 0 AndAlso (arrGameBoard(coords.Y, coords.X) And N) <> 0
+            Case "S" : valid = coords.Y < arrGameBoard.GetLength(0) AndAlso (arrGameBoard(coords.Y, coords.X) And S) <> 0
+            Case "E" : valid = coords.X < arrGameBoard.GetLength(1) AndAlso (arrGameBoard(coords.Y, coords.X) And E) <> 0
+            Case "W" : valid = coords.X > 0 AndAlso (arrGameBoard(coords.Y, coords.X) And W) <> 0
+        End Select
 
         Return valid
 
@@ -216,6 +223,21 @@
         Dim buttonClicked As Button = sender
 
         UpdatePlayerCoords(buttonClicked.Name(7))
+
+    End Sub
+
+    Private Sub CheckWin()
+
+        If coords.X = arrGameBoard.GetLength(1) - 1 And coords.Y = arrGameBoard.GetLength(0) - 1 Then
+
+            ' Win
+            tmrTick.Stop()
+            MsgBox("win!")
+
+            frmGameOver.Show()
+            Me.Hide()
+
+        End If
 
     End Sub
 

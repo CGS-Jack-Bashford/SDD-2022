@@ -37,7 +37,7 @@ Public Class frmMain
         Dim allChecksPassed As Boolean = True
 
         CheckSeed(allChecksPassed)
-        'ValidateName(allChecksPassed)
+        ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
 
         If allChecksPassed Then
@@ -123,6 +123,8 @@ Public Class frmMain
 
         txtMazeSeed.Enabled = (difficulty <> 4)
         lblMazeSeed.Enabled = (difficulty <> 4)
+
+        ValidateTextBoxes()
 
     End Sub
 
@@ -240,6 +242,63 @@ Public Class frmMain
             playerName = enteredName
 
         End If
+
+    End Sub
+
+    Private Sub ValidateName()
+
+        Dim enteredName As String = txtName.Text
+
+        Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
+
+        If Not validNamePattern.IsMatch(enteredName) Then
+
+            btnPlay.Enabled = False
+
+        Else
+
+            btnPlay.Enabled = True
+
+        End If
+
+    End Sub
+
+    Private Sub ValidateSeed()
+
+        Dim pattern As Regex = New Regex("^[0-9a-fA-F]{1,10}$")
+
+        If Not pattern.IsMatch(txtMazeSeed.Text) Then
+
+            btnPlay.Enabled = False
+
+        Else
+
+            btnPlay.Enabled = True
+
+        End If
+
+    End Sub
+
+    Private Sub ValidateTextBoxes()
+
+        Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
+        Dim validSeedPattern As Regex = New Regex("^[0-9a-fA-F]{0,10}$")
+
+        If Not (validNamePattern.IsMatch(txtName.Text) And validSeedPattern.IsMatch(txtMazeSeed.Text)) Then
+
+            btnPlay.Enabled = False
+
+        Else
+
+            btnPlay.Enabled = True
+
+        End If
+
+    End Sub
+
+    Private Sub TextBoxChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged, txtMazeSeed.TextChanged
+
+        ValidateTextBoxes()
 
     End Sub
 
