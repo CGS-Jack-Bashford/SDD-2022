@@ -169,7 +169,7 @@
 
     Private Sub UpdatePlayerCoords(direction As Char)
 
-        Debug.Print("2")
+        'Debug.Print("2")
 
         If ValidateMovement(direction) Then
 
@@ -180,7 +180,7 @@
                 Case "E" : coords.X += 1
             End Select
 
-            Debug.Print(direction)
+            'Debug.Print(direction)
 
             player.curr = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
             player.prev = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
@@ -194,14 +194,26 @@
         Dim valid As Boolean = True
 
         Select Case dir
-            Case "N" : valid = (coords.Y > 0) And (arrGameBoard(coords.Y, coords.X) And N <> 0)
-            Case "S" : valid = (coords.Y < (mazeSize + 1) * 10) And (arrGameBoard(coords.Y, coords.X) And S <> 0)
-            Case "E" : valid = (coords.X < (mazeSize + 1) * 10) And (arrGameBoard(coords.Y, coords.X) And E <> 0)
-            Case "W" : valid = (coords.X > 0) And (arrGameBoard(coords.Y, coords.X) And W <> 0)
+            Case "N" : valid = (coords.Y > 0) AndAlso (arrGameBoard(coords.Y, coords.X) And N <> 0)
+                Debug.Print(coords.Y)
+                Debug.Print(arrGameBoard(coords.Y, coords.X) And N)
+                Debug.Print(valid)
+            Case "S" : valid = (coords.Y < (mazeSize + 1) * 10) AndAlso (arrGameBoard(coords.Y, coords.X) And S <> 0)
+                Debug.Print(coords.Y)
+                Debug.Print(arrGameBoard(coords.Y, coords.X) And S)
+                Debug.Print(valid)
+            Case "E" : valid = (coords.X < (mazeSize + 1) * 10) AndAlso (arrGameBoard(coords.Y, coords.X) And E <> 0)
+                Debug.Print(coords.X)
+                Debug.Print(arrGameBoard(coords.Y, coords.X) And E)
+                Debug.Print(valid)
+            Case "W" : valid = (coords.X > 0) AndAlso (arrGameBoard(coords.Y, coords.X) And W <> 0)
+                Debug.Print(coords.X)
+                Debug.Print(arrGameBoard(coords.Y, coords.X) And W)
+                Debug.Print(valid)
         End Select
 
-        Debug.Print("3 " & valid)
-        Debug.Print(coords.ToString())
+        'Debug.Print("3 " & valid)
+        'Debug.Print(coords.ToString())
 
         Return valid
 
@@ -211,9 +223,11 @@
 
         Dim buttonClicked As Button = sender
 
-        Debug.Print("1")
+        'Debug.Print("1")
 
         UpdatePlayerCoords(buttonClicked.Name(7))
+
+        pnlGame.Invalidate()
 
     End Sub
 
