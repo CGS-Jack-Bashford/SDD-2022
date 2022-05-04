@@ -312,17 +312,6 @@ Public Class frmMain
 
         Dim edgeLength As Integer = (mazeSize + 1) * 10
 
-        'Debug.Print(edgeLength)
-        'Debug.Print(arrGameBoard.Length)
-
-        'For i = 0 To edgeLength - 1 Step 1
-        '    Dim s As String = ""
-        '    For j = 0 To edgeLength - 1 Step 1
-        '        s += arrGameBoard(i, j).ToString("X1")
-        '    Next
-        '    Debug.Print(s)
-        'Next
-
         Debug.Print(" " & StrDup((2 * edgeLength) - 1, "_"))
 
         Dim lineStr As String

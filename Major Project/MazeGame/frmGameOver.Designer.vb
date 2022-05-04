@@ -24,128 +24,37 @@ Partial Class frmGameOver
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGameOver))
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lbl_name = New System.Windows.Forms.Label()
+        Me.lbl_size = New System.Windows.Forms.Label()
+        Me.lbl_seed = New System.Windows.Forms.Label()
+        Me.lbl_time = New System.Windows.Forms.Label()
+        Me.lblPlayerName = New System.Windows.Forms.Label()
+        Me.lblMazeSize = New System.Windows.Forms.Label()
+        Me.lblMazeSeed = New System.Windows.Forms.Label()
+        Me.lblGameTime = New System.Windows.Forms.Label()
         Me.btnMazeSize10 = New MazeGame.ButtonEllipse()
         Me.btnMazeSize10Back = New MazeGame.ButtonEllipse()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnInstructions = New System.Windows.Forms.Button()
+        Me.btnToHighscores = New System.Windows.Forms.Button()
+        Me.btnToStart = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'lblTitle
-        '
-        Me.lblTitle.Location = New System.Drawing.Point(0, 0)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(100, 23)
-        Me.lblTitle.TabIndex = 12
-        '
-        'Label1
-        '
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 23)
-        Me.Label1.TabIndex = 11
-        '
-        'Label2
-        '
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 23)
-        Me.Label2.TabIndex = 10
-        '
-        'Label3
-        '
-        Me.Label3.Location = New System.Drawing.Point(0, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 23)
-        Me.Label3.TabIndex = 9
-        '
-        'Label4
-        '
-        Me.Label4.Location = New System.Drawing.Point(0, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 23)
-        Me.Label4.TabIndex = 8
-        '
-        'Label5
-        '
-        Me.Label5.Location = New System.Drawing.Point(0, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 23)
-        Me.Label5.TabIndex = 7
-        '
-        'Label6
-        '
-        Me.Label6.Location = New System.Drawing.Point(0, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(100, 23)
-        Me.Label6.TabIndex = 6
-        '
-        'Label7
-        '
-        Me.Label7.Location = New System.Drawing.Point(0, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 23)
-        Me.Label7.TabIndex = 5
-        '
-        'Label8
-        '
-        Me.Label8.Location = New System.Drawing.Point(0, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 23)
-        Me.Label8.TabIndex = 4
-        '
-        'btnMazeSize10
-        '
-        Me.btnMazeSize10.Location = New System.Drawing.Point(0, 0)
-        Me.btnMazeSize10.Name = "btnMazeSize10"
-        Me.btnMazeSize10.Size = New System.Drawing.Size(75, 23)
-        Me.btnMazeSize10.TabIndex = 2
-        '
-        'btnMazeSize10Back
-        '
-        Me.btnMazeSize10Back.Location = New System.Drawing.Point(0, 0)
-        Me.btnMazeSize10Back.Name = "btnMazeSize10Back"
-        Me.btnMazeSize10Back.Size = New System.Drawing.Size(75, 23)
-        Me.btnMazeSize10Back.TabIndex = 3
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(0, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        '
-        'btnInstructions
-        '
-        Me.btnInstructions.Location = New System.Drawing.Point(0, 0)
-        Me.btnInstructions.Name = "btnInstructions"
-        Me.btnInstructions.Size = New System.Drawing.Size(75, 23)
-        Me.btnInstructions.TabIndex = 1
         '
         'frmGameOver
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnInstructions)
+        Me.Controls.Add(Me.btnToHighscores)
+        Me.Controls.Add(Me.btnToStart)
         Me.Controls.Add(Me.btnMazeSize10)
         Me.Controls.Add(Me.btnMazeSize10Back)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblGameTime)
+        Me.Controls.Add(Me.lblMazeSeed)
+        Me.Controls.Add(Me.lblMazeSize)
+        Me.Controls.Add(Me.lblPlayerName)
+        Me.Controls.Add(Me.lbl_time)
+        Me.Controls.Add(Me.lbl_seed)
+        Me.Controls.Add(Me.lbl_size)
+        Me.Controls.Add(Me.lbl_name)
         Me.Controls.Add(Me.lblTitle)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -157,16 +66,16 @@ Partial Class frmGameOver
     End Sub
 
     Friend WithEvents lblTitle As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lbl_name As Label
+    Friend WithEvents lbl_size As Label
+    Friend WithEvents lbl_seed As Label
+    Friend WithEvents lbl_time As Label
+    Friend WithEvents lblPlayerName As Label
+    Friend WithEvents lblMazeSize As Label
+    Friend WithEvents lblMazeSeed As Label
+    Friend WithEvents lblGameTime As Label
     Friend WithEvents btnMazeSize10 As ButtonEllipse
     Friend WithEvents btnMazeSize10Back As ButtonEllipse
-    Friend WithEvents Button1 As Button
-    Friend WithEvents btnInstructions As Button
+    Friend WithEvents btnToHighscores As Button
+    Friend WithEvents btnToStart As Button
 End Class

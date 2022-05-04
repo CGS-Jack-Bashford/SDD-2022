@@ -230,9 +230,7 @@
 
         If coords.X = arrGameBoard.GetLength(1) - 1 And coords.Y = arrGameBoard.GetLength(0) - 1 Then
 
-            ' Win
             tmrTick.Stop()
-            MsgBox("win!")
 
             frmGameOver.Show()
             Me.Hide()

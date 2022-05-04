@@ -17,91 +17,91 @@
         '
         'Label1
         '
-        frmGameOver.Label1.AutoSize = True
-        frmGameOver.Label1.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label1.Location = New System.Drawing.Point(488, 224)
-        frmGameOver.Label1.Name = "Label1"
-        frmGameOver.Label1.Size = New System.Drawing.Size(99, 32)
-        frmGameOver.Label1.TabIndex = 2
-        frmGameOver.Label1.Text = "Name:"
+        frmGameOver.lbl_name.AutoSize = True
+        frmGameOver.lbl_name.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lbl_name.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lbl_name.Location = New System.Drawing.Point(488, 224)
+        frmGameOver.lbl_name.Name = "Label1"
+        frmGameOver.lbl_name.Size = New System.Drawing.Size(99, 32)
+        frmGameOver.lbl_name.TabIndex = 2
+        frmGameOver.lbl_name.Text = "Name:"
         '
         'Label2
         '
-        frmGameOver.Label2.AutoSize = True
-        frmGameOver.Label2.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label2.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label2.Location = New System.Drawing.Point(488, 284)
-        frmGameOver.Label2.Name = "Label2"
-        frmGameOver.Label2.Size = New System.Drawing.Size(100, 32)
-        frmGameOver.Label2.TabIndex = 3
-        frmGameOver.Label2.Text = "Size:"
+        frmGameOver.lbl_size.AutoSize = True
+        frmGameOver.lbl_size.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lbl_size.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lbl_size.Location = New System.Drawing.Point(488, 284)
+        frmGameOver.lbl_size.Name = "Label2"
+        frmGameOver.lbl_size.Size = New System.Drawing.Size(100, 32)
+        frmGameOver.lbl_size.TabIndex = 3
+        frmGameOver.lbl_size.Text = "Size:"
         '
         'Label3
         '
-        frmGameOver.Label3.AutoSize = True
-        frmGameOver.Label3.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label3.Location = New System.Drawing.Point(487, 344)
-        frmGameOver.Label3.Name = "Label3"
-        frmGameOver.Label3.Size = New System.Drawing.Size(100, 32)
-        frmGameOver.Label3.TabIndex = 4
-        frmGameOver.Label3.Text = "Seed:"
+        frmGameOver.lbl_seed.AutoSize = True
+        frmGameOver.lbl_seed.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lbl_seed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lbl_seed.Location = New System.Drawing.Point(487, 344)
+        frmGameOver.lbl_seed.Name = "Label3"
+        frmGameOver.lbl_seed.Size = New System.Drawing.Size(100, 32)
+        frmGameOver.lbl_seed.TabIndex = 4
+        frmGameOver.lbl_seed.Text = "Seed:"
         '
         'Label4
         '
-        frmGameOver.Label4.AutoSize = True
-        frmGameOver.Label4.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label4.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label4.Location = New System.Drawing.Point(488, 404)
-        frmGameOver.Label4.Name = "Label4"
-        frmGameOver.Label4.Size = New System.Drawing.Size(100, 32)
-        frmGameOver.Label4.TabIndex = 5
-        frmGameOver.Label4.Text = "Time:"
+        frmGameOver.lbl_time.AutoSize = True
+        frmGameOver.lbl_time.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lbl_time.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lbl_time.Location = New System.Drawing.Point(488, 404)
+        frmGameOver.lbl_time.Name = "Label4"
+        frmGameOver.lbl_time.Size = New System.Drawing.Size(100, 32)
+        frmGameOver.lbl_time.TabIndex = 5
+        frmGameOver.lbl_time.Text = "Time:"
         '
         'Label5
         '
-        frmGameOver.Label5.AutoSize = True
-        frmGameOver.Label5.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label5.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label5.Location = New System.Drawing.Point(593, 224)
-        frmGameOver.Label5.Name = "Label5"
-        frmGameOver.Label5.Size = New System.Drawing.Size(286, 32)
-        frmGameOver.Label5.TabIndex = 6
-        frmGameOver.Label5.Text = "_mac_equivalent_"
+        frmGameOver.lblPlayerName.AutoSize = True
+        frmGameOver.lblPlayerName.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lblPlayerName.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lblPlayerName.Location = New System.Drawing.Point(593, 224)
+        frmGameOver.lblPlayerName.Name = "Label5"
+        frmGameOver.lblPlayerName.Size = New System.Drawing.Size(286, 32)
+        frmGameOver.lblPlayerName.TabIndex = 6
+        frmGameOver.lblPlayerName.Text = "_mac_equivalent_"
         '
         'Label6
         '
-        frmGameOver.Label6.AutoSize = True
-        frmGameOver.Label6.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label6.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label6.Location = New System.Drawing.Point(644, 285)
-        frmGameOver.Label6.Name = "Label6"
-        frmGameOver.Label6.Size = New System.Drawing.Size(235, 32)
-        frmGameOver.Label6.TabIndex = 7
-        frmGameOver.Label6.Text = "_mac_equivale"
+        frmGameOver.lblMazeSize.AutoSize = True
+        frmGameOver.lblMazeSize.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lblMazeSize.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lblMazeSize.Location = New System.Drawing.Point(644, 285)
+        frmGameOver.lblMazeSize.Name = "Label6"
+        frmGameOver.lblMazeSize.Size = New System.Drawing.Size(235, 32)
+        frmGameOver.lblMazeSize.TabIndex = 7
+        frmGameOver.lblMazeSize.Text = "_mac_equivale"
         '
         'Label7
         '
-        frmGameOver.Label7.AutoSize = True
-        frmGameOver.Label7.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label7.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label7.Location = New System.Drawing.Point(593, 344)
-        frmGameOver.Label7.Name = "Label7"
-        frmGameOver.Label7.Size = New System.Drawing.Size(286, 32)
-        frmGameOver.Label7.TabIndex = 8
-        frmGameOver.Label7.Text = "_mac_equivalent_"
+        frmGameOver.lblMazeSeed.AutoSize = True
+        frmGameOver.lblMazeSeed.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lblMazeSeed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lblMazeSeed.Location = New System.Drawing.Point(593, 344)
+        frmGameOver.lblMazeSeed.Name = "Label7"
+        frmGameOver.lblMazeSeed.Size = New System.Drawing.Size(286, 32)
+        frmGameOver.lblMazeSeed.TabIndex = 8
+        frmGameOver.lblMazeSeed.Text = "_mac_equivalent_"
         '
         'Label8
         '
-        frmGameOver.Label8.AutoSize = True
-        frmGameOver.Label8.BackColor = System.Drawing.Color.Transparent
-        frmGameOver.Label8.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Label8.Location = New System.Drawing.Point(593, 404)
-        frmGameOver.Label8.Name = "Label8"
-        frmGameOver.Label8.Size = New System.Drawing.Size(286, 32)
-        frmGameOver.Label8.TabIndex = 9
-        frmGameOver.Label8.Text = "_mac_equivalent_"
+        frmGameOver.lblGameTime.AutoSize = True
+        frmGameOver.lblGameTime.BackColor = System.Drawing.Color.Transparent
+        frmGameOver.lblGameTime.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.lblGameTime.Location = New System.Drawing.Point(593, 404)
+        frmGameOver.lblGameTime.Name = "Label8"
+        frmGameOver.lblGameTime.Size = New System.Drawing.Size(286, 32)
+        frmGameOver.lblGameTime.TabIndex = 9
+        frmGameOver.lblGameTime.Text = "_mac_equivalent_"
         '
         'btnMazeSize10
         '
@@ -130,29 +130,29 @@
         frmGameOver.btnMazeSize10Back.TabStop = False
         frmGameOver.btnMazeSize10Back.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnToHighscores
         '
-        frmGameOver.Button1.BackColor = System.Drawing.Color.White
-        frmGameOver.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        frmGameOver.Button1.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.Button1.Location = New System.Drawing.Point(734, 529)
-        frmGameOver.Button1.Name = "Button1"
-        frmGameOver.Button1.Size = New System.Drawing.Size(300, 70)
-        frmGameOver.Button1.TabIndex = 14
-        frmGameOver.Button1.Text = "Highscores"
-        frmGameOver.Button1.UseVisualStyleBackColor = False
+        frmGameOver.btnToHighscores.BackColor = System.Drawing.Color.White
+        frmGameOver.btnToHighscores.Cursor = System.Windows.Forms.Cursors.Hand
+        frmGameOver.btnToHighscores.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.btnToHighscores.Location = New System.Drawing.Point(734, 529)
+        frmGameOver.btnToHighscores.Name = "Button1"
+        frmGameOver.btnToHighscores.Size = New System.Drawing.Size(300, 70)
+        frmGameOver.btnToHighscores.TabIndex = 14
+        frmGameOver.btnToHighscores.Text = "Highscores"
+        frmGameOver.btnToHighscores.UseVisualStyleBackColor = False
         '
-        'btnInstructions
+        'btnToStart
         '
-        frmGameOver.btnInstructions.BackColor = System.Drawing.Color.White
-        frmGameOver.btnInstructions.Cursor = System.Windows.Forms.Cursors.Hand
-        frmGameOver.btnInstructions.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.btnInstructions.Location = New System.Drawing.Point(334, 529)
-        frmGameOver.btnInstructions.Name = "btnInstructions"
-        frmGameOver.btnInstructions.Size = New System.Drawing.Size(300, 70)
-        frmGameOver.btnInstructions.TabIndex = 13
-        frmGameOver.btnInstructions.Text = "Back to Start"
-        frmGameOver.btnInstructions.UseVisualStyleBackColor = False
+        frmGameOver.btnToStart.BackColor = System.Drawing.Color.White
+        frmGameOver.btnToStart.Cursor = System.Windows.Forms.Cursors.Hand
+        frmGameOver.btnToStart.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.btnToStart.Location = New System.Drawing.Point(334, 529)
+        frmGameOver.btnToStart.Name = "btnInstructions"
+        frmGameOver.btnToStart.Size = New System.Drawing.Size(300, 70)
+        frmGameOver.btnToStart.TabIndex = 13
+        frmGameOver.btnToStart.Text = "Back to Start"
+        frmGameOver.btnToStart.UseVisualStyleBackColor = False
         '
         'frmGameOver
         '
