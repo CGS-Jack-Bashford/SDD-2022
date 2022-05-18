@@ -1,6 +1,6 @@
 ﻿Public Class frmGameOver
 
-    Private Sub frmGameOver_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmGameOver_Load(sender As Object, e As EventArgs) Handles MyBase.Load, Me.GotFocus
 
         configureFrmGameOver()
 
@@ -13,6 +13,16 @@
         lblPlayerName.Text = playerName
         lblMazeSeed.Text = mazeSeed.ToString("X1").PadLeft(10, "0")
         lblGameTime.Text = (gameTime \ 60) & ":" & (gameTime Mod 60)
+
+        Dim mazeSizeString As String = (mazeSize + 1).ToString() & "0x" & (mazeSize + 1).ToString() & "0"
+
+        lblMazeSize.Text = mazeSizeString
+
+        SetColor()
+
+    End Sub
+
+    Private Sub SetColor()
 
         Dim difficultyColor As Color
 
@@ -31,9 +41,13 @@
         btnMazeSize10.FlatAppearance.MouseOverBackColor = difficultyColor
         btnMazeSize10.FlatAppearance.MouseDownBackColor = difficultyColor
 
-        Dim mazeSizeString As String = (mazeSize + 1).ToString().PadLeft(2, "0") & "0x0" & (mazeSize + 1).ToString().PadLeft(2, "0")
+    End Sub
 
-        lblMazeSize.Text = mazeSizeString
+    Private Sub BackToStart(sender As Object, e As EventArgs) Handles btnToStart.Click
+
+        Globals.ResetGame()
+        frmMain.Show()
+        Me.Hide()
 
     End Sub
 

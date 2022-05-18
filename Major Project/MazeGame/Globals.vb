@@ -33,7 +33,19 @@
 
     End Structure
 
-    Public arrHighscores As Highscore()
+    Public arrHighscores(3, 5) As Highscore
     Public arrGameBoard(,) As Integer ' We define the gameboard array at the maximum size so that resizing impacts less on performance (since it'll always be a freeing of memory from the array, rather than a relocation and reallocation for the array).
+
+    Public Sub ResetGame()
+
+        playerName = ""
+        difficulty = 0
+        mazeSize = 0
+        mazeSeed = 0
+        gameTime = 0
+
+        ReDim arrGameBoard(30, 30)
+
+    End Sub
 
 End Module

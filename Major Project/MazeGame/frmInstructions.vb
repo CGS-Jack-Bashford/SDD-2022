@@ -4,4 +4,12 @@
         configureFrmInstructions()
 
     End Sub
+
+    Private Sub BackToStart(sender As Object, e As EventArgs) Handles btnBack.Click
+
+        Me.Hide()
+        frmMain.Focus()
+
+    End Sub
+
 End Class

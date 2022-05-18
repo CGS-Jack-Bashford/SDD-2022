@@ -7,7 +7,7 @@
     Dim coords As Point
     Dim gameTimer As Stopwatch = New Stopwatch()
 
-    Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.GotFocus
 
         configureFrmGame()
         SetupUI()
@@ -232,10 +232,18 @@
 
             tmrTick.Stop()
 
+            CheckHighScore()
+
             frmGameOver.Show()
             Me.Hide()
 
         End If
+
+    End Sub
+
+    Private Sub CheckHighScore()
+
+
 
     End Sub
 

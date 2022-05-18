@@ -2,7 +2,7 @@
 
 Public Class frmMain
 
-    Private Sub SetupForm(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.GotFocus
 
         configureFrmMain()
 
@@ -420,6 +420,20 @@ Public Class frmMain
 
             Next j
         Next i
+
+    End Sub
+
+    Private Sub ShowInstructions(sender As Object, e As EventArgs) Handles btnInstructions.Click
+
+        frmInstructions.Show()
+        frmInstructions.Focus()
+
+    End Sub
+
+    Private Sub ShowHighscores(sender As Object, e As EventArgs) Handles btnHighscores.Click
+
+        frmHighscores.Show()
+        frmHighscores.Focus()
 
     End Sub
 
