@@ -1,28 +1,102 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Text
+Imports System.Text.RegularExpressions
+Imports System.IO
 
 Public Class frmMain
 
-    Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.GotFocus
+    Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.Shown
 
         configureFrmMain()
+
+        LoadHighscoresFromFile(arrHighscores)
 
         ' Setup all of the handlers for the difficulty buttons
 
         Dim arrDifficultyButtons As Button() = {btnMazeSize10, btnMazeSize10Back, btnMazeSize20, btnMazeSize20Back, btnMazeSize30, btnMazeSize30Back, btnMazeSizeRandom, btnMazeSizeRandomBack}
 
         For i = 0 To arrDifficultyButtons.Length - 1 Step 1
-
             AddHandler arrDifficultyButtons(i).Click, AddressOf ChangeDifficultyHandlerBtn
-
         Next i
 
         Dim arrDifficultyLabels As Label() = {lblMazeSize10, lblMazeSize20, lblMazeSizeRandom, lblMazeSize30}
 
         For i = 0 To arrDifficultyLabels.Length - 1 Step 1
-
             AddHandler arrDifficultyLabels(i).Click, AddressOf ChangeDifficultyHandlerLbl
-
         Next i
+
+        Me.MaximizedBounds = New Rectangle(Me.Left, Me.Top, Me.Width, Me.Height)
+        Me.CenterToScreen()
+        Me.WindowState = FormWindowState.Normal
+
+        txtName.Text = ""
+        txtMazeSeed.Text = ""
+
+    End Sub
+
+    Private Sub LoadHighscoresFromFile(ByRef arrHighscores As Highscore()())
+
+        arrHighscores(0) = New Highscore() {}
+        arrHighscores(1) = New Highscore() {}
+        arrHighscores(2) = New Highscore() {}
+
+        If Not My.Computer.FileSystem.FileExists(Application.StartupPath & "highscores.txt") Then
+
+            Dim fs As FileStream = File.Create(Application.StartupPath & "highscores.txt")
+
+            Dim sentinel As Byte() = New UTF8Encoding(True).GetBytes("9999")
+            fs.Write(sentinel, 0, sentinel.Length)
+
+            fs.Close()
+
+        End If
+
+        FileOpen(1, "highscores.txt", OpenMode.Input)
+
+        Dim rawLine As String
+        Dim scoreComponents As String()
+        Dim currentHighscore As Highscore = New Highscore()
+
+        If EOF(1) Then
+
+            FileClose(1)
+
+            FileOpen(2, "highscores.txt", OpenMode.Output)
+            PrintLine(2, "9999")
+            FileClose(2)
+
+            FileOpen(1, "highscores.txt", OpenMode.Input)
+
+        End If
+
+        Input(1, rawLine)
+
+        rawLine = rawLine.Trim()
+
+        While rawLine <> "9999"
+
+            scoreComponents = rawLine.Split(New Char() {";"c})
+
+            currentHighscore.mazeSize = scoreComponents(0)
+            currentHighscore.gameTime = scoreComponents(1)
+            currentHighscore.playerName = scoreComponents(2)
+            currentHighscore.mazeSeed = Convert.ToUInt64(scoreComponents(3), 16)
+
+            ReDim Preserve arrHighscores(currentHighscore.mazeSize)(arrHighscores(currentHighscore.mazeSize).Length)
+            arrHighscores(currentHighscore.mazeSize)(arrHighscores(currentHighscore.mazeSize).Length - 1) = currentHighscore
+
+            Input(1, rawLine)
+
+            rawLine = rawLine.Trim()
+
+        End While
+
+        FileClose(1)
+
+        For sizeToSort = 0 To 2 Step 1
+
+            SortHighscores(sizeToSort)
+
+        Next sizetosort
 
     End Sub
 
@@ -45,6 +119,11 @@ Public Class frmMain
             GenerateMaze(Globals.arrGameBoard, mazeSeed, mazeSize)
 
             frmGame.Show()
+
+            If frmHighscores.Visible Then
+                frmHighscores.Close()
+            End If
+
             Me.Hide()
 
         End If
@@ -332,7 +411,7 @@ Public Class frmMain
 
                 End If
 
-                    If (arrGameBoard(r, c) And E) = 0 Then
+                If (arrGameBoard(r, c) And E) = 0 Then
 
                     lineStr &= "|"
 
@@ -425,12 +504,20 @@ Public Class frmMain
 
     Private Sub ShowInstructions(sender As Object, e As EventArgs) Handles btnInstructions.Click
 
+        If frmHighscores.Visible Then
+            frmHighscores.Close()
+        End If
+
         frmInstructions.Show()
         frmInstructions.Focus()
 
     End Sub
 
     Private Sub ShowHighscores(sender As Object, e As EventArgs) Handles btnHighscores.Click
+
+        If frmInstructions.Visible Then
+            frmInstructions.Close()
+        End If
 
         frmHighscores.Show()
         frmHighscores.Focus()

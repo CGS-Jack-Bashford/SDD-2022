@@ -12,7 +12,7 @@
 
         lblPlayerName.Text = playerName
         lblMazeSeed.Text = mazeSeed.ToString("X1").PadLeft(10, "0")
-        lblGameTime.Text = (gameTime \ 60) & ":" & (gameTime Mod 60)
+        lblGameTime.Text = (gameTime \ 60).ToString().PadLeft(2, "0") & ":" & (gameTime Mod 60).ToString.PadLeft(2, "0")
 
         Dim mazeSizeString As String = (mazeSize + 1).ToString() & "0x" & (mazeSize + 1).ToString() & "0"
 
@@ -43,11 +43,28 @@
 
     End Sub
 
-    Private Sub BackToStart(sender As Object, e As EventArgs) Handles btnToStart.Click
+    Private Sub CloseGame(sender As Object, e As EventArgs) Handles btnQuit.Click
 
         Globals.ResetGame()
-        frmMain.Show()
-        Me.Hide()
+
+        If frmHighscores.Visible Then
+            frmHighscores.Close()
+        End If
+
+        Application.Exit()
+
+    End Sub
+
+    Private Sub ToHighscores(sender As Object, e As EventArgs) Handles btnToHighscores.Click
+
+        frmHighscores.Show()
+        frmHighscores.Focus()
+
+    End Sub
+
+    Private Sub frmGameOver_Closing(sender As Object, e As EventArgs) Handles MyBase.Closing
+
+        Application.Exit()
 
     End Sub
 

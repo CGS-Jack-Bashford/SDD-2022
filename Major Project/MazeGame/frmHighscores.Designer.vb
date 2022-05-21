@@ -56,7 +56,7 @@ Partial Class frmHighscores
         Me.lblNameRanking4 = New System.Windows.Forms.Label()
         Me.lblNameRanking5 = New System.Windows.Forms.Label()
         Me.lblNameTitle = New System.Windows.Forms.Label()
-        Me.btnPlay = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.lbl_ranking2 = New System.Windows.Forms.Label()
         Me.lbl_ranking3 = New System.Windows.Forms.Label()
         Me.lbl_ranking4 = New System.Windows.Forms.Label()
@@ -72,7 +72,7 @@ Partial Class frmHighscores
         Me.Controls.Add(Me.lbl_ranking3)
         Me.Controls.Add(Me.lbl_ranking4)
         Me.Controls.Add(Me.lbl_ranking5)
-        Me.Controls.Add(Me.btnPlay)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btn_ranking1White)
         Me.Controls.Add(Me.btn_ranking2White)
         Me.Controls.Add(Me.btn_ranking3White)
@@ -149,7 +149,7 @@ Partial Class frmHighscores
     Friend WithEvents lblNameRanking4 As Label
     Friend WithEvents lblNameRanking5 As Label
     Friend WithEvents lblNameTitle As Label
-    Friend WithEvents btnPlay As Button
+    Friend WithEvents btnClose As Button
     Friend WithEvents lbl_ranking2 As Label
     Friend WithEvents lbl_ranking3 As Label
     Friend WithEvents lbl_ranking4 As Label

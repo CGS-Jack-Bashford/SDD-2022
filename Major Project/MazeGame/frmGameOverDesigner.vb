@@ -144,15 +144,15 @@
         '
         'btnToStart
         '
-        frmGameOver.btnToStart.BackColor = System.Drawing.Color.White
-        frmGameOver.btnToStart.Cursor = System.Windows.Forms.Cursors.Hand
-        frmGameOver.btnToStart.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmGameOver.btnToStart.Location = New System.Drawing.Point(334, 529)
-        frmGameOver.btnToStart.Name = "btnInstructions"
-        frmGameOver.btnToStart.Size = New System.Drawing.Size(300, 70)
-        frmGameOver.btnToStart.TabIndex = 13
-        frmGameOver.btnToStart.Text = "Back to Start"
-        frmGameOver.btnToStart.UseVisualStyleBackColor = False
+        frmGameOver.btnQuit.BackColor = System.Drawing.Color.White
+        frmGameOver.btnQuit.Cursor = System.Windows.Forms.Cursors.Hand
+        frmGameOver.btnQuit.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmGameOver.btnQuit.Location = New System.Drawing.Point(334, 529)
+        frmGameOver.btnQuit.Name = "btnQuit"
+        frmGameOver.btnQuit.Size = New System.Drawing.Size(300, 70)
+        frmGameOver.btnQuit.TabIndex = 13
+        frmGameOver.btnQuit.Text = "Quit Game"
+        frmGameOver.btnQuit.UseVisualStyleBackColor = False
         '
         'frmGameOver
         '

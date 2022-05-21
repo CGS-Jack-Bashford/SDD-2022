@@ -27,13 +27,13 @@
     Structure Highscore
 
         Public playerName As String
-        Public mazeSeed As Integer
+        Public mazeSeed As ULong
         Public mazeSize As Integer
         Public gameTime As Integer
 
     End Structure
 
-    Public arrHighscores(3, 5) As Highscore
+    Public arrHighscores As Highscore()() = New Highscore(2)() {}
     Public arrGameBoard(,) As Integer ' We define the gameboard array at the maximum size so that resizing impacts less on performance (since it'll always be a freeing of memory from the array, rather than a relocation and reallocation for the array).
 
     Public Sub ResetGame()
@@ -45,6 +45,44 @@
         gameTime = 0
 
         ReDim arrGameBoard(30, 30)
+
+    End Sub
+
+    Public Sub SortHighscores(ByVal sizeToSort As Integer)
+
+        Dim last As Integer = arrHighscores(sizeToSort).Length - 1
+        Dim swapped As Boolean = True
+        Dim i As Integer = 0
+
+        While swapped
+
+            swapped = False
+            i = 0
+
+            While i < last
+
+                If arrHighscores(sizeToSort)(i).gameTime > arrHighscores(sizeToSort)(i + 1).gameTime Then
+
+                    Swap(sizeToSort, i, i + 1)
+                    swapped = True
+
+                End If
+
+                i += 1
+
+            End While
+
+            last -= 1
+
+        End While
+
+    End Sub
+
+    Public Sub Swap(size As Integer, idxA As Integer, idxB As Integer)
+
+        Dim temp As Highscore = arrHighscores(size)(idxA)
+        arrHighscores(size)(idxA) = arrHighscores(size)(idxB)
+        arrHighscores(size)(idxB) = temp
 
     End Sub
 

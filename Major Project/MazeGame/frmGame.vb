@@ -7,7 +7,9 @@
     Dim coords As Point
     Dim gameTimer As Stopwatch = New Stopwatch()
 
-    Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.GotFocus
+    Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.GotFocus, MyBase.Shown, Me.VisibleChanged
+
+        KeyPreview = True
 
         configureFrmGame()
         SetupUI()
@@ -34,7 +36,15 @@
 
         coords.X = 0
         coords.Y = 0
+
         player = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
+
+        lblTitle.Focus()
+
+        mazeDrawn = False
+        gameTimer = New Stopwatch()
+
+        pnlGame.Invalidate()
 
     End Sub
 
@@ -97,12 +107,6 @@
         Return (edgesLength:=i - 1, edges)
 
     End Function
-
-    Private Sub frmGame_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
-
-        Application.Exit()
-
-    End Sub
 
     Private Sub pnlGame_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
@@ -226,6 +230,40 @@
 
     End Sub
 
+    Private Sub KeyHandler(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+
+        Select Case e.KeyData
+            Case Keys.Up
+                UpdatePlayerCoords("N")
+            Case Keys.Down
+                UpdatePlayerCoords("S")
+            Case Keys.Left
+                UpdatePlayerCoords("W")
+            Case Keys.Right
+                UpdatePlayerCoords("E")
+        End Select
+
+        e.Handled = True
+
+    End Sub
+
+    Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
+
+        Select Case keyData
+            Case Keys.Up
+                UpdatePlayerCoords("N")
+            Case Keys.Down
+                UpdatePlayerCoords("S")
+            Case Keys.Left
+                UpdatePlayerCoords("W")
+            Case Keys.Right
+                UpdatePlayerCoords("E")
+        End Select
+
+        Return Nothing
+
+    End Function
+
     Private Sub CheckWin()
 
         If coords.X = arrGameBoard.GetLength(1) - 1 And coords.Y = arrGameBoard.GetLength(0) - 1 Then
@@ -243,7 +281,66 @@
 
     Private Sub CheckHighScore()
 
+        Dim currentRound As Highscore = New Highscore()
 
+        currentRound.gameTime = gameTime
+        currentRound.mazeSeed = mazeSeed
+        currentRound.mazeSize = mazeSize
+        currentRound.playerName = playerName
+
+        UpdateHighscores(currentRound)
+
+    End Sub
+
+    Private Sub UpdateHighscores(currentRound As Highscore)
+
+        ReDim Preserve arrHighscores(currentRound.mazeSize)(arrHighscores(currentRound.mazeSize).Length)
+        arrHighscores(currentRound.mazeSize)(arrHighscores(currentRound.mazeSize).Length - 1) = currentRound
+
+        SortHighscores(currentRound.mazeSize)
+
+        WriteHighscoresToFile(arrHighscores)
+
+    End Sub
+
+    Private Sub WriteHighscoresToFile(ByRef arrHighscores As Highscore()())
+
+        FileOpen(1, "highscores.txt", OpenMode.Output)
+
+        For sizeCounter = 0 To 2 Step 1
+
+            If arrHighscores(sizeCounter).Length = 1 Then
+
+                Dim currHighscore As Highscore = arrHighscores(sizeCounter)(0)
+
+                Dim lineToWrite As String = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
+
+                PrintLine(1, lineToWrite)
+
+            Else
+
+                For i = 0 To Math.Min(arrHighscores(sizeCounter).Length - 1, 4) Step 1
+
+                    Dim currHighscore As Highscore = arrHighscores(sizeCounter)(i)
+
+                    Dim lineToWrite As String = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
+
+                    PrintLine(1, lineToWrite)
+
+                Next i
+
+            End If
+
+        Next sizeCounter
+
+        PrintLine(1, "9999")
+        FileClose(1)
+
+    End Sub
+
+    Private Sub frmGame_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
+
+        Application.Exit()
 
     End Sub
 

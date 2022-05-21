@@ -35,7 +35,7 @@ Partial Class frmGameOver
         Me.btnMazeSize10 = New MazeGame.ButtonEllipse()
         Me.btnMazeSize10Back = New MazeGame.ButtonEllipse()
         Me.btnToHighscores = New System.Windows.Forms.Button()
-        Me.btnToStart = New System.Windows.Forms.Button()
+        Me.btnQuit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'frmGameOver
@@ -44,7 +44,7 @@ Partial Class frmGameOver
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.btnToHighscores)
-        Me.Controls.Add(Me.btnToStart)
+        Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.btnMazeSize10)
         Me.Controls.Add(Me.btnMazeSize10Back)
         Me.Controls.Add(Me.lblGameTime)
@@ -77,5 +77,5 @@ Partial Class frmGameOver
     Friend WithEvents btnMazeSize10 As ButtonEllipse
     Friend WithEvents btnMazeSize10Back As ButtonEllipse
     Friend WithEvents btnToHighscores As Button
-    Friend WithEvents btnToStart As Button
+    Friend WithEvents btnQuit As Button
 End Class

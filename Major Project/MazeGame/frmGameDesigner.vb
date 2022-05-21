@@ -175,7 +175,7 @@
         '
         'txtMazeSeed
         '
-        frmGame.txtMazeSeed.Enabled = True
+        frmGame.txtMazeSeed.Enabled = False
         frmGame.txtMazeSeed.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         frmGame.txtMazeSeed.Location = New System.Drawing.Point(55, 332)
         frmGame.txtMazeSeed.Name = "txtMazeSeed"

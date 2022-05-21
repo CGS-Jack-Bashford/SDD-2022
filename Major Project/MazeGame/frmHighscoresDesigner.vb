@@ -412,15 +412,15 @@
         '
         'btnPlay
         '
-        frmHighscores.btnPlay.BackColor = System.Drawing.Color.White
-        frmHighscores.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand
-        frmHighscores.btnPlay.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        frmHighscores.btnPlay.Location = New System.Drawing.Point(526, 551)
-        frmHighscores.btnPlay.Name = "btnPlay"
-        frmHighscores.btnPlay.Size = New System.Drawing.Size(300, 70)
-        frmHighscores.btnPlay.TabIndex = 26
-        frmHighscores.btnPlay.Text = "Back"
-        frmHighscores.btnPlay.UseVisualStyleBackColor = False
+        frmHighscores.btnClose.BackColor = System.Drawing.Color.White
+        frmHighscores.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        frmHighscores.btnClose.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        frmHighscores.btnClose.Location = New System.Drawing.Point(526, 551)
+        frmHighscores.btnClose.Name = "btnClose"
+        frmHighscores.btnClose.Size = New System.Drawing.Size(300, 70)
+        frmHighscores.btnClose.TabIndex = 26
+        frmHighscores.btnClose.Text = "Back"
+        frmHighscores.btnClose.UseVisualStyleBackColor = False
         '
         'lbl_ranking2
         '
