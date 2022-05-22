@@ -48,7 +48,7 @@
 
     End Sub
 
-    Public Sub SortHighscores(ByVal sizeToSort As Integer)
+    Public Sub SortHighscores(ByRef arrHighscores As Highscore()(), ByVal sizeToSort As Integer)
 
         Dim last As Integer = arrHighscores(sizeToSort).Length - 1
         Dim swapped As Boolean = True

@@ -46,6 +46,10 @@
 
         pnlGame.Invalidate()
 
+        Me.MaximizedBounds = New Rectangle(Me.Left, Me.Top, Me.Width, Me.Height)
+        Me.CenterToScreen()
+        Me.WindowState = FormWindowState.Normal
+
     End Sub
 
     Private Sub SetupUI()
@@ -128,6 +132,15 @@
 
         gameTime += 1
 
+        If gameTime = 3600 Then
+
+            tmrTick.Stop()
+            MsgBox("You exceeded the maximum time (60 minutes) for the maze. Try again next time!")
+
+            Application.Exit()
+
+        End If
+
         Dim minutes As Integer = gameTime \ 60
         Dim seconds As Integer = gameTime Mod 60
 
@@ -184,7 +197,7 @@
 
     Private Sub UpdatePlayerCoords(direction As Char)
 
-        Debug.Print(arrGameBoard.GetLength(0))
+        ' Debug.Print(arrGameBoard.GetLength(0))
 
         If ValidateMovement(direction) Then
 
@@ -260,7 +273,7 @@
                 UpdatePlayerCoords("E")
         End Select
 
-        Return Nothing
+        Return False
 
     End Function
 
@@ -297,7 +310,7 @@
         ReDim Preserve arrHighscores(currentRound.mazeSize)(arrHighscores(currentRound.mazeSize).Length)
         arrHighscores(currentRound.mazeSize)(arrHighscores(currentRound.mazeSize).Length - 1) = currentRound
 
-        SortHighscores(currentRound.mazeSize)
+        SortHighscores(arrHighscores, currentRound.mazeSize)
 
         WriteHighscoresToFile(arrHighscores)
 

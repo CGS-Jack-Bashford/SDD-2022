@@ -21,7 +21,11 @@
 
             AddHandler labelList(i).Click, AddressOf ChangeHighscoresViewLbl
 
-        Next
+        Next i
+
+        Me.MaximizedBounds = New Rectangle(Me.Left, Me.Top, Me.Width, Me.Height)
+        Me.CenterToScreen()
+        Me.WindowState = FormWindowState.Normal
 
     End Sub
 
@@ -68,8 +72,8 @@
 
         If newMazeSize <> SelectedMazeSize Then
 
-            SelectedMazeSize = newMazeSize
             UpdateView(SelectedMazeSize)
+            SelectedMazeSize = newMazeSize
 
         End If
 
@@ -128,15 +132,19 @@
         Dim buttonList As Button() = {btnMazeSize10, btnMazeSize20, btnMazeSize30}
         Dim colorList As Color() = {applicationColors("green"), applicationColors("yellow"), applicationColors("red")}
 
+        Dim oldButton As Button = buttonList(SelectedMazeSize)
+        Dim white As Color = Color.White
+
+        oldButton.BackColor = white
+        oldButton.FlatAppearance.MouseDownBackColor = white
+        oldButton.FlatAppearance.MouseOverBackColor = white
+
         Dim selectedButton As Button = buttonList(newMazeSize)
         Dim selectedColor As Color = colorList(newMazeSize)
 
         selectedButton.BackColor = selectedColor
         selectedButton.FlatAppearance.MouseDownBackColor = selectedColor
         selectedButton.FlatAppearance.MouseOverBackColor = selectedColor
-
-        Dim oldButton As Button = buttonList(SelectedMazeSize)
-        Dim white As Color = Color.White
 
     End Sub
 

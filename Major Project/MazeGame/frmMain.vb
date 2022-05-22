@@ -33,6 +33,12 @@ Public Class frmMain
 
     End Sub
 
+    Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
+
+        frmHelp.Show()
+
+    End Sub
+
     Private Sub LoadHighscoresFromFile(ByRef arrHighscores As Highscore()())
 
         arrHighscores(0) = New Highscore() {}
@@ -94,7 +100,7 @@ Public Class frmMain
 
         For sizeToSort = 0 To 2 Step 1
 
-            SortHighscores(sizeToSort)
+            SortHighscores(arrHighscores, sizeToSort)
 
         Next sizetosort
 
@@ -110,9 +116,22 @@ Public Class frmMain
 
         Dim allChecksPassed As Boolean = True
 
-        CheckSeed(allChecksPassed)
-        ValidateName(allChecksPassed)
+        Dim seedCheckPassed As Boolean = CheckSeed(allChecksPassed)
+        Dim nameCheckPassed As Boolean = ValidateName(allChecksPassed)
         CheckDifficulty(allChecksPassed)
+
+        If Not seedCheckPassed Then
+
+            MsgBox("That seed is invalid. Please provide a 1-10 digit hexadecimal (0-9, A-F) number.")
+
+        End If
+
+        If Not nameCheckPassed Then
+            MsgBox("That name is invalid. Please enter a string 1-16 characters, consisting of alphanumeric/underscore characters.")
+
+        End If
+
+        allChecksPassed = allChecksPassed And seedCheckPassed And nameCheckPassed
 
         If allChecksPassed Then
 
@@ -237,7 +256,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub CheckSeed(ByRef checkPassed As Boolean)
+    Private Function CheckSeed(ByVal checkPassed As Boolean) As Boolean
 
         If SeedEntered() Then
 
@@ -248,8 +267,6 @@ Public Class frmMain
                 mazeSeed = Convert.ToUInt64(enteredSeed, 16)
 
             Else
-
-                MsgBox("That seed is invalid. Please provide a 1-10 digit hexadecimal number.")
 
                 checkPassed = False
 
@@ -263,7 +280,9 @@ Public Class frmMain
 
         End If
 
-    End Sub
+        Return checkPassed
+
+    End Function
 
     Private Function SeedEntered() As Boolean
 
@@ -304,15 +323,13 @@ Public Class frmMain
 
     End Function
 
-    Private Sub ValidateName(ByRef checkPassed As Boolean)
+    Private Function ValidateName(ByVal checkPassed As Boolean) As Boolean
 
         Dim enteredName As String = txtName.Text
 
         Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
 
         If Not validNamePattern.IsMatch(enteredName) Then
-
-            MsgBox("That name is invalid. Please enter a string 1-16 characters, consisting of alphanumeric/underscore characters.")
 
             checkPassed = False
 
@@ -322,7 +339,9 @@ Public Class frmMain
 
         End If
 
-    End Sub
+        Return checkPassed
+
+    End Function
 
     Private Sub ValidateName()
 
@@ -388,48 +407,6 @@ Public Class frmMain
         Dim mazeRnd As Random = New Random(mazeSeed Mod (Integer.MaxValue))
 
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
-
-        Dim edgeLength As Integer = (mazeSize + 1) * 10
-
-        Debug.Print(" " & StrDup((2 * edgeLength) - 1, "_"))
-
-        Dim lineStr As String
-
-        For r = 0 To edgeLength - 1 Step 1
-
-            lineStr = "|"
-
-            For c = 0 To edgeLength - 1 Step 1
-
-                If (arrGameBoard(r, c) And S) = 0 Then
-
-                    lineStr &= "_"
-
-                Else
-
-                    lineStr &= " "
-
-                End If
-
-                If (arrGameBoard(r, c) And E) = 0 Then
-
-                    lineStr &= "|"
-
-                ElseIf ((arrGameBoard(r, c) Or arrGameBoard(r, c + 1)) And S) = 0 Then
-
-                    lineStr &= "_"
-
-                Else
-
-                    lineStr &= " "
-
-                End If
-
-            Next c
-
-            Debug.Print(lineStr)
-
-        Next r
 
     End Sub
 

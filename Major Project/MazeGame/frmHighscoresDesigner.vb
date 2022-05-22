@@ -422,10 +422,21 @@
         frmHighscores.btnClose.Text = "Back"
         frmHighscores.btnClose.UseVisualStyleBackColor = False
         '
+        'lbl_ranking1
+        '
+        frmHighscores.lbl_ranking1.AutoSize = True
+        frmHighscores.lbl_ranking1.BackColor = applicationColors("gold")
+        frmHighscores.lbl_ranking1.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        frmHighscores.lbl_ranking1.Location = New System.Drawing.Point(497, 234)
+        frmHighscores.lbl_ranking1.Name = "lbl_ranking1"
+        frmHighscores.lbl_ranking1.Size = New System.Drawing.Size(18, 21)
+        frmHighscores.lbl_ranking1.TabIndex = 32
+        frmHighscores.lbl_ranking1.Text = "1"
+        '
         'lbl_ranking2
         '
         frmHighscores.lbl_ranking2.AutoSize = True
-        frmHighscores.lbl_ranking2.BackColor = System.Drawing.Color.Transparent
+        frmHighscores.lbl_ranking2.BackColor = applicationColors("silver")
         frmHighscores.lbl_ranking2.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         frmHighscores.lbl_ranking2.Location = New System.Drawing.Point(496, 286)
         frmHighscores.lbl_ranking2.Name = "lbl_ranking2"
@@ -436,7 +447,7 @@
         'lbl_ranking3
         '
         frmHighscores.lbl_ranking3.AutoSize = True
-        frmHighscores.lbl_ranking3.BackColor = System.Drawing.Color.Transparent
+        frmHighscores.lbl_ranking3.BackColor = applicationColors("bronze")
         frmHighscores.lbl_ranking3.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         frmHighscores.lbl_ranking3.Location = New System.Drawing.Point(496, 338)
         frmHighscores.lbl_ranking3.Name = "lbl_ranking3"
@@ -447,7 +458,7 @@
         'lbl_ranking4
         '
         frmHighscores.lbl_ranking4.AutoSize = True
-        frmHighscores.lbl_ranking4.BackColor = System.Drawing.Color.Transparent
+        frmHighscores.lbl_ranking4.BackColor = Color.White
         frmHighscores.lbl_ranking4.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         frmHighscores.lbl_ranking4.Location = New System.Drawing.Point(497, 390)
         frmHighscores.lbl_ranking4.Name = "lbl_ranking4"
@@ -458,7 +469,7 @@
         'lbl_ranking5
         '
         frmHighscores.lbl_ranking5.AutoSize = True
-        frmHighscores.lbl_ranking5.BackColor = System.Drawing.Color.Transparent
+        frmHighscores.lbl_ranking5.BackColor = Color.White
         frmHighscores.lbl_ranking5.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         frmHighscores.lbl_ranking5.Location = New System.Drawing.Point(497, 442)
         frmHighscores.lbl_ranking5.Name = "lbl_ranking5"
@@ -466,21 +477,11 @@
         frmHighscores.lbl_ranking5.TabIndex = 31
         frmHighscores.lbl_ranking5.Text = "5"
         '
-        'lbl_ranking1
-        '
-        frmHighscores.lbl_ranking1.AutoSize = True
-        frmHighscores.lbl_ranking1.BackColor = System.Drawing.SystemColors.Window
-        frmHighscores.lbl_ranking1.Font = New System.Drawing.Font("Maze", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        frmHighscores.lbl_ranking1.Location = New System.Drawing.Point(497, 234)
-        frmHighscores.lbl_ranking1.Name = "lbl_ranking1"
-        frmHighscores.lbl_ranking1.Size = New System.Drawing.Size(18, 21)
-        frmHighscores.lbl_ranking1.TabIndex = 32
-        frmHighscores.lbl_ranking1.Text = "1"
-        '
         'frmHighscores
         '
         frmHighscores.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         frmHighscores.ClientSize = New System.Drawing.Size(1352, 729)
+        frmHighscores.TransparencyKey = ColorTranslator.FromHtml("#00FF00")
     End Sub
 
 End Module
