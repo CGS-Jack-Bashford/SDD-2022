@@ -29,6 +29,12 @@
 
     End Sub
 
+    Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
+
+        frmHelp.Show()
+
+    End Sub
+
     Private Sub SetupUI()
 
         Dim buttonsAndColors = New Dictionary(Of Button, Color) From {
@@ -72,7 +78,7 @@
 
         If newMazeSize <> SelectedMazeSize Then
 
-            UpdateView(SelectedMazeSize)
+            UpdateView(newMazeSize)
             SelectedMazeSize = newMazeSize
 
         End If

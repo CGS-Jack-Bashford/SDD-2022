@@ -22,12 +22,13 @@ Partial Class frmHelp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHelp))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblHelp1 = New System.Windows.Forms.Label()
         Me.lblHelp2 = New System.Windows.Forms.Label()
         Me.lblHelp3 = New System.Windows.Forms.Label()
         Me.lblHelp4 = New System.Windows.Forms.Label()
-        Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -65,20 +66,21 @@ Partial Class frmHelp
         Me.lblHelp4.Size = New System.Drawing.Size(100, 23)
         Me.lblHelp4.TabIndex = 1
         '
-        'btnBack
+        'btnClose
         '
-        Me.btnBack.Location = New System.Drawing.Point(0, 0)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(75, 23)
-        Me.btnBack.TabIndex = 0
+        Me.btnClose.Location = New System.Drawing.Point(0, 0)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.TabIndex = 0
         '
         'frmHelp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(284, 261)
-        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.lblHelp4)
         Me.Controls.Add(Me.lblHelp3)
         Me.Controls.Add(Me.lblHelp2)
@@ -98,5 +100,5 @@ Partial Class frmHelp
     Friend WithEvents lblHelp2 As Label
     Friend WithEvents lblHelp3 As Label
     Friend WithEvents lblHelp4 As Label
-    Friend WithEvents btnBack As Button
+    Friend WithEvents btnClose As Button
 End Class

@@ -12,6 +12,12 @@
 
     End Sub
 
+    Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
+
+        frmHelp.Show()
+
+    End Sub
+
     Private Sub InitializeUI()
 
         lblPlayerName.Text = playerName

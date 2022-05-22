@@ -52,6 +52,12 @@
 
     End Sub
 
+    Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
+
+        frmHelp.Show()
+
+    End Sub
+
     Private Sub SetupUI()
 
         Dim mazeSizes As String() = {"10x10", "20x20", "30x30"}

@@ -18,7 +18,7 @@
         '
         frmHighscores.btnMazeSize10.BackColor = System.Drawing.Color.White
         frmHighscores.btnMazeSize10.Cursor = System.Windows.Forms.Cursors.Hand
-        frmHighscores.btnMazeSize10.Enabled = False
+        frmHighscores.btnMazeSize10.Enabled = True
         frmHighscores.btnMazeSize10.FlatAppearance.BorderSize = 0
         frmHighscores.btnMazeSize10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         frmHighscores.btnMazeSize10.Location = New System.Drawing.Point(83, 235)
