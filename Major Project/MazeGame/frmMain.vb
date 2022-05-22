@@ -171,9 +171,9 @@ Public Class frmMain
         Dim allChecksPassed As Boolean
 
         ' Check the name, seed, and difficulty values are all valid
-        Dim seedCheckPassed As Boolean = CheckSeed()
-        Dim nameCheckPassed As Boolean = ValidateName()
-        Dim difficultyCheckPassed As Boolean = CheckDifficulty()
+        Dim seedCheckPassed As Boolean = CheckSeed(mazeSeed)
+        Dim nameCheckPassed As Boolean = ValidateName(txtName.Text, playerName)
+        Dim difficultyCheckPassed As Boolean = CheckDifficulty(difficulty, mazeSize)
 
         ' Alert the user if their entered information is invalid or missing
 
@@ -324,8 +324,8 @@ Public Class frmMain
     ''' Check if the difficulty that the player selected is valid (i.e. that they have indeed selected a difficulty)
     ''' </summary>
     ''' <param name="checkPassed">ByRef variable to pass back the result of the check, as well as the function return value</param>
-    ''' <returns></returns>
-    Private Function CheckDifficulty() As Boolean
+    ''' <returns>True if the difficulty selected was valid, False if it was invalid</returns>
+    Private Function CheckDifficulty(ByRef difficulty As Integer, ByRef mazeSize As Integer) As Boolean
 
         Dim checkPassed As Boolean = True
 
@@ -362,8 +362,8 @@ Public Class frmMain
     ''' <summary>
     ''' Check if the entered seed is valid
     ''' </summary>
-    ''' <returns></returns>
-    Private Function CheckSeed() As Boolean
+    ''' <returns>True if the seed was either valid or auto-generated, False if the seed was invalid</returns>
+    Private Function CheckSeed(ByRef mazeSeed As ULong) As Boolean
 
         Dim checkPassed As Boolean = True
 
@@ -400,21 +400,31 @@ Public Class frmMain
     ''' <summary>
     ''' Ensure a seed was entered into the textbox
     ''' </summary>
-    ''' <returns></returns>
+    ''' <returns>True if the seed was entered, False if a seed was not entered</returns>
     Private Function SeedEntered() As Boolean
 
         Return Not String.IsNullOrEmpty(txtMazeSeed.Text)
 
     End Function
 
+    ''' <summary>
+    ''' Validates a seed string against the regex pattern of a valid seed
+    ''' </summary>
+    ''' <param name="enteredSeed">The seed string to validate</param>
+    ''' <returns>True if the seed is valid, False if the seed is invalid</returns>
     Private Function ValidateSeed(enteredSeed As String) As Boolean
 
+        ' The pattern describes any hexadecimal digit (upper and lower case), 1-10 digits in length, making up the entirety of the string
         Dim pattern As Regex = New Regex("^[0-9a-fA-F]{1,10}$")
 
         Return pattern.IsMatch(enteredSeed)
 
     End Function
 
+    ''' <summary>
+    ''' Generates a random seed (unsigned 64-bit integer) by concatenating several hexadecimal digits together
+    ''' </summary>
+    ''' <returns>A randomly 64-bit unsigned integer</returns>
     Private Function GenerateSeed() As ULong
 
         Dim seedRnd As New Random()
@@ -426,6 +436,7 @@ Public Class frmMain
             currentVal As Integer,
             currentChar As Char
 
+        ' Generate a random hexadecimal digit, and append it to the seed string
         For i = 1 To 10 Step 1
 
             currentVal = seedRnd.Next(0, 16)
@@ -434,15 +445,22 @@ Public Class frmMain
 
         Next i
 
+        ' Parse the seed string from hexadecimal to a UInt64 and return it
         seedInt = Convert.ToUInt64(seedStr, 16)
 
         Return seedInt
 
     End Function
 
-    Private Function ValidateName(ByVal checkPassed As Boolean) As Boolean
+    ''' <summary>
+    ''' Validates the player's entered name
+    ''' </summary>
+    ''' <returns>True if the player entered a valid name, False otherwise</returns>
+    Private Function ValidateName(ByVal enteredName As String, ByRef playerName As String) As Boolean
 
-        Dim enteredName As String = txtName.Text
+        Dim checkPassed As Boolean = True
+
+        ' Match the entered name against the pattern describing alphanumeric digits or underscores, 1-16 characters, for the entire string (i.e. not a substring, the whole string)
 
         Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
 
@@ -452,6 +470,8 @@ Public Class frmMain
 
         Else
 
+            ' If the name is valid, assign it to the playerName variable and return True
+
             playerName = enteredName
 
         End If
@@ -460,44 +480,15 @@ Public Class frmMain
 
     End Function
 
-    Private Sub ValidateName()
-
-        Dim enteredName As String = txtName.Text
-
-        Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
-
-        If Not validNamePattern.IsMatch(enteredName) Then
-
-            btnPlay.Enabled = False
-
-        Else
-
-            btnPlay.Enabled = True
-
-        End If
-
-    End Sub
-
-    Private Sub ValidateSeed()
-
-        Dim pattern As Regex = New Regex("^[0-9a-fA-F]{1,10}$")
-
-        If Not pattern.IsMatch(txtMazeSeed.Text) Then
-
-            btnPlay.Enabled = False
-
-        Else
-
-            btnPlay.Enabled = True
-
-        End If
-
-    End Sub
-
+    ''' <summary>
+    ''' Validate the user input text boxes to be valid, instantly (this is run on a change of contents in either textbox to allow live updates)
+    ''' </summary>
     Private Sub ValidateTextBoxes()
 
         Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
         Dim validSeedPattern As Regex = New Regex("^[0-9a-fA-F]{0,10}$")
+
+        ' Enable the Play button only if both text boxes are valid
 
         If Not (validNamePattern.IsMatch(txtName.Text) And validSeedPattern.IsMatch(txtMazeSeed.Text)) Then
 
@@ -511,49 +502,83 @@ Public Class frmMain
 
     End Sub
 
+    ''' <summary>
+    ''' Validate both text boxes when either of them changes
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub TextBoxChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged, txtMazeSeed.TextChanged
 
         ValidateTextBoxes()
 
     End Sub
 
+    ''' <summary>
+    ''' Generate the maze based off of the given size and seed, mutating the arrGameBoard array by reference
+    ''' </summary>
+    ''' <param name="arrGameBoard">The array that will store the cell values of the maze</param>
+    ''' <param name="mazeSeed">The seed to generate the maze based off of</param>
+    ''' <param name="mazeSize">The size of the maze (0 = 10x10, 1 = 20x20, 2 = 30x30)</param>
     Private Sub GenerateMaze(ByRef arrGameBoard As Integer(,), mazeSeed As ULong, mazeSize As Integer)
+
+        ' Fill the game board with zeroes after redimensioning
 
         InitializeGameBoard(arrGameBoard, mazeSize)
 
+        ' Create the Random object to generate the maze with
+
         Dim mazeRnd As Random = New Random(mazeSeed Mod (Integer.MaxValue))
+
+        ' Begin recursively generating the maze from the top-left corner of the board
 
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
     End Sub
 
-    Private Sub RecursePassage(arrGameBoard As Integer(,), cy As Integer, cx As Integer, mazeRnd As Random)
+    ''' <summary>
+    ''' Recursively generates the maze, beginning from a given x and y position and moving to any free cells (or backtracking if none are available)
+    ''' </summary>
+    ''' <param name="arrGameBoard">The arrGameBoard array which stores all of the cell wall values, mutated by reference</param>
+    ''' <param name="cy">The current X value (to start moving from)</param>
+    ''' <param name="cx">The current Y value (to start moving from)</param>
+    ''' <param name="mazeRnd">The Random object that ensures the same maze is generated from the same input seed</param>
+    Private Sub RecursePassage(ByRef arrGameBoard As Integer(,), cy As Integer, cx As Integer, mazeRnd As Random)
 
+        ' Each of the four directions that the player can move. This is shuffled to produce random pathing
         Dim arrDirections As Integer() = {N, S, E, W}
 
         Dim nx As Integer
         Dim ny As Integer
         Dim direction As Integer
 
+        ' Shuffle the directions using the Random object
         ShuffleDirections(arrDirections, mazeRnd)
 
+        ' Loop over each index in arrDirections
         For i = 0 To 3 Step 1
 
+            ' Initialize the new X and new Y positions
             nx = cx
             ny = cy
 
             direction = arrDirections(i)
 
+            ' Add the vertical and horizontal components of the direction of movement to their respective variables
             ny += Vertical(direction)
             nx += Horizontal(direction)
 
+            ' Boolean values representing whether the new X and new Y coordinates are in the valid range of values (they must stay within the bounds of the array)
             Dim verticalRange As Boolean = ny >= 0 And ny < arrGameBoard.GetLength(0)
             Dim horizontalRange As Boolean = nx >= 0 And nx < arrGameBoard.GetLength(1)
 
+            ' If the values are in the valid range, and the cell that they point to is unvisited (cell values of 0 have no open walls and are thus unvisited)
             If verticalRange AndAlso horizontalRange AndAlso arrGameBoard(ny, nx) = 0 Then
 
+                ' Use a bitwise Or to open the walls between the current cell and the new cell.
                 arrGameBoard(cy, cx) = (arrGameBoard(cy, cx) Or direction)
                 arrGameBoard(ny, nx) = (arrGameBoard(ny, nx) Or Opposite(direction))
+
+                ' Begin recursively generating again from the new cell
 
                 RecursePassage(arrGameBoard, ny, nx, mazeRnd)
 
@@ -561,13 +586,21 @@ Public Class frmMain
 
         Next i
 
+        ' If the cell has no valid unvisited neighbors, then the recursion will fall back to the previous case here and continue in the directions loop of the previous cell
+
     End Sub
 
+    ''' <summary>
+    ''' Shuffles the array of directions using a given Random object
+    ''' </summary>
+    ''' <param name="arrDirections">The array of directions to shufle (length 1)</param>
+    ''' <param name="rndShuffle">The Random object to shuffle the array with</param>
     Private Sub ShuffleDirections(ByRef arrDirections As Integer(), ByRef rndShuffle As Random)
 
         Dim temp As Integer
         Dim j As Integer
 
+        ' Standard Fisher-Yates shuffle algorithm, pick a random index and swap with the current index of iteration (reverse looping is used for concise code)
         For i = 3 To 0 Step -1
 
             j = rndShuffle.Next(i + 1)
@@ -580,12 +613,19 @@ Public Class frmMain
 
     End Sub
 
+    ''' <summary>
+    ''' Redimension and fill the arrGameBoard array with zeroes
+    ''' </summary>
+    ''' <param name="arrGameBoard">The arrGameBoard array to initialize, mutated by reference</param>
+    ''' <param name="mazeSize">The size to redimension the arrGameBoard array to</param>
     Private Sub InitializeGameBoard(ByRef arrGameBoard As Integer(,), mazeSize As Integer)
 
+        ' Define the edge length of the array based on the maze size
         Dim edgeLength As Integer = (mazeSize + 1) * 10
 
         ReDim arrGameBoard(edgeLength - 1, edgeLength - 1)
 
+        ' Fill each array element with a 0
         For i = 0 To edgeLength - 1 Step 1
             For j = 0 To edgeLength - 1 Step 1
 
@@ -596,6 +636,11 @@ Public Class frmMain
 
     End Sub
 
+    ''' <summary>
+    ''' Show the Instructions form when the Instructions button is clicked (closing the Highscores form if this is open)
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ShowInstructions(sender As Object, e As EventArgs) Handles btnInstructions.Click
 
         If frmHighscores.Visible Then
@@ -607,6 +652,11 @@ Public Class frmMain
 
     End Sub
 
+    ''' <summary>
+    ''' Show the Highscores form when the Instructions button is clicked (closing the Instructions form if this is open)
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ShowHighscores(sender As Object, e As EventArgs) Handles btnHighscores.Click
 
         If frmInstructions.Visible Then
