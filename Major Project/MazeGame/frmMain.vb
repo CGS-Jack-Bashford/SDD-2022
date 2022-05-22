@@ -4,11 +4,41 @@ Imports System.IO
 
 Public Class frmMain
 
+    ''' <summary>
+    ''' Configure the form's UI, load initial high scores from the highscores.txt file, and setup click handlers
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.Shown
 
         configureFrmMain()
 
         LoadHighscoresFromFile(arrHighscores)
+
+        AddMazeSizeButtonHandlers()
+
+        SetupUI()
+
+    End Sub
+
+    ''' <summary>
+    ''' Setup the UI to prevent maximization, and to reset the textboxes in case they were not already reset
+    ''' </summary>
+    Private Sub SetupUI()
+
+        Me.MaximizedBounds = New Rectangle(Me.Left, Me.Top, Me.Width, Me.Height)
+        Me.CenterToScreen()
+        Me.WindowState = FormWindowState.Normal
+
+        txtName.Text = ""
+        txtMazeSeed.Text = ""
+
+    End Sub
+
+    ''' <summary>
+    ''' Add the click handlers in bulk for the maze size selection buttons
+    ''' </summary>
+    Private Sub AddMazeSizeButtonHandlers()
 
         ' Setup all of the handlers for the difficulty buttons
 
@@ -24,27 +54,31 @@ Public Class frmMain
             AddHandler arrDifficultyLabels(i).Click, AddressOf ChangeDifficultyHandlerLbl
         Next i
 
-        Me.MaximizedBounds = New Rectangle(Me.Left, Me.Top, Me.Width, Me.Height)
-        Me.CenterToScreen()
-        Me.WindowState = FormWindowState.Normal
-
-        txtName.Text = ""
-        txtMazeSeed.Text = ""
-
     End Sub
 
+    ''' <summary>
+    ''' Show the help form when F1 is pressed
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
 
         frmHelp.Show()
 
     End Sub
 
+    ''' <summary>
+    ''' Load the highscores into arrHighscores from the file highscores.txt. Handles cases where the file does not exist or is empty as well.
+    ''' </summary>
+    ''' <param name="arrHighscores">The array of highscores, to be modified by reference</param>
     Private Sub LoadHighscoresFromFile(ByRef arrHighscores As Highscore()())
 
+        ' Initialize the three components of the jagged array to be empty
         arrHighscores(0) = New Highscore() {}
         arrHighscores(1) = New Highscore() {}
         arrHighscores(2) = New Highscore() {}
 
+        ' Create the file with a sentinel value if it does not exist at the correct location (highscores.txt, in the same folder as the executable)
         If Not My.Computer.FileSystem.FileExists(Application.StartupPath & "highscores.txt") Then
 
             Dim fs As FileStream = File.Create(Application.StartupPath & "highscores.txt")
@@ -62,6 +96,8 @@ Public Class frmMain
         Dim scoreComponents As String()
         Dim currentHighscore As Highscore = New Highscore()
 
+        ' If the file is empty, write the sentinel value to it and close the file
+
         If EOF(1) Then
 
             FileClose(1)
@@ -70,55 +106,76 @@ Public Class frmMain
             PrintLine(2, "9999")
             FileClose(2)
 
-            FileOpen(1, "highscores.txt", OpenMode.Input)
+        Else
 
-        End If
-
-        Input(1, rawLine)
-
-        rawLine = rawLine.Trim()
-
-        While rawLine <> "9999"
-
-            scoreComponents = rawLine.Split(New Char() {";"c})
-
-            currentHighscore.mazeSize = scoreComponents(0)
-            currentHighscore.gameTime = scoreComponents(1)
-            currentHighscore.playerName = scoreComponents(2)
-            currentHighscore.mazeSeed = Convert.ToUInt64(scoreComponents(3), 16)
-
-            ReDim Preserve arrHighscores(currentHighscore.mazeSize)(arrHighscores(currentHighscore.mazeSize).Length)
-            arrHighscores(currentHighscore.mazeSize)(arrHighscores(currentHighscore.mazeSize).Length - 1) = currentHighscore
+            ' Otherwise, read each line from the file, trim it, and split it into its four components (delimited by ;) up until the sentinel value is read
 
             Input(1, rawLine)
 
             rawLine = rawLine.Trim()
 
-        End While
+            While rawLine <> "9999"
 
-        FileClose(1)
+                scoreComponents = rawLine.Split(New Char() {";"c})
 
-        For sizeToSort = 0 To 2 Step 1
+                currentHighscore.mazeSize = scoreComponents(0)
+                currentHighscore.gameTime = scoreComponents(1)
+                currentHighscore.playerName = scoreComponents(2)
+                currentHighscore.mazeSeed = Convert.ToUInt64(scoreComponents(3), 16)
 
-            SortHighscores(arrHighscores, sizeToSort)
+                ' Append the new highscore value to the end of the current maze size sub-array of the array
 
-        Next sizetosort
+                ReDim Preserve arrHighscores(currentHighscore.mazeSize)(arrHighscores(currentHighscore.mazeSize).Length)
+                arrHighscores(currentHighscore.mazeSize)(arrHighscores(currentHighscore.mazeSize).Length - 1) = currentHighscore
+
+                ' Read the next line from the file
+
+                Input(1, rawLine)
+
+                rawLine = rawLine.Trim()
+
+            End While
+
+            ' Close the file, and sort arrHighscores (each of the sub-arrays are sorted individually, hence the loop)
+
+            FileClose(1)
+
+            For sizeToSort = 0 To 2 Step 1
+
+                SortHighscores(arrHighscores, sizeToSort)
+
+            Next sizeToSort
+
+        End If
 
     End Sub
 
+    ''' <summary>
+    ''' When the form is closed, quit the application
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub frmMain_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
 
         Application.Exit()
 
     End Sub
 
+    ''' <summary>
+    ''' Handles the setup of the game, and sends the player to frmGame if all checks are passed
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub SetupGame(sender As Object, e As EventArgs) Handles btnPlay.Click
 
-        Dim allChecksPassed As Boolean = True
+        Dim allChecksPassed As Boolean
 
-        Dim seedCheckPassed As Boolean = CheckSeed(allChecksPassed)
-        Dim nameCheckPassed As Boolean = ValidateName(allChecksPassed)
-        CheckDifficulty(allChecksPassed)
+        ' Check the name, seed, and difficulty values are all valid
+        Dim seedCheckPassed As Boolean = CheckSeed()
+        Dim nameCheckPassed As Boolean = ValidateName()
+        Dim difficultyCheckPassed As Boolean = CheckDifficulty()
+
+        ' Alert the user if their entered information is invalid or missing
 
         If Not seedCheckPassed Then
 
@@ -127,11 +184,20 @@ Public Class frmMain
         End If
 
         If Not nameCheckPassed Then
+
             MsgBox("That name is invalid. Please enter a string 1-16 characters, consisting of alphanumeric/underscore characters.")
 
         End If
 
-        allChecksPassed = allChecksPassed And seedCheckPassed And nameCheckPassed
+        If Not difficultyCheckPassed Then
+
+            MsgBox("That difficulty is invalid. Please select one of the four difficulties on the left.")
+
+        End If
+
+        allChecksPassed = seedCheckPassed And nameCheckPassed And difficultyCheckPassed
+
+        ' If all of the choices are correct, then generate the game board and proceed to frmGame, closing all other forms if they're open.
 
         If allChecksPassed Then
 
@@ -143,12 +209,21 @@ Public Class frmMain
                 frmHighscores.Close()
             End If
 
+            If frmInstructions.Visible Then
+                frmInstructions.Close()
+            End If
+
             Me.Hide()
 
         End If
 
     End Sub
 
+    ''' <summary>
+    ''' Change the maze difficulty when a maze size button is clicked
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ChangeDifficultyHandlerBtn(sender As Object, e As EventArgs)
 
         Dim buttonClicked As Button = sender
@@ -170,10 +245,19 @@ Public Class frmMain
 
         End Select
 
+        ' Update the buttons with the selected difficulty color
+
         SetDifficultyColor(difficulty - 1, newColor)
+
+        ValidateTextBoxes()
 
     End Sub
 
+    ''' <summary>
+    ''' Change the maze difficulty when a maze size label is clicked
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ChangeDifficultyHandlerLbl(sender As Object, e As EventArgs)
 
         Dim labelClicked As Label = sender
@@ -195,14 +279,24 @@ Public Class frmMain
 
         End Select
 
+        ' Update the buttons with the selected difficulty color
+
         SetDifficultyColor(difficulty - 1, newColor)
+
+        ValidateTextBoxes()
 
     End Sub
 
+    ''' <summary>
+    ''' Update the target maze size button with its corresponding color
+    ''' </summary>
+    ''' <param name="targetButtonIndex">The button index to update</param>
+    ''' <param name="targetButtonColor">The color to update the button with</param>
     Private Sub SetDifficultyColor(targetButtonIndex As Integer, targetButtonColor As Color)
 
         Dim buttonsArray As Button() = {btnMazeSize10, btnMazeSize20, btnMazeSize30, btnMazeSizeRandom}
 
+        ' First, reset all of the buttons to white except for the one being updated
         For i = 0 To buttonsArray.Length - 1 Step 1
 
             If i <> targetButtonIndex Then
@@ -215,18 +309,25 @@ Public Class frmMain
 
         Next i
 
+        ' Updated the required button to its correct color
         buttonsArray(targetButtonIndex).BackColor = targetButtonColor
         buttonsArray(targetButtonIndex).FlatAppearance.MouseOverBackColor = targetButtonColor
         buttonsArray(targetButtonIndex).FlatAppearance.MouseDownBackColor = targetButtonColor
 
+        ' If the random difficulty is selected, disable the mazeSeed fields as they aren't used in this difficulty
         txtMazeSeed.Enabled = (difficulty <> 4)
         lblMazeSeed.Enabled = (difficulty <> 4)
 
-        ValidateTextBoxes()
-
     End Sub
 
-    Private Sub CheckDifficulty(ByRef checkPassed As Boolean)
+    ''' <summary>
+    ''' Check if the difficulty that the player selected is valid (i.e. that they have indeed selected a difficulty)
+    ''' </summary>
+    ''' <param name="checkPassed">ByRef variable to pass back the result of the check, as well as the function return value</param>
+    ''' <returns></returns>
+    Private Function CheckDifficulty() As Boolean
+
+        Dim checkPassed As Boolean = True
 
         Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle on its own
 
@@ -254,9 +355,19 @@ Public Class frmMain
 
         End If
 
-    End Sub
+        Return checkPassed
 
-    Private Function CheckSeed(ByVal checkPassed As Boolean) As Boolean
+    End Function
+
+    ''' <summary>
+    ''' Check if the entered seed is valid
+    ''' </summary>
+    ''' <returns></returns>
+    Private Function CheckSeed() As Boolean
+
+        Dim checkPassed As Boolean = True
+
+        ' If a seed was entered, validate it and store the result in checkPassed
 
         If SeedEntered() Then
 
@@ -274,6 +385,8 @@ Public Class frmMain
 
         Else
 
+            ' If a seed was not entered, generate one
+
             Dim generatedSeed As ULong = GenerateSeed()
 
             mazeSeed = generatedSeed
@@ -284,6 +397,10 @@ Public Class frmMain
 
     End Function
 
+    ''' <summary>
+    ''' Ensure a seed was entered into the textbox
+    ''' </summary>
+    ''' <returns></returns>
     Private Function SeedEntered() As Boolean
 
         Return Not String.IsNullOrEmpty(txtMazeSeed.Text)
