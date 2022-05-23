@@ -9,14 +9,14 @@
     ''' </summary>
     ''' <param name="sender">Reference to the control which called the subroutine</param>
     ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
-    Private Sub frmHighscores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Add and configure all UI elements and controls
 
         configureFrmHighscores()
         SetupUI()
 
-        AddMazeSizeButtonHandlers
+        AddMazeSizeButtonHandlers()
 
     End Sub
 

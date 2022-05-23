@@ -9,8 +9,8 @@
     ''' <summary>
     ''' Configure the game screen and setup all components for the game graphics and UI
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub InitialiseGameScreen(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.GotFocus, MyBase.Shown, Me.VisibleChanged
 
         ' This is needed so that the keypresses can be nullified after processing
@@ -25,8 +25,8 @@
     ''' <summary>
     ''' Show the help form when the F1 key is pressed
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
 
         frmHelp.Show()
@@ -134,9 +134,9 @@
     ''' <summary>
     ''' Draw each of the on-screen game components
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub pnlGame_Paint(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
+    Private Sub PaintGameScreen(sender As Object, e As PaintEventArgs) Handles pnlGame.Paint
 
         ' Draw the walls and textures underneath the player
         DrawWalls(e)
@@ -156,8 +156,8 @@
     ''' <summary>
     ''' The game timer tick handler - updates the on-screen timer label, and halts the game if the time limit of 1 hour is reached
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub TickHandler(sender As Object, e As EventArgs) Handles tmrTick.Tick
 
         gameTime = gameTime + 1
@@ -300,8 +300,8 @@
     ''' <summary>
     ''' When a gamepad movement button is clicked, attempt a movement in the direction of click
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub MovementButton_Click(sender As Object, e As EventArgs) Handles btnMoveN.Click, btnMoveE.Click, btnMoveS.Click, btnMoveW.Click
 
         Dim buttonClicked As Button = sender
@@ -451,9 +451,9 @@
     ''' <summary>
     ''' When the form is closed, quit the application
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub frmGame_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
+    Private Sub CloseForm(sender As Object, e As EventArgs) Handles MyBase.Closing
 
         Application.Exit()
 

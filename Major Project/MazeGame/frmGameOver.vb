@@ -5,7 +5,7 @@
     ''' </summary>
     ''' <param name="sender">Reference to the control which called the subroutine</param>
     ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
-    Private Sub frmGameOver_Load(sender As Object, e As EventArgs) Handles MyBase.Load, Me.GotFocus
+    Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.GotFocus
 
         configureFrmGameOver()
 

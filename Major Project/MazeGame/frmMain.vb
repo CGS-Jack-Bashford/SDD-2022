@@ -59,8 +59,8 @@ Public Class frmMain
     ''' <summary>
     ''' Show the help form when F1 is pressed
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
 
         frmHelp.Show()
@@ -153,9 +153,9 @@ Public Class frmMain
     ''' <summary>
     ''' When the form is closed, quit the application
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub frmMain_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
+    Private Sub CloseForm(sender As Object, e As EventArgs) Handles MyBase.Closing
 
         Application.Exit()
 
@@ -164,8 +164,8 @@ Public Class frmMain
     ''' <summary>
     ''' Handles the setup of the game, and sends the player to frmGame if all checks are passed
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub SetupGame(sender As Object, e As EventArgs) Handles btnPlay.Click
 
         Dim allChecksPassed As Boolean
@@ -222,8 +222,8 @@ Public Class frmMain
     ''' <summary>
     ''' Change the maze difficulty when a maze size button is clicked
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ChangeDifficultyHandlerBtn(sender As Object, e As EventArgs)
 
         Dim buttonClicked As Button = sender
@@ -256,8 +256,8 @@ Public Class frmMain
     ''' <summary>
     ''' Change the maze difficulty when a maze size label is clicked
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ChangeDifficultyHandlerLbl(sender As Object, e As EventArgs)
 
         Dim labelClicked As Label = sender
@@ -505,8 +505,8 @@ Public Class frmMain
     ''' <summary>
     ''' Validate both text boxes when either of them changes
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub TextBoxChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged, txtMazeSeed.TextChanged
 
         ValidateTextBoxes()
@@ -639,8 +639,8 @@ Public Class frmMain
     ''' <summary>
     ''' Show the Instructions form when the Instructions button is clicked (closing the Highscores form if this is open)
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ShowInstructions(sender As Object, e As EventArgs) Handles btnInstructions.Click
 
         If frmHighscores.Visible Then
@@ -655,8 +655,8 @@ Public Class frmMain
     ''' <summary>
     ''' Show the Highscores form when the Instructions button is clicked (closing the Instructions form if this is open)
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ShowHighscores(sender As Object, e As EventArgs) Handles btnHighscores.Click
 
         If frmInstructions.Visible Then
