@@ -89,20 +89,6 @@
 
     End Sub
 
-    'Function GenerateTopEdge(ByVal cell As Integer, ByVal loc As (row As Integer, column As Integer)) As RectangleF
-
-    '    Dim edge As RectangleF = New RectangleF(0, 0, 0, 0)
-
-    '    If (cell And N) = 0 Then
-
-    '        edge = New RectangleF((loc.column * 5 * pixelSize), (loc.row * 5 * pixelSize), 5 * pixelSize, pixelSize)
-
-    '    End If
-
-    '    Return edge
-
-    'End Function
-
     ''' <summary>
     ''' Generates the cell wall edges for each cell
     ''' </summary>
@@ -122,22 +108,22 @@
         ' Each of the four cases depending on which walls are open
         If (cell And N) = 0 Then
             edges(i) = New RectangleF(colpx, rowpx, 5 * pixelSize, pixelSize)
-            i += 1
+            i = i + 1
         End If
 
         If (cell And E) = 0 Then
             edges(i) = New RectangleF(colpx + (4 * pixelSize), rowpx, pixelSize, 5 * pixelSize)
-            i += 1
+            i = i + 1
         End If
 
         If (cell And S) = 0 Then
             edges(i) = New RectangleF(colpx, rowpx + (4 * pixelSize), 5 * pixelSize, pixelSize)
-            i += 1
+            i = i + 1
         End If
 
         If (cell And W) = 0 Then
             edges(i) = New RectangleF(colpx, rowpx, pixelSize, 5 * pixelSize)
-            i += 1
+            i = i + 1
         End If
 
         ' Return a named tuple consisting of the array of rectangular edges and its length
@@ -174,7 +160,7 @@
     ''' <param name="e"></param>
     Private Sub TickHandler(sender As Object, e As EventArgs) Handles tmrTick.Tick
 
-        gameTime += 1
+        gameTime = gameTime + 1
 
         ' The game cannot run for more than one hour due to formatting constraints, so we quit the game if it's reached that time limit
         If gameTime = 3600 Then
@@ -271,10 +257,10 @@
             pnlGame.Invalidate(Rectangle.Round(player))
 
             Select Case direction
-                Case "N" : coords.Y -= 1
-                Case "S" : coords.Y += 1
-                Case "W" : coords.X -= 1
-                Case "E" : coords.X += 1
+                Case "N" : coords.Y = coords.Y - 1
+                Case "S" : coords.Y = coords.Y + 1
+                Case "W" : coords.X = coords.X - 1
+                Case "E" : coords.X = coords.X + 1
             End Select
 
             ' Redefine the player at its new position
@@ -419,28 +405,33 @@
     ''' <param name="arrHighscores">The array of highscores to write to the file</param>
     Private Sub WriteHighscoresToFile(ByRef arrHighscores As Highscore()())
 
+        Dim currHighscore As Highscore
+        Dim lineToWrite As String
+
         FileOpen(1, "highscores.txt", OpenMode.Output)
 
         ' Loop over each sub-array of arrHighscores
 
         For sizeCounter = 0 To 2 Step 1
 
-
+            ' If only one highscore exists for the given maze size, write it out to the file correctly formatted
             If arrHighscores(sizeCounter).Length = 1 Then
 
-                Dim currHighscore As Highscore = arrHighscores(sizeCounter)(0)
+                currHighscore = arrHighscores(sizeCounter)(0)
 
-                Dim lineToWrite As String = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
+                lineToWrite = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
 
                 PrintLine(1, lineToWrite)
 
             Else
 
+                ' Otherwise, write out each highscore to the file (either the first five highscores, or all of them, whichever is less)
+
                 For i = 0 To Math.Min(arrHighscores(sizeCounter).Length - 1, 4) Step 1
 
-                    Dim currHighscore As Highscore = arrHighscores(sizeCounter)(i)
+                    currHighscore = arrHighscores(sizeCounter)(i)
 
-                    Dim lineToWrite As String = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
+                    lineToWrite = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
 
                     PrintLine(1, lineToWrite)
 
@@ -450,11 +441,18 @@
 
         Next sizeCounter
 
+        ' Write the sentinel and close the file
+
         PrintLine(1, "9999")
         FileClose(1)
 
     End Sub
 
+    ''' <summary>
+    ''' When the form is closed, quit the application
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub frmGame_Close(sender As Object, e As EventArgs) Handles MyBase.Closing
 
         Application.Exit()

@@ -92,7 +92,7 @@ Public Class frmMain
 
         FileOpen(1, "highscores.txt", OpenMode.Input)
 
-        Dim rawLine As String
+        Dim rawLine As String = ""
         Dim scoreComponents As String()
         Dim currentHighscore As Highscore = New Highscore()
 
@@ -564,8 +564,8 @@ Public Class frmMain
             direction = arrDirections(i)
 
             ' Add the vertical and horizontal components of the direction of movement to their respective variables
-            ny += Vertical(direction)
-            nx += Horizontal(direction)
+            ny = ny + Vertical(direction)
+            nx = nx + Horizontal(direction)
 
             ' Boolean values representing whether the new X and new Y coordinates are in the valid range of values (they must stay within the bounds of the array)
             Dim verticalRange As Boolean = ny >= 0 And ny < arrGameBoard.GetLength(0)

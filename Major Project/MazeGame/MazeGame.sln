@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MazeGame", "MazeGame.vbproj", "{719051E8-8DA7-4DE1-9D30-20DE9009F02F}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "MazeGame", "MazeGame.vbproj", "{719051E8-8DA7-4DE1-9D30-20DE9009F02F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A2B7859-8771-419C-88CB-23EAA72E2689}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
