@@ -264,9 +264,10 @@
     ''' <param name="direction">The direction (N/E/S/W) that the player has requested to move in</param>
     Private Sub UpdatePlayerCoords(direction As Char)
 
-        ' If the movement is valid (doesn't move into a wall or maze barrier) then proceed
+        ' If the movement is valid (doesn't move into a wall or maze barrier) then move the player
         If ValidateMovement(direction) Then
 
+            ' Redraw the player's old position
             pnlGame.Invalidate(Rectangle.Round(player))
 
             Select Case direction
@@ -276,20 +277,29 @@
                 Case "E" : coords.X += 1
             End Select
 
+            ' Redefine the player at its new position
             player = New RectangleF((coords.X * 5 * pixelSize) + pixelSize, (coords.Y * 5 * pixelSize) + pixelSize, 3 * pixelSize, 3 * pixelSize)
 
+            ' Redraw the player's new position
             pnlGame.Invalidate(Rectangle.Round(player))
 
+            ' Check if the player has won the game
             CheckWin()
 
         End If
 
     End Sub
 
+    ''' <summary>
+    ''' Validate the player's movement in a certain direction to ensure it is not moving through a wall or into a maze barrier
+    ''' </summary>
+    ''' <param name="dir">The direction (N/E/S/W) that the player has requested to move in</param>
+    ''' <returns>True if the player's movement is valid, False if it's not valid</returns>
     Function ValidateMovement(dir As Char) As Boolean
 
         Dim valid As Boolean
 
+        ' Both the maze edges and the cell walls must be checked. AndAlso ensures no out-of-range errors 
         Select Case dir
             Case "N" : valid = coords.Y > 0 AndAlso (arrGameBoard(coords.Y, coords.X) And N) <> 0
             Case "S" : valid = coords.Y < arrGameBoard.GetLength(0) AndAlso (arrGameBoard(coords.Y, coords.X) And S) <> 0
@@ -301,31 +311,26 @@
 
     End Function
 
+    ''' <summary>
+    ''' When a gamepad movement button is clicked, attempt a movement in the direction of click
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub MovementButton_Click(sender As Object, e As EventArgs) Handles btnMoveN.Click, btnMoveE.Click, btnMoveS.Click, btnMoveW.Click
 
         Dim buttonClicked As Button = sender
 
+        ' The 8th character of each of the names of the gamepad buttons is the direction (N/E/S/W)
         UpdatePlayerCoords(buttonClicked.Name(7))
 
     End Sub
 
-    Private Sub KeyHandler(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-
-        Select Case e.KeyData
-            Case Keys.Up
-                UpdatePlayerCoords("N")
-            Case Keys.Down
-                UpdatePlayerCoords("S")
-            Case Keys.Left
-                UpdatePlayerCoords("W")
-            Case Keys.Right
-                UpdatePlayerCoords("E")
-        End Select
-
-        e.Handled = True
-
-    End Sub
-
+    ''' <summary>
+    ''' Override default keypresses and ensure that when an arrow key is pressed, a movement request is sent. All other keypresses are ignored.
+    ''' </summary>
+    ''' <param name="msg"></param>
+    ''' <param name="keyData"></param>
+    ''' <returns></returns>
     Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
 
         Select Case keyData
@@ -343,13 +348,22 @@
 
     End Function
 
+    ''' <summary>
+    ''' Check if the player has won (which is true if they are in the bottom right corner of the maze)
+    ''' </summary>
     Private Sub CheckWin()
 
         If coords.X = arrGameBoard.GetLength(1) - 1 And coords.Y = arrGameBoard.GetLength(0) - 1 Then
 
+            ' Stop the game timer
+
             tmrTick.Stop()
 
-            CheckHighScore()
+            ' Update arrHighscores with the game result
+
+            HandleHighscore()
+
+            ' Move to frmGameOver
 
             frmGameOver.Show()
             Me.Hide()
@@ -358,7 +372,12 @@
 
     End Sub
 
-    Private Sub CheckHighScore()
+    ''' <summary>
+    ''' Create a Highscore record and pass it along to insert into the arrHighscores array
+    ''' </summary>
+    Private Sub HandleHighscore()
+
+        ' Create a Highscore record and add it to the array
 
         Dim currentRound As Highscore = New Highscore()
 
@@ -371,22 +390,41 @@
 
     End Sub
 
+    ''' <summary>
+    ''' Add the new Highscore to the relevant arrHighscores sub-array, sort it, and write out the highscores to highscores.txt
+    ''' </summary>
+    ''' <param name="currentRound">The new Highscore to potentially save</param>
     Private Sub UpdateHighscores(currentRound As Highscore)
 
-        ReDim Preserve arrHighscores(currentRound.mazeSize)(arrHighscores(currentRound.mazeSize).Length)
-        arrHighscores(currentRound.mazeSize)(arrHighscores(currentRound.mazeSize).Length - 1) = currentRound
+        Dim currMazeSize = currentRound.mazeSize
 
-        SortHighscores(arrHighscores, currentRound.mazeSize)
+        ' Redimension the array by 1 value, and append the new highscore to the end of the array
+
+        ReDim Preserve arrHighscores(currMazeSize)(arrHighscores(currMazeSize).Length)
+        arrHighscores(currMazeSize)(arrHighscores(currMazeSize).Length - 1) = currentRound
+
+        ' Sort the sub-array of highscores that we just updated
+
+        Globals.SortHighscores(arrHighscores, currentRound.mazeSize)
+
+        ' Write the highscores out to highscores.txt
 
         WriteHighscoresToFile(arrHighscores)
 
     End Sub
 
+    ''' <summary>
+    ''' Write the array arrHighscores out to the file highscores.txt
+    ''' </summary>
+    ''' <param name="arrHighscores">The array of highscores to write to the file</param>
     Private Sub WriteHighscoresToFile(ByRef arrHighscores As Highscore()())
 
         FileOpen(1, "highscores.txt", OpenMode.Output)
 
+        ' Loop over each sub-array of arrHighscores
+
         For sizeCounter = 0 To 2 Step 1
+
 
             If arrHighscores(sizeCounter).Length = 1 Then
 
