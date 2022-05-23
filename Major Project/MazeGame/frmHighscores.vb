@@ -7,8 +7,8 @@
     ''' <summary>
     ''' Configure all UI elements, and add event handlers in bulk
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub frmHighscores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Add and configure all UI elements and controls
@@ -51,8 +51,8 @@
     ''' <summary>
     ''' Show the help form when F1 is pressed
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
 
     Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
 
@@ -99,8 +99,8 @@
     ''' <summary>
     ''' Close the form if the 'Close' button is clicked
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub CloseForm(sender As Object, e As EventArgs) Handles btnClose.Click
 
         Me.Close()
@@ -110,8 +110,8 @@
     ''' <summary>
     ''' Change the maze size view if the button that was clicked is different to the currently selected maze size view. Button variant
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ChangeHighscoresViewBtn(sender As Object, e As EventArgs)
 
         Dim buttonClicked As Button = sender
@@ -129,8 +129,8 @@
     ''' <summary>
     ''' Change the maze size view if the button that was clicked is different to the currently selected maze size view. Label variant
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ChangeHighscoresViewLbl(sender As Object, e As EventArgs)
 
         Dim labelClicked As Label = sender
@@ -224,8 +224,8 @@
     ''' <summary>
     ''' When the form is closed, switch focus to the form that displayed it (either frmMain or frmGameOver)
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub FocusOtherForm(sender As Object, e As EventArgs) Handles Me.Closing, Me.Closed
 
         If frmMain.Visible Then

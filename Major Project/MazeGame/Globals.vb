@@ -52,22 +52,18 @@
             i = 0
 
             ' Swap all out-of-order elements in the array, up until the unsorted partition
-
             While i < last
 
                 If arrHighscores(sizeToSort)(i).gameTime > arrHighscores(sizeToSort)(i + 1).gameTime Then
-
                     Swap(sizeToSort, i, i + 1)
                     swapped = True
-
                 End If
 
                 i = i + 1
 
             End While
 
-            ' Decrement the unsorted partition (increase the size of the sorted section by 1) as the next sorted element has bubbled to the top.
-
+            ' Decrement the unsorted partition (increase the size of the sorted section by 1) as the next sorted element has 'bubbled' to the top.
             last = last - 1
 
         End While

@@ -7,8 +7,8 @@ Public Class frmMain
     ''' <summary>
     ''' Configure the form's UI, load initial high scores from the highscores.txt file, and setup click handlers
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.Shown
 
         configureFrmMain()

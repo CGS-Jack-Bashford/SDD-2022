@@ -3,8 +3,8 @@
     ''' <summary>
     ''' Configure the UI when the form loads (or when it focuses in the event of an unpaint)
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub frmGameOver_Load(sender As Object, e As EventArgs) Handles MyBase.Load, Me.GotFocus
 
         configureFrmGameOver()
@@ -20,8 +20,8 @@
     ''' <summary>
     ''' Show frmHelp when the F1 key is pressed
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
 
         frmHelp.Show()
@@ -77,8 +77,8 @@
     ''' <summary>
     ''' Close the game when the Quit button is clicked, or if the form is closed
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub CloseGame(sender As Object, e As EventArgs) Handles btnQuit.Click, Me.Closing
 
         Application.Exit()
@@ -88,8 +88,8 @@
     ''' <summary>
     ''' Show frmHighscores when the Highscores button is clicked
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+    ''' <param name="sender">Reference to the control which called the subroutine</param>
+    ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub ToHighscores(sender As Object, e As EventArgs) Handles btnToHighscores.Click
 
         frmHighscores.Show()
