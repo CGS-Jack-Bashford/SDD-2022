@@ -11,12 +11,10 @@ Public Class frmMain
     ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load, Me.Shown
 
+        ' Add and configure all UI elements and controls, as well as loading all highscores from the highscores.txt file
         configureFrmMain()
-
         LoadHighscoresFromFile(arrHighscores)
-
         AddMazeSizeButtonHandlers()
-
         SetupUI()
 
     End Sub
@@ -36,11 +34,11 @@ Public Class frmMain
     End Sub
 
     ''' <summary>
-    ''' Add the click handlers in bulk for the maze size selection buttons
+    ''' Add the click handlers in bulk for the maze size selection buttons and labels
     ''' </summary>
     Private Sub AddMazeSizeButtonHandlers()
 
-        ' Setup all of the handlers for the difficulty buttons
+        ' Setup all of the handlers for the difficulty buttons and their corresponding labels
 
         Dim arrDifficultyButtons As Button() = {btnMazeSize10, btnMazeSize10Back, btnMazeSize20, btnMazeSize20Back, btnMazeSize30, btnMazeSize30Back, btnMazeSizeRandom, btnMazeSizeRandomBack}
 
@@ -73,7 +71,7 @@ Public Class frmMain
     ''' <param name="arrHighscores">The array of highscores, to be modified by reference</param>
     Private Sub LoadHighscoresFromFile(ByRef arrHighscores As Highscore()())
 
-        ' Initialize the three components of the jagged array to be empty
+        ' Initialize the three components of the jagged array arrHighscores to be empty
         arrHighscores(0) = New Highscore() {}
         arrHighscores(1) = New Highscore() {}
         arrHighscores(2) = New Highscore() {}
@@ -111,7 +109,6 @@ Public Class frmMain
             ' Otherwise, read each line from the file, trim it, and split it into its four components (delimited by ;) up until the sentinel value is read
 
             Input(1, rawLine)
-
             rawLine = rawLine.Trim()
 
             While rawLine <> "9999"
@@ -131,7 +128,6 @@ Public Class frmMain
                 ' Read the next line from the file
 
                 Input(1, rawLine)
-
                 rawLine = rawLine.Trim()
 
             End While
@@ -141,9 +137,7 @@ Public Class frmMain
             FileClose(1)
 
             For sizeToSort = 0 To 2 Step 1
-
                 SortHighscores(arrHighscores, sizeToSort)
-
             Next sizeToSort
 
         End If
@@ -178,27 +172,20 @@ Public Class frmMain
         ' Alert the user if their entered information is invalid or missing
 
         If Not seedCheckPassed Then
-
             MsgBox("That seed is invalid. Please provide a 1-10 digit hexadecimal (0-9, A-F) number.")
-
         End If
 
         If Not nameCheckPassed Then
-
             MsgBox("That name is invalid. Please enter a string 1-16 characters, consisting of alphanumeric/underscore characters.")
-
         End If
 
         If Not difficultyCheckPassed Then
-
             MsgBox("That difficulty is invalid. Please select one of the four difficulties on the left.")
-
         End If
 
         allChecksPassed = seedCheckPassed And nameCheckPassed And difficultyCheckPassed
 
         ' If all of the choices are correct, then generate the game board and proceed to frmGame, closing all other forms if they're open.
-
         If allChecksPassed Then
 
             GenerateMaze(Globals.arrGameBoard, mazeSeed, mazeSize)
@@ -328,29 +315,19 @@ Public Class frmMain
     Private Function CheckDifficulty(ByRef difficulty As Integer, ByRef mazeSize As Integer) As Boolean
 
         Dim checkPassed As Boolean = True
-
         Dim validDifficulties As Integer() = {1, 2, 3, 4} ' 4 indicates the Random difficulty, which we handle on its own
 
         ' If the user hasn't provided a difficulty, or by a typecast issue the difficulty isn't in the validDifficulties array, it doesn't proceed
-
         If IsNothing(difficulty) Or Not validDifficulties.Contains(difficulty) Then
-
             checkPassed = False
-
         Else
 
             ' If the selected difficulty is "4", or Random, then we generate the random maze size and assign it here
-
             If difficulty = 4 Then
-
                 mazeSize = New Random().Next(0, 3)
-
             Else
-
-                ' Otherwise, we adjust the difficulty by an offset of 1 to obtain the relevant mazeSize
-
+                ' Otherwise, we adjust the difficulty by an offset of -1 to obtain the relevant mazeSize
                 mazeSize = difficulty - 1
-
             End If
 
         End If
@@ -368,27 +345,19 @@ Public Class frmMain
         Dim checkPassed As Boolean = True
 
         ' If a seed was entered, validate it and store the result in checkPassed
-
         If SeedEntered() Then
 
             Dim enteredSeed As String = txtMazeSeed.Text
-
             If ValidateSeed(enteredSeed) Then
-
                 mazeSeed = Convert.ToUInt64(enteredSeed, 16)
-
             Else
-
                 checkPassed = False
-
             End If
 
         Else
 
             ' If a seed was not entered, generate one
-
             Dim generatedSeed As ULong = GenerateSeed()
-
             mazeSeed = generatedSeed
 
         End If
@@ -416,7 +385,6 @@ Public Class frmMain
 
         ' The pattern describes any hexadecimal digit (upper and lower case), 1-10 digits in length, making up the entirety of the string
         Dim pattern As Regex = New Regex("^[0-9a-fA-F]{1,10}$")
-
         Return pattern.IsMatch(enteredSeed)
 
     End Function
@@ -463,17 +431,11 @@ Public Class frmMain
         ' Match the entered name against the pattern describing alphanumeric digits or underscores, 1-16 characters, for the entire string (i.e. not a substring, the whole string)
 
         Dim validNamePattern As Regex = New Regex("^[a-zA-Z0-9_]{1,16}$")
-
         If Not validNamePattern.IsMatch(enteredName) Then
-
             checkPassed = False
-
         Else
-
             ' If the name is valid, assign it to the playerName variable and return True
-
             playerName = enteredName
-
         End If
 
         Return checkPassed
@@ -491,13 +453,9 @@ Public Class frmMain
         ' Enable the Play button only if both text boxes are valid
 
         If Not (validNamePattern.IsMatch(txtName.Text) And validSeedPattern.IsMatch(txtMazeSeed.Text)) Then
-
             btnPlay.Enabled = False
-
         Else
-
             btnPlay.Enabled = True
-
         End If
 
     End Sub
@@ -508,9 +466,7 @@ Public Class frmMain
     ''' <param name="sender">Reference to the control which called the subroutine</param>
     ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
     Private Sub TextBoxChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged, txtMazeSeed.TextChanged
-
         ValidateTextBoxes()
-
     End Sub
 
     ''' <summary>
@@ -522,15 +478,10 @@ Public Class frmMain
     Private Sub GenerateMaze(ByRef arrGameBoard As Integer(,), mazeSeed As ULong, mazeSize As Integer)
 
         ' Fill the game board with zeroes after redimensioning
-
         InitializeGameBoard(arrGameBoard, mazeSize)
-
-        ' Create the Random object to generate the maze with
-
+        ' Create the Random object to generate the maze with, using the maze seed (the modulus is required to ensure the value fits in the Int32 data type)
         Dim mazeRnd As Random = New Random(mazeSeed Mod (Integer.MaxValue))
-
         ' Begin recursively generating the maze from the top-left corner of the board
-
         RecursePassage(arrGameBoard, 0, 0, mazeRnd)
 
     End Sub
@@ -579,7 +530,6 @@ Public Class frmMain
                 arrGameBoard(ny, nx) = (arrGameBoard(ny, nx) Or Opposite(direction))
 
                 ' Begin recursively generating again from the new cell
-
                 RecursePassage(arrGameBoard, ny, nx, mazeRnd)
 
             End If
@@ -628,9 +578,7 @@ Public Class frmMain
         ' Fill each array element with a 0
         For i = 0 To edgeLength - 1 Step 1
             For j = 0 To edgeLength - 1 Step 1
-
                 arrGameBoard(i, j) = 0
-
             Next j
         Next i
 

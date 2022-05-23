@@ -2,7 +2,7 @@
 
     ' This form-scoped variable indicates which maze size is currently being viewed
 
-    Private SelectedMazeSize As Integer = 0
+    Private SelectedMazeSize As Integer
 
     ''' <summary>
     ''' Configure all UI elements, and add event handlers in bulk
@@ -12,10 +12,8 @@
     Private Sub SetupForm(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Add and configure all UI elements and controls
-
         configureFrmHighscores()
         SetupUI()
-
         AddMazeSizeButtonHandlers()
 
     End Sub
@@ -23,27 +21,20 @@
     ''' <summary>
     ''' Add the click handlers for the maze size buttons and labels
     ''' </summary>
-
     Private Sub AddMazeSizeButtonHandlers()
 
         ' Add all handlers for the maze size selection buttons
-
         Dim buttonList As Button() = {btnMazeSize10, btnMazeSize10Back, btnMazeSize20, btnMazeSize20Back, btnMazeSize30, btnMazeSize30Back}
 
         For i = 0 To buttonList.Length - 1 Step 1
-
             AddHandler buttonList(i).Click, AddressOf ChangeHighscoresViewBtn
-
         Next i
 
         ' Add handlers for the labels of the buttons as well
-
         Dim labelList As Label() = {lblMazeSize10, lblMazeSize20, lblMazeSize30}
 
         For i = 0 To labelList.Length - 1 Step 1
-
             AddHandler labelList(i).Click, AddressOf ChangeHighscoresViewLbl
-
         Next i
 
     End Sub
@@ -53,7 +44,6 @@
     ''' </summary>
     ''' <param name="sender">Reference to the control which called the subroutine</param>
     ''' <param name="e">Provides more information about the event which caused this subroutine to be called</param>
-
     Private Sub ShowHelpForm(sender As Object, e As EventArgs) Handles Me.HelpRequested
 
         frmHelp.Show()
@@ -63,7 +53,6 @@
     ''' <summary>
     ''' Setup the maze size selection buttons and prevent maximization
     ''' </summary>
-
     Private Sub SetupUI()
 
         ' Setup the user interface by initializing the colors of the maze selection buttons
@@ -82,16 +71,13 @@
 
         Next kvp
 
-        btnMazeSize10.BackColor = applicationColors("green")
-        btnMazeSize10.FlatAppearance.MouseOverBackColor = applicationColors("green")
-        btnMazeSize10.FlatAppearance.MouseDownBackColor = applicationColors("green")
-
         ' Ensure maximizing the window does not actually maximize it, to avoid scaling issues.
 
         Me.MaximizedBounds = New Rectangle(Me.Left, Me.Top, Me.Width, Me.Height)
         Me.CenterToScreen()
         Me.WindowState = FormWindowState.Normal
 
+        SelectedMazeSize = mazeSize
         UpdateView(SelectedMazeSize)
 
     End Sub
@@ -137,10 +123,8 @@
         Dim newMazeSize As Integer = CInt(labelClicked.Name(11).ToString()) - 1
 
         If newMazeSize <> SelectedMazeSize Then
-
             UpdateView(newMazeSize)
             SelectedMazeSize = newMazeSize
-
         End If
 
     End Sub
@@ -152,7 +136,6 @@
     Public Sub UpdateView(newMazeSize As Integer)
 
         ' Select the dimension of arrHighscores with the maze size that we need to display
-
         Dim highScoresToDisplay As Highscore() = arrHighscores(newMazeSize)
 
         ' Construct an array of ranking labels to change the text of.
@@ -169,26 +152,19 @@
         For i = 0 To 4 Step 1
 
             ' If there are more highscores to display then we fill in the corresponding data for that row.
-
             If i < highScoresToDisplay.Length Then
-
                 currHighscore = highScoresToDisplay(i)
                 rankingLabels(i)(0).Text = currHighscore.playerName
                 rankingLabels(i)(1).Text = (currHighscore.gameTime \ 60).ToString().PadLeft(2, "0") & ":" & (currHighscore.gameTime Mod 60).ToString().PadLeft(2, "0")
-
             Else
-
                 ' If there are less than 5 highscores to display, we empty the bottom rows which do not have any highscore results.
-
                 rankingLabels(i)(0).Text = ""
                 rankingLabels(i)(1).Text = ""
-
             End If
 
         Next i
 
         ' Update the color of the correspondingly clicked button to indicate which maze size is being displayed.
-
         UpdateButtonColor(newMazeSize)
 
     End Sub

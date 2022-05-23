@@ -90,6 +90,7 @@ Partial Class frmInstructions
         Me.Name = "frmInstructions"
         Me.Text = "Maze Game"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

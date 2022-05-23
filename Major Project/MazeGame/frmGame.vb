@@ -1,7 +1,6 @@
 ﻿Public Class frmGame
 
     Dim pixelSize As Integer
-    ' Dim rectangleEdges(,) As RectangleF
     Dim mazeDrawn As Boolean = False
     Dim player As RectangleF
     Dim coords As Point
@@ -43,20 +42,6 @@
             Case 1 : pixelSize = 6
             Case 2 : pixelSize = 4
         End Select
-
-        'Dim edgeLength As Integer = (mazeSize + 1) * 10
-
-        'ReDim rectangleEdges(edgeLength - 1, edgeLength - 1)
-
-        'For row = 0 To edgeLength - 1 Step 1
-
-        '    For column = 0 To edgeLength - 1 Step 1
-
-        '        rectangleEdges(row, column) = GenerateTopEdge(arrGameBoard(row, column), (row:=row, column:=column))
-
-        '    Next column
-
-        'Next row
 
         coords.X = 0
         coords.Y = 0
@@ -339,18 +324,15 @@
     ''' </summary>
     Private Sub CheckWin()
 
+        ' If the player has won the game (they are in the bottom right hand corner of their maze) then
         If coords.X = arrGameBoard.GetLength(1) - 1 And coords.Y = arrGameBoard.GetLength(0) - 1 Then
 
             ' Stop the game timer
-
             tmrTick.Stop()
-
-            ' Update arrHighscores with the game result
-
+            ' Update arrHighscores with the game result (which will discard it if it's not a highscore)
             HandleHighscore()
 
             ' Move to frmGameOver
-
             frmGameOver.Show()
             Me.Hide()
 
@@ -364,7 +346,6 @@
     Private Sub HandleHighscore()
 
         ' Create a Highscore record and add it to the array
-
         Dim currentRound As Highscore = New Highscore()
 
         currentRound.gameTime = gameTime
@@ -385,16 +366,13 @@
         Dim currMazeSize = currentRound.mazeSize
 
         ' Redimension the array by 1 value, and append the new highscore to the end of the array
-
         ReDim Preserve arrHighscores(currMazeSize)(arrHighscores(currMazeSize).Length)
         arrHighscores(currMazeSize)(arrHighscores(currMazeSize).Length - 1) = currentRound
 
         ' Sort the sub-array of highscores that we just updated
-
         Globals.SortHighscores(arrHighscores, currentRound.mazeSize)
 
         ' Write the highscores out to highscores.txt
-
         WriteHighscoresToFile(arrHighscores)
 
     End Sub
@@ -418,31 +396,23 @@
             If arrHighscores(sizeCounter).Length = 1 Then
 
                 currHighscore = arrHighscores(sizeCounter)(0)
-
                 lineToWrite = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
-
                 PrintLine(1, lineToWrite)
 
             Else
 
                 ' Otherwise, write out each highscore to the file (either the first five highscores, or all of them, whichever is less)
-
                 For i = 0 To Math.Min(arrHighscores(sizeCounter).Length - 1, 4) Step 1
-
                     currHighscore = arrHighscores(sizeCounter)(i)
-
                     lineToWrite = currHighscore.mazeSize & ";" & currHighscore.gameTime & ";" & currHighscore.playerName & ";" & currHighscore.mazeSeed.ToString("X").PadLeft(10, "0")
-
                     PrintLine(1, lineToWrite)
-
                 Next i
 
             End If
 
         Next sizeCounter
 
-        ' Write the sentinel and close the file
-
+        ' Write the sentinel value and close the file
         PrintLine(1, "9999")
         FileClose(1)
 

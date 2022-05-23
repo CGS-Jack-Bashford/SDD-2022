@@ -22,7 +22,7 @@
 
         frmHelp.lblHelp2.BackColor = System.Drawing.Color.Transparent
         frmHelp.lblHelp2.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        frmHelp.lblHelp2.Location = New System.Drawing.Point(337, 253)
+        frmHelp.lblHelp2.Location = New System.Drawing.Point(337, 240)
         frmHelp.lblHelp2.Name = "lblHelp2"
         frmHelp.lblHelp2.Size = New System.Drawing.Size(694, 107)
         frmHelp.lblHelp2.TabIndex = 3
@@ -31,7 +31,7 @@
 
         frmHelp.lblHelp3.BackColor = System.Drawing.Color.Transparent
         frmHelp.lblHelp3.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        frmHelp.lblHelp3.Location = New System.Drawing.Point(337, 390)
+        frmHelp.lblHelp3.Location = New System.Drawing.Point(337, 380)
         frmHelp.lblHelp3.Name = "lblHelp3"
         frmHelp.lblHelp3.Size = New System.Drawing.Size(694, 79)
         frmHelp.lblHelp3.TabIndex = 4
@@ -40,7 +40,7 @@
 
         frmHelp.lblHelp4.BackColor = System.Drawing.Color.Transparent
         frmHelp.lblHelp4.Font = New System.Drawing.Font("Anonymous Pro for Powerline", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        frmHelp.lblHelp4.Location = New System.Drawing.Point(337, 499)
+        frmHelp.lblHelp4.Location = New System.Drawing.Point(337, 489)
         frmHelp.lblHelp4.Name = "lblHelp4"
         frmHelp.lblHelp4.Size = New System.Drawing.Size(694, 77)
         frmHelp.lblHelp4.TabIndex = 5
