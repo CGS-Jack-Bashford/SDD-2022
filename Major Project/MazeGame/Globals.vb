@@ -55,7 +55,7 @@
             While i < last
 
                 If arrHighscores(sizeToSort)(i).gameTime > arrHighscores(sizeToSort)(i + 1).gameTime Then
-                    Swap(sizeToSort, i, i + 1)
+                    Swap(arrHighscores, sizeToSort, i, i + 1)
                     swapped = True
                 End If
 
@@ -76,7 +76,7 @@
     ''' <param name="size">The maze size / index of arrHighscores to reference</param>
     ''' <param name="idxA">Index 1 to swap</param>
     ''' <param name="idxB">Index 2 to swap</param>
-    Public Sub Swap(size As Integer, idxA As Integer, idxB As Integer)
+    Public Sub Swap(arrHighscores As Highscore(,)(), size As Integer, idxA As Integer, idxB As Integer)
 
         Dim temp As Highscore = arrHighscores(size)(idxA)
         arrHighscores(size)(idxA) = arrHighscores(size)(idxB)
