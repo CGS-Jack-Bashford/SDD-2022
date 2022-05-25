@@ -76,7 +76,7 @@
     ''' <param name="size">The maze size / index of arrHighscores to reference</param>
     ''' <param name="idxA">Index 1 to swap</param>
     ''' <param name="idxB">Index 2 to swap</param>
-    Public Sub Swap(arrHighscores As Highscore(,)(), size As Integer, idxA As Integer, idxB As Integer)
+    Public Sub Swap(arrHighscores As Highscore()(), size As Integer, idxA As Integer, idxB As Integer)
 
         Dim temp As Highscore = arrHighscores(size)(idxA)
         arrHighscores(size)(idxA) = arrHighscores(size)(idxB)
