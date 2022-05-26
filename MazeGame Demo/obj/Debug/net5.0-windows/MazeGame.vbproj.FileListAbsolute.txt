@@ -60,3 +60,11 @@ C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\obj\Debug\net5.0-windows\M
 C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\obj\Debug\net5.0-windows\MazeGame.dll
 C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\obj\Debug\net5.0-windows\ref\MazeGame.dll
 C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\obj\Debug\net5.0-windows\MazeGame.pdb
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\MazeGame.exe
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\MazeGame.deps.json
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\MazeGame.runtimeconfig.json
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\MazeGame.runtimeconfig.dev.json
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\MazeGame.dll
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\ref\MazeGame.dll
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\bin\Debug\net5.0-windows\MazeGame.pdb
+C:\Users\Jack Bashford\Desktop\SDD-2022\MazeGame Demo\obj\Debug\net5.0-windows\MazeGame.genruntimeconfig.cache
