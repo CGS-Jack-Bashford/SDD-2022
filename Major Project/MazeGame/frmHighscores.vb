@@ -133,7 +133,7 @@
     ''' Update the maze size view with the selected maze size display.
     ''' </summary>
     ''' <param name="newMazeSize">The new maze size to display highscores for</param>
-    Public Sub UpdateView(newMazeSize As Integer, arrHighscores As Highscore()())
+    Private Sub UpdateView(newMazeSize As Integer, arrHighscores As Highscore()())
 
         ' Select the dimension of arrHighscores with the maze size that we need to display
         Dim highScoresToDisplay As Highscore() = arrHighscores(newMazeSize)
