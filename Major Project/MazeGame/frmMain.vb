@@ -345,7 +345,7 @@ Public Class frmMain
         Dim checkPassed As Boolean = True
 
         ' If a seed was entered, validate it and store the result in checkPassed
-        If SeedEntered() Then
+        If SeedEntered(txtMazeSeed) Then
 
             Dim enteredSeed As String = txtMazeSeed.Text
             If ValidateSeed(enteredSeed) Then
@@ -356,9 +356,8 @@ Public Class frmMain
 
         Else
 
-            ' If a seed was not entered, generate one
-            Dim generatedSeed As ULong = GenerateSeed()
-            mazeSeed = generatedSeed
+            ' If a seed was not entered, generate one (and reset the current maze seed)
+            mazeSeed = GenerateSeed(mazeSeed)
 
         End If
 
@@ -370,7 +369,7 @@ Public Class frmMain
     ''' Ensure a seed was entered into the textbox
     ''' </summary>
     ''' <returns>True if the seed was entered, False if a seed was not entered</returns>
-    Private Function SeedEntered() As Boolean
+    Private Function SeedEntered(txtMazeSeed As TextBox) As Boolean
 
         Return Not String.IsNullOrEmpty(txtMazeSeed.Text)
 
@@ -393,7 +392,9 @@ Public Class frmMain
     ''' Generates a random seed (unsigned 64-bit integer) by concatenating several hexadecimal digits together
     ''' </summary>
     ''' <returns>A randomly 64-bit unsigned integer</returns>
-    Private Function GenerateSeed() As ULong
+    Private Function GenerateSeed(ByRef mazeSeed As ULong) As ULong
+
+        mazeSeed = 0
 
         Dim seedRnd As New Random()
 

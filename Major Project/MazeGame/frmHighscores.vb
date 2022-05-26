@@ -78,7 +78,7 @@
         Me.WindowState = FormWindowState.Normal
 
         SelectedMazeSize = mazeSize
-        UpdateView(SelectedMazeSize)
+        UpdateView(SelectedMazeSize, arrHighscores)
 
     End Sub
 
@@ -105,7 +105,7 @@
 
         If newMazeSize <> SelectedMazeSize Then
 
-            UpdateView(newMazeSize)
+            UpdateView(newMazeSize, arrHighscores)
             SelectedMazeSize = newMazeSize
 
         End If
@@ -123,7 +123,7 @@
         Dim newMazeSize As Integer = CInt(labelClicked.Name(11).ToString()) - 1
 
         If newMazeSize <> SelectedMazeSize Then
-            UpdateView(newMazeSize)
+            UpdateView(newMazeSize, arrHighscores)
             SelectedMazeSize = newMazeSize
         End If
 
@@ -133,7 +133,7 @@
     ''' Update the maze size view with the selected maze size display.
     ''' </summary>
     ''' <param name="newMazeSize">The new maze size to display highscores for</param>
-    Public Sub UpdateView(newMazeSize As Integer)
+    Public Sub UpdateView(newMazeSize As Integer, arrHighscores As Highscore()())
 
         ' Select the dimension of arrHighscores with the maze size that we need to display
         Dim highScoresToDisplay As Highscore() = arrHighscores(newMazeSize)
