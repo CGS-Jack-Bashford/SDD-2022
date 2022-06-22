@@ -38,7 +38,7 @@ Public Class Form1
         arrHighscores(1) = New Highscore(4) {}
         arrHighscores(2) = New Highscore(4) {}
 
-#Region "Assignment of Data Set 1 Inputs"
+        ' Data Set 1
 
         arrHighscores(0)(0).playerName = "Alfred"
         arrHighscores(0)(0).gameTime = 10
@@ -70,8 +70,6 @@ Public Class Form1
         arrHighscores(2)(3).gameTime = 42
         arrHighscores(2)(4).playerName = "Olivia"
         arrHighscores(2)(4).gameTime = 52
-
-#End Region
 
         DisplayHighscores(arrHighscores, lstInput1)
 
@@ -81,7 +79,304 @@ Public Class Form1
 
         DisplayHighscores(arrHighscores, lstOutput1)
 
-#Region "Assignment of Data Set 1 Expected Output"
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 30
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 50
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 31
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 41
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 51
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 22
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 32
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 52
+
+        DisplayHighscores(arrHighscores, lstExpected1)
+
+        ' Data Set 2
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 20
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 40
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 21
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 21
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 51
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 12
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 12
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 52
+
+        DisplayHighscores(arrHighscores, lstInput2)
+
+        For i = 0 To arrHighscores.Length - 1 Step 1
+            SortHighscores(arrHighscores, i)
+        Next
+
+        DisplayHighscores(arrHighscores, lstOutput2)
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 20
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 40
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 21
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 21
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 51
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 12
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 12
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 52
+
+        DisplayHighscores(arrHighscores, lstExpected2)
+
+        ' Data Set 3
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 50
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 10
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 40
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 20
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 30
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 31
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 41
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 11
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 51
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 21
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 52
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 22
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 32
+
+
+        DisplayHighscores(arrHighscores, lstInput3)
+
+        For i = 0 To arrHighscores.Length - 1 Step 1
+            SortHighscores(arrHighscores, i)
+        Next
+
+        DisplayHighscores(arrHighscores, lstOutput3)
+
+        arrHighscores(0)(0).playerName = "Bob"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Damon"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Edvin"
+        arrHighscores(0)(2).gameTime = 30
+        arrHighscores(0)(3).playerName = "Cheryl"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Alfred"
+        arrHighscores(0)(4).gameTime = 50
+        arrHighscores(1)(0).playerName = "Henry"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "Jacob"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Frank"
+        arrHighscores(1)(2).gameTime = 31
+        arrHighscores(1)(3).playerName = "George"
+        arrHighscores(1)(3).gameTime = 41
+        arrHighscores(1)(4).playerName = "Isaac"
+        arrHighscores(1)(4).gameTime = 51
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Monty"
+        arrHighscores(2)(1).gameTime = 22
+        arrHighscores(2)(2).playerName = "Olivia"
+        arrHighscores(2)(2).gameTime = 32
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Ludwig"
+        arrHighscores(2)(4).gameTime = 52
+
+        DisplayHighscores(arrHighscores, lstExpected3)
+
+        ' Data Set 4
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 50
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 40
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 30
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 20
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 10
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 51
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 41
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 31
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 21
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 11
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 52
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 42
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 32
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 22
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 12
+
+
+        DisplayHighscores(arrHighscores, lstInput4)
+
+        For i = 0 To arrHighscores.Length - 1 Step 1
+            SortHighscores(arrHighscores, i)
+        Next
+
+        DisplayHighscores(arrHighscores, lstOutput4)
+
+        arrHighscores(0)(0).playerName = "Edvin"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Damon"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 30
+        arrHighscores(0)(3).playerName = "Bob"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Alfred"
+        arrHighscores(0)(4).gameTime = 50
+        arrHighscores(1)(0).playerName = "Jacob"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "Isaac"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 31
+        arrHighscores(1)(3).playerName = "George"
+        arrHighscores(1)(3).gameTime = 41
+        arrHighscores(1)(4).playerName = "Frank"
+        arrHighscores(1)(4).gameTime = 51
+        arrHighscores(2)(0).playerName = "Olivia"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Nathan"
+        arrHighscores(2)(1).gameTime = 22
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 32
+        arrHighscores(2)(3).playerName = "Ludwig"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Kevin"
+        arrHighscores(2)(4).gameTime = 52
+
+        DisplayHighscores(arrHighscores, lstExpected4)
+
+        ' Data Set 5
+
+        arrHighscores(0)(0).playerName = "Bob"
+        arrHighscores(0)(0).gameTime = 20
+        arrHighscores(0)(1).playerName = "Cheryl"
+        arrHighscores(0)(1).gameTime = 30
+        arrHighscores(0)(2).playerName = "Damon"
+        arrHighscores(0)(2).gameTime = 40
+        arrHighscores(0)(3).playerName = "Edvin"
+        arrHighscores(0)(3).gameTime = 50
+        arrHighscores(0)(4).playerName = "Alfred"
+        arrHighscores(0)(4).gameTime = 10
+        arrHighscores(1)(0).playerName = "George"
+        arrHighscores(1)(0).gameTime = 21
+        arrHighscores(1)(1).playerName = "Henry"
+        arrHighscores(1)(1).gameTime = 31
+        arrHighscores(1)(2).playerName = "Isaac"
+        arrHighscores(1)(2).gameTime = 41
+        arrHighscores(1)(3).playerName = "Jacob"
+        arrHighscores(1)(3).gameTime = 51
+        arrHighscores(1)(4).playerName = "Frank"
+        arrHighscores(1)(4).gameTime = 11
+        arrHighscores(2)(0).playerName = "Ludwig"
+        arrHighscores(2)(0).gameTime = 22
+        arrHighscores(2)(1).playerName = "Monty"
+        arrHighscores(2)(1).gameTime = 32
+        arrHighscores(2)(2).playerName = "Nathan"
+        arrHighscores(2)(2).gameTime = 42
+        arrHighscores(2)(3).playerName = "Olivia"
+        arrHighscores(2)(3).gameTime = 52
+        arrHighscores(2)(4).playerName = "Kevin"
+        arrHighscores(2)(4).gameTime = 12
+
+
+        DisplayHighscores(arrHighscores, lstInput5)
+
+        For i = 0 To arrHighscores.Length - 1 Step 1
+            SortHighscores(arrHighscores, i)
+        Next
+
+        DisplayHighscores(arrHighscores, lstOutput5)
 
         arrHighscores(0)(0).playerName = "Alfred"
         arrHighscores(0)(0).gameTime = 10
@@ -114,9 +409,155 @@ Public Class Form1
         arrHighscores(2)(4).playerName = "Olivia"
         arrHighscores(2)(4).gameTime = 52
 
-#End Region
+        DisplayHighscores(arrHighscores, lstExpected5)
 
-        DisplayHighscores(arrHighscores, lstExpected1)
+        ' Data Set 6
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 30
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 10
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 31
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 41
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 11
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 22
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 32
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 12
+
+        DisplayHighscores(arrHighscores, lstInput6)
+
+        For i = 0 To arrHighscores.Length - 1 Step 1
+            SortHighscores(arrHighscores, i)
+        Next
+
+        DisplayHighscores(arrHighscores, lstOutput6)
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Edvin"
+        arrHighscores(0)(1).gameTime = 10
+        arrHighscores(0)(2).playerName = "Bob"
+        arrHighscores(0)(2).gameTime = 20
+        arrHighscores(0)(3).playerName = "Cheryl"
+        arrHighscores(0)(3).gameTime = 30
+        arrHighscores(0)(4).playerName = "Damon"
+        arrHighscores(0)(4).gameTime = 40
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "Jacob"
+        arrHighscores(1)(1).gameTime = 11
+        arrHighscores(1)(2).playerName = "George"
+        arrHighscores(1)(2).gameTime = 21
+        arrHighscores(1)(3).playerName = "Henry"
+        arrHighscores(1)(3).gameTime = 31
+        arrHighscores(1)(4).playerName = "Isaac"
+        arrHighscores(1)(4).gameTime = 41
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Olivia"
+        arrHighscores(2)(1).gameTime = 12
+        arrHighscores(2)(2).playerName = "Ludwig"
+        arrHighscores(2)(2).gameTime = 22
+        arrHighscores(2)(3).playerName = "Monty"
+        arrHighscores(2)(3).gameTime = 32
+        arrHighscores(2)(4).playerName = "Nathan"
+        arrHighscores(2)(4).gameTime = 42
+
+        DisplayHighscores(arrHighscores, lstExpected6)
+
+        ' Data Set 7
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Bob"
+        arrHighscores(0)(1).gameTime = 20
+        arrHighscores(0)(2).playerName = "Cheryl"
+        arrHighscores(0)(2).gameTime = 30
+        arrHighscores(0)(3).playerName = "Damon"
+        arrHighscores(0)(3).gameTime = 40
+        arrHighscores(0)(4).playerName = "Edvin"
+        arrHighscores(0)(4).gameTime = 10
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "George"
+        arrHighscores(1)(1).gameTime = 21
+        arrHighscores(1)(2).playerName = "Henry"
+        arrHighscores(1)(2).gameTime = 31
+        arrHighscores(1)(3).playerName = "Isaac"
+        arrHighscores(1)(3).gameTime = 41
+        arrHighscores(1)(4).playerName = "Jacob"
+        arrHighscores(1)(4).gameTime = 11
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Ludwig"
+        arrHighscores(2)(1).gameTime = 22
+        arrHighscores(2)(2).playerName = "Monty"
+        arrHighscores(2)(2).gameTime = 32
+        arrHighscores(2)(3).playerName = "Nathan"
+        arrHighscores(2)(3).gameTime = 42
+        arrHighscores(2)(4).playerName = "Olivia"
+        arrHighscores(2)(4).gameTime = 12
+
+        DisplayHighscores(arrHighscores, lstInput7)
+
+        For i = 0 To arrHighscores.Length - 1 Step 1
+            SortHighscores(arrHighscores, i)
+        Next
+
+        DisplayHighscores(arrHighscores, lstOutput7)
+
+        arrHighscores(0)(0).playerName = "Alfred"
+        arrHighscores(0)(0).gameTime = 10
+        arrHighscores(0)(1).playerName = "Edvin"
+        arrHighscores(0)(1).gameTime = 10
+        arrHighscores(0)(2).playerName = "Bob"
+        arrHighscores(0)(2).gameTime = 20
+        arrHighscores(0)(3).playerName = "Cheryl"
+        arrHighscores(0)(3).gameTime = 30
+        arrHighscores(0)(4).playerName = "Damon"
+        arrHighscores(0)(4).gameTime = 40
+        arrHighscores(1)(0).playerName = "Frank"
+        arrHighscores(1)(0).gameTime = 11
+        arrHighscores(1)(1).playerName = "Jacob"
+        arrHighscores(1)(1).gameTime = 11
+        arrHighscores(1)(2).playerName = "George"
+        arrHighscores(1)(2).gameTime = 21
+        arrHighscores(1)(3).playerName = "Henry"
+        arrHighscores(1)(3).gameTime = 31
+        arrHighscores(1)(4).playerName = "Isaac"
+        arrHighscores(1)(4).gameTime = 41
+        arrHighscores(2)(0).playerName = "Kevin"
+        arrHighscores(2)(0).gameTime = 12
+        arrHighscores(2)(1).playerName = "Olivia"
+        arrHighscores(2)(1).gameTime = 12
+        arrHighscores(2)(2).playerName = "Ludwig"
+        arrHighscores(2)(2).gameTime = 22
+        arrHighscores(2)(3).playerName = "Monty"
+        arrHighscores(2)(3).gameTime = 32
+        arrHighscores(2)(4).playerName = "Nathan"
+        arrHighscores(2)(4).gameTime = 42
+
+        DisplayHighscores(arrHighscores, lstExpected7)
 
     End Sub
 
