@@ -22,8 +22,10 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lstOutput = New System.Windows.Forms.ListBox()
         Me.btnRead = New System.Windows.Forms.Button()
+        Me.tmrCallSub = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lstOutput
@@ -44,6 +46,11 @@ Partial Class Form1
         Me.btnRead.Text = "Button1"
         Me.btnRead.UseVisualStyleBackColor = True
         '
+        'tmrCallSub
+        '
+        Me.tmrCallSub.Enabled = True
+        Me.tmrCallSub.Interval = 10
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
@@ -59,4 +66,5 @@ Partial Class Form1
 
     Friend WithEvents lstOutput As ListBox
     Friend WithEvents btnRead As Button
+    Friend WithEvents tmrCallSub As Timer
 End Class
