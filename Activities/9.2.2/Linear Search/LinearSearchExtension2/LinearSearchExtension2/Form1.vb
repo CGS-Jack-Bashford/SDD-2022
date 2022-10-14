@@ -54,6 +54,8 @@ Public Class Form1
 
             End If
 
+        ' This sets the found index's element to be selected after the previous is de-selected.
+        
             lstNums.SetSelected(idx, True)
 
         End If
